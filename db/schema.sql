@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS gymclub_db;
+CREATE DATABASE gymclub_db;
