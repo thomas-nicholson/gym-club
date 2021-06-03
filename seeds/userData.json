@@ -10,5 +10,23 @@
         "email": "billy@example.com",
         "password": "password",
         "picture": "#"
-      }
+    },
+    {
+        "username": "AbodominAbreham",
+        "email": "abreham@example.com",
+        "password": "password",
+        "picture": "#"
+    },
+    {
+        "username": "DeadliftDavid",
+        "email": "david@example.com",
+        "password": "password",
+        "picture": "#"
+    },
+    {
+        "username": "MaxSquatSpencer",
+        "email": "spencer@example.com",
+        "password": "password",
+        "picture": "#"
+    }
   ]
