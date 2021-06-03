@@ -4,23 +4,40 @@
         <img class="square2" src="Images/square.png">
         <img class="square3" src="Images/square.png">
     </div>
-    {{!-- <div class="container">
+    <div class="container">
         <img class="gym-club-img" src="Images/Gym-Club.png" alt="Gym CLub">
         <a class="hover" href='#'><img class="login" id="buttons"  src="Images/Login.png" alt="login"></a>
         <a class="hover" href='#'><img class="signUp" id="buttons"  src="Images/Signup.png" alt="sign up"></a>
         <a class="guest" href='#' id="buttons">Continue as Guest</a>
-    </div>      --}}
+    </div>     
     <div class='formContainer'>
       <form action="/action_page.php" method="post">
       <div class="container">
         <label for="uname"><b><img class="title" src="/Images/Email.png"></b></label>
-        <input class="enterField" type="text" placeholder="Enter Username" name="uname" required>
+        <input class="enterField" type="text" placeholder="Enter Email" name="uname" required>
 
         <label for="psw"><b><img class="title1" src="/Images/password.png"></b></label>
         <input class="enterField" type="password" placeholder="Enter Password" name="psw" required>
         
         <button type="submit" class="button">Login</button>
-        <button type="button" class="button">Cancel</button>
+        <button type="button" class="button cancel" >Cancel</button>
+      </div>
+     </form>
+    </div>
+    <div class='formContainer1'>
+      <form action="/action_page.php" method="post">
+      <div class="container">
+        <label for="uname"><b><img class="title2" src="/Images/Username.png"></b></label>
+        <input class="enterField" type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="uname"><b><img class="title" src="/Images/Email.png"></b></label>
+        <input class="enterField" type="text" placeholder="Enter Email" name="uname" required>
+
+        <label for="psw"><b><img class="title1" src="/Images/password.png"></b></label>
+        <input class="enterField" type="password" placeholder="Enter Password" name="psw" required>
+        
+        <button type="submit" class="button">Login</button>
+        <button type="button" class="button cancel2">Cancel</button>
       </div>
      </form>
     </div>
@@ -63,3 +80,5 @@ anime({
 })  
 
 </script>
+
+<script src='/js/script.js'></script>
