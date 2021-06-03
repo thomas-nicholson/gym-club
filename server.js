@@ -38,7 +38,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Linking routes folder to express
-//app.use(routes);
+app.use(routes);
 
 //set app to sync to database and listen for requests
 /*
