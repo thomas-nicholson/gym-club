@@ -47,34 +47,32 @@ router.get('/signup', (req, res) => {
     res.send("Signup Route");
 });
 
-router.get('/user', async (req, res) => {
-    // if (req.session.user_id === undefined){
-    //     res.render('landing', {
-    //     });
-    // }
+router.get('/user/:id', async (req, res) => {
+    if (req.session.user_id === undefined){
+        res.redirect('../');
+    }
+    const user = await User.findByPk(req.params.id, {
+        include: [
+            {
+                model: Stats
+            },
+            {
+                model: Blog
+            },
+        ],
+    });
 
-    // const user = await User.findAll({
-    //     where: {
-    //         id: req.session.user_id
-    //     },
-        // include: [
-        //     {
-        //         model: Stats,
-        //     },
-        // ],
-    // });
+    const users = user.get({ plain: true});
 
-    // const userdata = user.map((users) => users.get({ plain: true}));
-
-    // try {
-    //     res.render('user', {
-    //         userdata,
-    //         logged_in: req.session.logged_in 
-    //     });
-    // } catch (err) {
-    //     res.status(500).json(err);
-    // }
-    res.render('user')
+    try {
+        res.render('user', {
+            ...users,
+            logged_in: req.session.logged_in 
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+    
 });
 
 router.get('/users/self/newpost', (req, res) => {
