@@ -1,7 +1,42 @@
 const router = require('express').Router();
+const { User, Blog, Stats} = require('../models');
+// const withAuth = require('../utils/auth');
+// const redirect= require('../utils/redirect');
+// const home = require('../utils/home');
 
 router.get('/', (req, res) => {
     res.render("landing");
+});
+
+router.get('/home', async (req, res) => {
+    try {
+        const postData = await Blog.findAll({
+            include: [
+                {
+                    model: User,
+                    attributes: ['username', 'id'],
+                },
+            ],
+            order: [['id', 'DESC']],
+        });
+
+        const blogs = postData.map((blog) => blog.get({ plain: true}));
+
+        let homeStatus;
+        if (blogs[0] === undefined) {
+            homeStatus = false
+        } else {
+            homeStatus = true
+        }
+
+        res.render('home', {
+            homeStatus,
+            blogs,
+            logged_in: req.session.logged_in 
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.get('/login', (req, res) => {
@@ -12,8 +47,34 @@ router.get('/signup', (req, res) => {
     res.send("Signup Route");
 });
 
-router.get('/users/self', (req, res) => {
-    res.send("self user Route");
+router.get('/user', async (req, res) => {
+    // if (req.session.user_id === undefined){
+    //     res.render('landing', {
+    //     });
+    // }
+
+    // const user = await User.findAll({
+    //     where: {
+    //         id: req.session.user_id
+    //     },
+        // include: [
+        //     {
+        //         model: Stats,
+        //     },
+        // ],
+    // });
+
+    // const userdata = user.map((users) => users.get({ plain: true}));
+
+    // try {
+    //     res.render('user', {
+    //         userdata,
+    //         logged_in: req.session.logged_in 
+    //     });
+    // } catch (err) {
+    //     res.status(500).json(err);
+    // }
+    res.render('user')
 });
 
 router.get('/users/self/newpost', (req, res) => {
