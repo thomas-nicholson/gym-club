@@ -1,6 +1,7 @@
 [
     {
       "age": 25,
+      "description": "Yay this is describing me!",
       "height": 1.88,
       "weight": 72,
       "max_bench": 101,
@@ -10,6 +11,7 @@
     },
     {
       "age": 26,
+      "description": "Yay this is describing me!",
       "height": 1.62,
       "weight": 86,
       "max_bench": 82,
@@ -19,6 +21,7 @@
     },
     {
       "age": 27,
+      "description": "Yay this is describing me!",
       "height": 1.75,
       "weight": 63,
       "max_bench": 98,
@@ -28,6 +31,7 @@
     },
     {
       "age": 28,
+      "description": "Yay this is describing me!",
       "height": 1.78,
       "weight": 91,
       "max_bench": 67,
@@ -37,6 +41,7 @@
     },
     {
       "age": 29,
+      "description": "Yay this is describing me!",
       "height": 1.83,
       "weight": 120,
       "max_bench": 238,

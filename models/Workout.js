@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Stats extends Model {}
+class Workout extends Model {}
 
-Stats.init(
+Workout.init(
     {
       id: {
         type: DataTypes.INTEGER,
@@ -11,32 +11,17 @@ Stats.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      age: {
-        type: DataTypes.INTEGER,
+      title: {
+        type: DataTypes.STRING,
         allowNull: false,
       },
       description: {
         type: DataTypes.STRING,
       },
-      height: {
-        type: DataTypes.DECIMAL(3, 2),
+      date_created: {
+        type: DataTypes.DATE,
         allowNull: false,
-      },
-      weight: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      max_bench: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      max_deadlift: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      max_squat: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+        defaultValue: DataTypes.NOW,
       },
       user_id: {
         type: DataTypes.INTEGER,
@@ -51,8 +36,8 @@ Stats.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'stats',
+      modelName: 'workout',
     }
   );
   
-  module.exports = Stats;
+  module.exports = Workout;
