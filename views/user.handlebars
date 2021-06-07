@@ -21,18 +21,49 @@
 {{/if}} --}}
 
 <main class="body"> 
-    <div>
-        <div>
+    <div class='userContainer'>
+        <div class="userImage"></div>
 
+        <div class="userDetails">
+            <div class="details">
+                <h2>Username: {{username}}</h2>
+                <h2>Age: {{stat.age}}</h2>
+            </div>
+            
+            <div class="stats">
+                <h3>Max Bench: {{stat.max_bench}}kg</h3>
+                <h3>Max Deadlift: {{stat.max_deadlift}}kg</h3>
+                <h3>Max Squat: {{stat.max_squat}}kg</h3>
+            </div>
         </div>
-        <h3>Username</h3>
-        <p>???</p>
-        <h3>Age</h3>
-        <div>
-            <h4>Max Deadlift</h4>
-            <h4>Max Deadlift</h4>
-            <h4>Max Deadlift</h4>
-        </div>
+        
+    </div>
+    <div class="description">
+        <h1>About Me</h1>
+        <p></p>
+
+    </div>
+    <div>
+        <a href="#">Past Blogs</a>
+        <a href="#">Workout Routines</a>
     </div>
     
 </main>
+
+<script>
+    const rotate = 
+        anime({ 
+        targets: '.menu',
+        duration: 300,
+        rotate: 180,
+        easing: 'linear',
+        autoplay: false
+        })
+    
+
+    const btn = document.querySelector(".menuBtn")
+
+    btn.onclick = rotate.play
+      
+
+  </script>
