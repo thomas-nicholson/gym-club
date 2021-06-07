@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-// const session = require('express-session');
+const session = require('express-session');
 // const exphbs = require('express-handlebars');
  const routes = require('./controllers');
 //Import helpers folder
@@ -8,7 +8,7 @@ const express = require('express');
 
 const sequelize = require('./config/connection');
 //Import module to store sessions in database
-//const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3001;
 //const hbs = exphbs.create({ helpers });
 
 //Session Middleware
-/*
+
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
@@ -26,8 +26,8 @@ const sess = {
     store: new SequelizeStore({
         db: sequelize
     })
-};*/
-//app.use(session(sess));
+};
+app.use(session(sess));
 
 //Handlebars+ helpers middleware
 //app.engine('handlebars', hbs.engine);
