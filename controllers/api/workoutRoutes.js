@@ -25,8 +25,7 @@ router.put('/update/:id', async (req, res) => {
         {
           where: {
             id: req.params.id,
-            user_id: req.body.user_id
-            // user_id: req.session.user_id
+            user_id: req.session.user_id
           },
         }
       )
