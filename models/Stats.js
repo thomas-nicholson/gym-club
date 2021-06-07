@@ -16,7 +16,7 @@ Stats.init(
         allowNull: false,
       },
       height: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DECIMAL(3, 2),
         allowNull: false,
       },
       weight: {
