@@ -6,8 +6,7 @@ router.post('/addworkout', async (req, res) => {
         const newWorkout = await Workout.create({
             title: req.body.title,
             description: req.body.description,
-            user_id: req.body.user_id
-            // user_id: req.session.user_id
+            user_id: req.session.user_id
         })
         res.status(200).json(newWorkout);
 
