@@ -1,0 +1,27 @@
+[
+    {
+      "title": "Supreme Lifts",
+      "description": "I eat supreme pizza when I lift my weights",
+      "user_id": 1
+    },
+    {
+      "title": "Squat Time",
+      "description": "No longer will my legs look like twigs",
+      "user_id": 2
+    },
+    {
+      "title": "Big Gains",
+      "description": "I want my arms to be bigger than watermelons",
+      "user_id": 3
+    },
+    {
+      "title": "Drop the bell",
+      "description": "I will drop anything to go the gym",
+      "user_id": 4
+    },
+    {
+      "title": "I am getting double thick",
+      "description": "I used to think that the texture of a Maccas thick shake was thick, but when I touched my glutes, I was wrong",
+      "user_id": 5
+    }
+  ]
