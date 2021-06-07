@@ -11,7 +11,7 @@ Blog.init(
         primaryKey: true,
         autoIncrement: true,
       },
-      name: {
+      title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -36,7 +36,7 @@ Blog.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'Blog',
+      modelName: 'blog',
     }
   );
   
