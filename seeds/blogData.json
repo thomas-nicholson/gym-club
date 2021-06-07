@@ -1,6 +1,27 @@
 [
     {
       "title": "I lift more than you",
-      "description": "My mate Jimmy down at the pub really likes to show off his lifting skills."
+      "description": "My mate Billy down at the pub really likes to show off his lifting skills.",
+      "user_id": 1
+    },
+    {
+      "title": "Hi my name is chad 😄",
+      "description": "I spend most of my day eating chicken!",
+      "user_id": 2
+    },
+    {
+      "title": "Hey Abe, you suck at lifting ",
+      "description": "You are like a twig and you can't even pick up your mum's groceries",
+      "user_id": 3
+    },
+    {
+      "title": "My name is David and I am the best 👋",
+      "description": "What else can I say?",
+      "user_id": 4
+    },
+    {
+      "title": "Everywhere I go I squat",
+      "description": "Squat is my middle name...",
+      "user_id": 5
     }
   ]
