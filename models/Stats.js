@@ -15,6 +15,9 @@ Stats.init(
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      description: {
+        type: DataTypes.STRING,
+      },
       height: {
         type: DataTypes.DECIMAL(3, 2),
         allowNull: false,
