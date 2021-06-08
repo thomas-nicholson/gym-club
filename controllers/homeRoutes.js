@@ -37,15 +37,11 @@ router.get('/', async (req, res) => {
 
 router.get('/login', async (req, res) => {
     try {
-        res.render('landing');
+        res.render('login');
     } catch (err) {
         res.status(500).json(err);
     }
 })
-
-router.get('/signup', (req, res) => {
-    res.send("Signup Route");
-});
 
 router.get('/user/:id', async (req, res) => {
     // if (req.session.user_id === undefined){
@@ -73,14 +69,6 @@ router.get('/user/:id', async (req, res) => {
         res.status(500).json(err);
     }
     
-});
-
-router.get('/users/self/newpost', (req, res) => {
-    res.send("new post Route");
-});
-
-router.get('/profile/:userid', (req,res) => {
-    res.send(`Other User Route ${req.params.userid}`);
 });
 
 module.exports = router;

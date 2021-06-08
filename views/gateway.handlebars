@@ -1,0 +1,52 @@
+<main class="main">
+    <div class='background'>
+        <img class="square1" src="Images/square.png">
+        <img class="square2" src="Images/square.png">
+        <img class="square3" src="Images/square.png">
+    </div>
+    <div class="container">
+        <img class="gym-club-img" src="Images/Gym-Club.png" alt="Gym CLub">
+        <a class="hover" href='#'><img class="login" id="buttons"  src="Images/Login.png" alt="login"></a>
+        <a class="hover" href='#'><img class="signUp" id="buttons"  src="Images/Signup.png" alt="sign up"></a>
+        <a class="guest" href='/' id="buttons">Continue as Guest</a>
+    </div>     
+</main>
+
+<script>
+anime({
+    targets: '.gym-club-img',
+    duration: 1000,
+    translateY: 600,
+}) 
+anime({
+    targets: '#buttons',
+    duration: 1500,
+    translateX: 1000,
+    easing: 'easeInOutSine',
+    delay: (elm, i) => i*300
+})
+anime({
+    targets: '.square1',
+    duration: 30000,
+    rotate: 360,
+    easing: 'linear',
+    loop: true
+})
+anime({
+    targets: '.square2',
+    duration: 20000,
+    rotate: 360,
+    easing: 'linear',
+    loop: true
+})
+anime({
+    targets: '.square3',
+    duration: 25000,
+    rotate: -360,
+    easing: 'linear',
+    loop: true
+})  
+
+</script>
+
+<script src='./js/script.js'></script>
