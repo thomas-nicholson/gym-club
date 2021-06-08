@@ -1,4 +1,10 @@
-<div class='formContainer'>
+<main class="main">
+  <div class='background'>
+        <img class="square1" src="Images/square.png">
+        <img class="square2" src="Images/square.png">
+        <img class="square3" src="Images/square.png">
+    </div>
+  <div class='formContainer'>
   <form>
   <div class="container">
     <label for="uname"><b><img class="title" src="/Images/Email.png"></b></label>
@@ -11,3 +17,29 @@
   </div>
  </form>
 </div>
+</main>
+
+<script>
+anime({
+    targets: '.square1',
+    duration: 30000,
+    rotate: 360,
+    easing: 'linear',
+    loop: true
+})
+anime({
+    targets: '.square2',
+    duration: 20000,
+    rotate: 360,
+    easing: 'linear',
+    loop: true
+})
+anime({
+    targets: '.square3',
+    duration: 25000,
+    rotate: -360,
+    easing: 'linear',
+    loop: true
+})  
+
+</script>

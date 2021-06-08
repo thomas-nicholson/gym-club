@@ -1,3 +1,9 @@
+<main class="main">
+    <div class='background'>
+        <img class="square1" src="Images/square.png">
+        <img class="square2" src="Images/square.png">
+        <img class="square3" src="Images/square.png">
+    </div>
 <div class='formContainer1'>
   <form>
   <div class="container">
@@ -13,3 +19,29 @@
   </div>
  </form>
 </div>
+</main>
+
+<script>
+anime({
+    targets: '.square1',
+    duration: 30000,
+    rotate: 360,
+    easing: 'linear',
+    loop: true
+})
+anime({
+    targets: '.square2',
+    duration: 20000,
+    rotate: 360,
+    easing: 'linear',
+    loop: true
+})
+anime({
+    targets: '.square3',
+    duration: 25000,
+    rotate: -360,
+    easing: 'linear',
+    loop: true
+})  
+
+</script>
