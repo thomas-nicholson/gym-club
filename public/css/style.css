@@ -291,6 +291,7 @@ align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  text-align: center;
   flex-wrap: wrap;
 }
 
@@ -328,6 +329,7 @@ align-items: center;
 
 
 .description{
+  text-align: center;
   margin: 40px
 }
 
