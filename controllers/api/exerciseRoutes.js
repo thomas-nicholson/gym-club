@@ -8,13 +8,35 @@ router.post('/add/:id', async (req, res) => {
             exercise: req.body.exercise,
             reps: req.body.reps,
             sets: req.body.sets,
-            user_id: req.session.user_id,
             workout_id: req.params.id
         })
         res.status(200).json(newExercise)
   
     } catch (error) {
       res.status(400).json({ error: error.toString() });
+    }
+  });
+
+  // This allows you to update exercises
+router.put('/update/:id', async (req, res) => {
+    try {
+      const exerciseUpdate = await Exercise.update(
+        {
+          exercise: req.body.exercise,
+          reps: req.body.reps,
+          sets: req.body.sets,
+          workout_id: req.params.id
+        },
+        {
+          where: {
+            id: req.params.id
+          },
+        }
+      )
+  
+      res.status(200).json(exerciseUpdate)
+    } catch (err) {
+      res.status(500).json(err);
     }
   });
 
