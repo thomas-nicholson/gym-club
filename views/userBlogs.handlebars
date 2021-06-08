@@ -1,0 +1,33 @@
+
+<header class="homeheader">
+    <img class="logo" src="/Images/GymClub.png">
+    <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
+    <div>
+        <a href="/">Home</a>
+        <a href="/user">Profile</a>
+        {{#if loggedIn}}
+        <a href="/">Logout</a>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+    </div>   
+</header>
+
+<a>Back</a>
+
+<div class="centering col-md-6 project-list">
+    <h3>Current Blogs:</h3>
+
+    {{#each blogs as |blog|}}
+    <div class="row">
+      <div class="row-md-8">
+        <h4 class="margin"><a href="/project/{{blog.id}}">{{blog.name}}</a></h4>
+      </div>
+      <div class="row-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{!-- {{/if}} --}}
+</div>
