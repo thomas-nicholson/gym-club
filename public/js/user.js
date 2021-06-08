@@ -20,3 +20,24 @@ const newUserHandler = async (event) => {
         }
     }
 };
+
+const loginUserHandler = async (event) => {
+    event.preventDefault();
+
+    const email = document.querySelector('#email').value.trim();
+    const password = document.querySelector('#password').value.trim();
+
+    if (password && email) {
+        const response = await fetch('/api/users/login', {
+            method: 'POST',
+            body: JSON.stringify({ password, email }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert(response.statusText);
+        }
+    }
+};
