@@ -8,16 +8,6 @@ router.get('/', (req, res) => {
     res.render("landing");
 });
 
-// router.get('/', async (req, res) => {
-//     try {
-//         const blogData = await Blog.findAll();
-//         res.status(200).json(blogData);
-
-//     } catch (err) {
-//         res.status(400).json(err);
-//     }
-// });
-
 router.get('/home', async (req, res) => {
     try {
         const postData = await Blog.findAll({

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Blog } = require('../../models');
 
+// The structure for this is very similar to workoutRoutes.js
 router.post('/newpost', async (req, res) => {
     try {
         const newBlog = await Blog.create({
