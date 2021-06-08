@@ -4,11 +4,7 @@ const { User, Blog, Stats} = require('../models');
 // const redirect= require('../utils/redirect');
 // const home = require('../utils/home');
 
-router.get('/', (req, res) => {
-    res.render("landing");
-});
-
-router.get('/home', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const postData = await Blog.findAll({
             include: [
@@ -37,14 +33,11 @@ router.get('/home', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+    
 });
 
-router.get('/login', (req, res) => {
-    res.send("Login Route");
-});
-
-router.get('/signup', (req, res) => {
-    res.send("Signup Route");
+router.get('/login', async (req, res) => {
+    res.render("landing");
 });
 
 router.get('/user/:id', async (req, res) => {
