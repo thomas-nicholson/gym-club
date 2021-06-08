@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const { User, Blog, Stats, Comment} = require('../models');
-// const withAuth = require('../utils/auth');
-// const redirect= require('../utils/redirect');
-// const home = require('../utils/home');
+const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
@@ -61,7 +59,7 @@ router.get('/signup', async (req, res) => {
     }
 })
 
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', auth, async (req, res) => {
     try {
 
         const blogData = await Blog.findByPk(req.params.id, {
@@ -88,7 +86,7 @@ router.get('/blog/:id', async (req, res) => {
 })
 
 
-router.get('/user/:id', async (req, res) => {
+router.get('/user/:id', auth, async (req, res) => {
     // if (req.session.user_id === undefined){
     //     res.redirect('../');
     // }
