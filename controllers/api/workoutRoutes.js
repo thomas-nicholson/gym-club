@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Workout, Exercise } = require('../../models');
 
+// This allows you to addd workouts
 router.post('/add', async (req, res) => {
     try {
         const newWorkout = await Workout.create({
@@ -15,6 +16,7 @@ router.post('/add', async (req, res) => {
     }
 });
 
+// This allows you to update workouts
 router.put('/update/:id', async (req, res) => {
     try {
       const workoutUpdate = await Workout.update(
@@ -36,6 +38,7 @@ router.put('/update/:id', async (req, res) => {
     }
   });
 
+//   This allows you to delete workouts
   router.delete('/delete/:id', async (req, res) => {
     try {
 
