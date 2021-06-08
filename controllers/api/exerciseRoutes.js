@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Exercise } = require('../../models');
 
 //   This allows you to add exercises to the workout
-router.post('/exercise/:id', async (req, res) => {
+router.post('/add/:id', async (req, res) => {
     try {
         const newExercise = await Exercise.create({
             exercise: req.body.exercise,
