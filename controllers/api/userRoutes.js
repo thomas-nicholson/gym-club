@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+const Sequelize = require('sequelize');
+
+const Op = Sequelize.Op;
+
 router.post('/', async (req, res) => {
     try {
       const userData = await User.create(req.body);
@@ -53,14 +57,30 @@ router.post('/', async (req, res) => {
     }
   });
 
-  router.get('/:userID', async (req, res) => {
-    try {
-      const userData = await User.findByPk(req.params.userID);
-      res.status(200).json(userData);
-  
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  });
+router.get('/:userID', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.userID);
+    res.status(200).json(userData);
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/search', async (req,res) => {
+  console.log(req.body);
+  try {
+    const searchData = await User.findAll({
+      where: {
+        username: { 
+          [Op.like] : "%"+ req.body.searchQuery +"%" }
+        }
+      });
+    res.status(200).json(searchData);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+})
 
   module.exports = router;
