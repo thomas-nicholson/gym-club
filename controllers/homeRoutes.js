@@ -79,7 +79,7 @@ router.get('/users/self/newpost', (req, res) => {
     res.send("new post Route");
 });
 
-router.get('/users/:userid', (req,res) => {
+router.get('/profile/:userid', (req,res) => {
     res.send(`Other User Route ${req.params.userid}`);
 });
 
