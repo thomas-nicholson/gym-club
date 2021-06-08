@@ -41,3 +41,19 @@ const updateWorkoutHandler = async (event) => {
         }
     }
 };
+
+const deleteWorkoutHandler = async (event) => {
+    event.preventDefault();
+
+    const id;
+
+    const response = await fetch('/api/workout/delete/'+id, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json'},
+    });
+    if (response.ok) {
+        document.location.replace('/');
+    } else {
+        alert(response.statusText);
+    }
+}
