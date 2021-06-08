@@ -36,6 +36,31 @@ router.get('/', async (req, res) => {
     
 });
 
+
+router.get('/login', async (req, res) => {
+    try {
+        res.render('login');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/welcome', async (req, res) => {
+    try {
+        res.render('gateway');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/signup', async (req, res) => {
+    try {
+        res.render('signup');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.get('/blog/:id', async (req, res) => {
     try {
 
@@ -61,9 +86,7 @@ router.get('/blog/:id', async (req, res) => {
         res.status(500).json(err);
       }
 })
-router.get('/login', async (req, res) => {
-    res.render("landing");
-});
+
 
 router.get('/user/:id', async (req, res) => {
     // if (req.session.user_id === undefined){
@@ -91,14 +114,6 @@ router.get('/user/:id', async (req, res) => {
         res.status(500).json(err);
     }
     
-});
-
-router.get('/users/self/newpost', (req, res) => {
-    res.send("new post Route");
-});
-
-router.get('/profile/:userid', (req,res) => {
-    res.send(`Other User Route ${req.params.userid}`);
 });
 
 module.exports = router;
