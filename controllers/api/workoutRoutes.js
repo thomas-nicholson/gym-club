@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Workout, Exercise } = require('../../models');
+const auth = require('../../utils/auth');
 
 // This allows you to addd workouts
-router.post('/add', async (req, res) => {
+router.post('/add', auth, async (req, res) => {
     try {
         const newWorkout = await Workout.create({
             title: req.body.title,
@@ -17,7 +18,7 @@ router.post('/add', async (req, res) => {
 });
 
 // This allows you to update workouts
-router.put('/update/:id', async (req, res) => {
+router.put('/update/:id', auth, async (req, res) => {
     try {
       const workoutUpdate = await Workout.update(
         {
@@ -39,26 +40,26 @@ router.put('/update/:id', async (req, res) => {
   });
 
 //   This allows you to delete workouts
-  router.delete('/delete/:id', async (req, res) => {
-    try {
+router.delete('/delete/:id', auth, async (req, res) => {
+  try {
 
-      const exerciseDelete = await Exercise.destroy({
+    const exerciseDelete = await Exercise.destroy({
+      where: {
+        workout_id: req.params.id,
+      }
+    })
+
+    const workoutDelete = await Workout.destroy({
         where: {
-          workout_id: req.params.id,
+            id: req.params.id,
+            user_id: req.session.user_id
         }
-      })
+    })
 
-      const workoutDelete = await Workout.destroy({
-          where: {
-              id: req.params.id,
-              user_id: req.session.user_id
-          }
-      })
-  
-      res.status(200).json(workoutDelete)
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+    res.status(200).json(workoutDelete)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
