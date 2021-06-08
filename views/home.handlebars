@@ -2,16 +2,20 @@
 
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
-    <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
-    <div>
-        <a href="/home">Home</a>
-        <a href="/user">Profile</a>
-        {{#if loggedIn}}
-        <a href="/">Logout</a>
-        {{else}}
-        <a href="/">Login</a>
-        {{/if}}
+    <div class="menuflex">
+      <div class="menudrop">
+          <a href="/home">Home</a>
+          <a href="/user">Profile</a>
+          {{#if loggedIn}}
+          <a href="/">Logout</a>
+          {{else}}
+          <a href="/">Login</a>
+          {{/if}}
+      </div>
+      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
+      
     </div>
+    
     
 </header>
     

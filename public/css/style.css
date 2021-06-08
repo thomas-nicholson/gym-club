@@ -161,6 +161,7 @@ display: flex;
 flex-direction: row;
 top: 0px;
 justify-content: space-between;
+width: 100%
 /* height: 100px */
 }
 
@@ -174,10 +175,29 @@ width: 300px
 
 .menu{
 position: relative;
-right: 100px;
+right: 20px;
 margin-top: 40px;
 height: 50px;
 width: 50px
+}
+
+.menuflex{
+  display: flex;
+  flex-direction: row;
+}
+
+.menudrop{
+  position: relative;
+  top: 55px;
+  left: -40px
+}
+
+.menudrop a{
+  margin-left: 15px
+}
+
+.blog-para{
+  margin-bottom: 30px;
 }
 
 @media (max-width: 580px) {
@@ -242,6 +262,7 @@ align-items: center;
 .row{
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
 }
 
 .menuBtn:hover{
