@@ -17,21 +17,22 @@
     
   <main class="body"> 
     {{#each blogs as |blog| }}
-    <a href="#">
+    
       <div class="individual-blog">
-        <div class="row">
-          <a href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
-          <p>{{blog.date_created}}</p>
-        </div>
-        <h1 class="blog-heading">{{blog.title}}</h1>
-        <p class="seperator">_____________________</p>
+        
+        <a class="headingA"><h1 class="blog-heading">{{blog.title}}</h1></a>
+    
         <div class="blog-para">
           <p>
             {{blog.description}}
           </p>
         </div>
+        <div class="row">
+          <a href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
+          <p>{{blog.date_created}}</p>
+        </div>
       </div>
-    </a>
+    
     {{/each}}
   </main>
 

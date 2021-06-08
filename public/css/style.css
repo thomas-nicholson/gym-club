@@ -154,6 +154,7 @@ cursor: pointer;
 /* Home Page */
 
 header{
+background-color: rgb(5, 3, 36);
 position: sticky;
 overflow: hidden;
 display: flex;
@@ -167,6 +168,7 @@ justify-content: space-between;
 position: relative;
 left: 20px;
 margin-top: 15px;
+margin-bottom: 15px;
 width: 300px
 }
 
@@ -218,6 +220,7 @@ cursor: pointer;
 }
 
 .individual-blog{
+text-align: center;
 margin: 15px;
 width: 50%;
 border-radius: 5px;
@@ -227,10 +230,13 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 }
-
-.seperator{
-position: relative;
-top: -40px;
+.blog-heading{
+  margin: 20px;
+  font-size: 30px;
+  
+}
+.headingA{
+  width: 80%
 }
 
 .row{
