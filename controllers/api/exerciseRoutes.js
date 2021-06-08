@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Exercise } = require('../../models');
+const auth = require('../../utils/auth');
 
 //   This allows you to add exercises to the workout
-router.post('/add/:id', async (req, res) => {
+router.post('/add/:id', auth, async (req, res) => {
   try {
       const newExercise = await Exercise.create({
           exercise: req.body.exercise,
@@ -18,7 +19,7 @@ router.post('/add/:id', async (req, res) => {
 });
 
   // This allows you to update exercises
-router.put('/update/:id', async (req, res) => {
+router.put('/update/:id', auth, async (req, res) => {
   try {
     const exerciseUpdate = await Exercise.update(
       {
@@ -41,7 +42,7 @@ router.put('/update/:id', async (req, res) => {
 });
 
   //   This allows you to delete exercises
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id', auth, async (req, res) => {
   try {
 
     const exerciseDelete = await Exercise.destroy({
