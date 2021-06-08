@@ -1,0 +1,53 @@
+<header class="homeheader">
+    <img class="logo" src="/Images/GymClub.png">
+    <div class="menuflex">
+      <div class="menudrop">
+          <a href="/">Home</a>
+          <a href="/user">Profile</a>
+          {{#if loggedIn}}
+          <a href="/">Logout</a>
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+      </div>
+      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
+      
+    </div>
+    
+    
+</header>
+
+<main class="body"> 
+      <div class="individual-blog">
+          <div class="row2">
+          <a href="/user/{{user.id}}">{{user.username}}</a>
+          <p>{{date_created}}</p>
+        </div>
+        <h1 class="blog-heading">{{title}}</h1>
+        <div class="blog-para">
+          <p>
+            {{description}}
+          </p>
+        </div>
+      </div>
+
+      <div class='addcomment'>
+        <form>
+            <input type="text" id="fname" name="fname" value="Add Comment">
+            <button class="btn btn-primary log" type="submit" id="commentButton" post-id="{{viewPost.id}}">Post</button>
+        </form>
+      </div>
+
+      <div class="commentSection">
+          
+          <h1>Comments</h1>
+          {{#each comments as |comment|}}
+          <div class="comment">
+              <a href="/user/{{comment.user.id}}"><h3>{{comment.user.username}}</h3></a>
+              <p>{{comment.comment}}</p>
+          </div>
+          {{/each}}
+      </div>
+    
+    
+  </main>

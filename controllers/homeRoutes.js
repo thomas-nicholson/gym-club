@@ -1,14 +1,10 @@
 const router = require('express').Router();
-const { User, Blog, Stats} = require('../models');
+const { User, Blog, Stats, Comment} = require('../models');
 // const withAuth = require('../utils/auth');
 // const redirect= require('../utils/redirect');
 // const home = require('../utils/home');
 
-router.get('/', (req, res) => {
-    res.render("landing");
-});
-
-router.get('/home', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const postData = await Blog.findAll({
             include: [
@@ -37,14 +33,36 @@ router.get('/home', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+    
 });
 
-router.get('/login', (req, res) => {
-    res.send("Login Route");
-});
+router.get('/blog/:id', async (req, res) => {
+    try {
 
-router.get('/signup', (req, res) => {
-    res.send("Signup Route");
+        const blogData = await Blog.findByPk(req.params.id, {
+            include: [{
+                model: User,
+            },
+            {
+                model: Comment,
+                include: [{
+                    model:User,
+                }]
+            }],
+        });
+    
+        const blog = blogData.get({ plain: true });
+    
+        res.render('blog', {
+          ...blog,
+          logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+})
+router.get('/login', async (req, res) => {
+    res.render("landing");
 });
 
 router.get('/user/:id', async (req, res) => {

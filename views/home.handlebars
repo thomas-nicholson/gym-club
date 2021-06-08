@@ -2,36 +2,41 @@
 
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
-    <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
-    <div>
-        <a href="/home">Home</a>
-        <a href="/user">Profile</a>
-        {{#if loggedIn}}
-        <a href="/">Logout</a>
-        {{else}}
-        <a href="/">Login</a>
-        {{/if}}
+    <div class="menuflex">
+      <div class="menudrop">
+          <a href="/">Home</a>
+          <a href="/user">Profile</a>
+          {{#if loggedIn}}
+          <a href="/">Logout</a>
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+      </div>
+      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
+      
     </div>
+    
     
 </header>
     
   <main class="body"> 
     {{#each blogs as |blog| }}
-    <a href="#">
+    
       <div class="individual-blog">
-        <div class="row">
-          <a href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
-          <p>{{blog.date_created}}</p>
-        </div>
-        <h1 class="blog-heading">{{blog.title}}</h1>
-        <p class="seperator">_____________________</p>
+        
+        <a href="/blog/{{blog.id}}" class="headingA"><h1 class="blog-heading">{{blog.title}}</h1></a>
+    
         <div class="blog-para">
           <p>
             {{blog.description}}
           </p>
         </div>
+        <div class="row">
+          <a href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
+          <p>{{blog.date_created}}</p>
+        </div>
       </div>
-    </a>
+    
     {{/each}}
   </main>
 
