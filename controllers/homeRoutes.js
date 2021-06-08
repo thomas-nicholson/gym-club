@@ -43,6 +43,22 @@ router.get('/login', async (req, res) => {
     }
 })
 
+router.get('/welcome', async (req, res) => {
+    try {
+        res.render('gateway');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/signup', async (req, res) => {
+    try {
+        res.render('signup');
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.get('/user/:id', async (req, res) => {
     // if (req.session.user_id === undefined){
     //     res.redirect('../');
