@@ -18,4 +18,20 @@ router.post('/add/:id', async (req, res) => {
     }
   });
 
+  //   This allows you to delete exercises
+  router.delete('/delete/:id', async (req, res) => {
+    try {
+
+      const exerciseDelete = await Exercise.destroy({
+        where: {
+          id: req.params.id,
+        }
+      })
+  
+      res.status(200).json(exerciseDelete)
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
   module.exports = router;
