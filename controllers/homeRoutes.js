@@ -48,9 +48,9 @@ router.get('/signup', (req, res) => {
 });
 
 router.get('/user/:id', async (req, res) => {
-    if (req.session.user_id === undefined){
-        res.redirect('../');
-    }
+    // if (req.session.user_id === undefined){
+    //     res.redirect('../');
+    // }
     const user = await User.findByPk(req.params.id, {
         include: [
             {
