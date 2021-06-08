@@ -43,6 +43,7 @@ html {
 }
 
 .container {
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -95,7 +96,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 307px;
 }
 
 .formContainer1 {
@@ -103,7 +104,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 307px;
 }
 
 .title {
