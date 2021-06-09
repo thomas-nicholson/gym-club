@@ -3,6 +3,7 @@ const { User } = require('../../models');
 
 const Sequelize = require('sequelize');
 const { where } = require('sequelize');
+const number = require('../../utils/randomNumber');
 
 const Op = Sequelize.Op;
 
@@ -12,7 +13,7 @@ router.post('/', async (req, res) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.email,
-        picture: "/images/avatars/042-owl.svg"
+        picture: `/images/avatars/${number}.svg`
       });
   
       req.session.save(() => {
