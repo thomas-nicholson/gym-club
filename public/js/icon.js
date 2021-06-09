@@ -1,0 +1,1 @@
+// Front end icon javascript that connect to backend
