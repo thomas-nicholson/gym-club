@@ -23,7 +23,6 @@ router.put('/update/:id', async (req, res) => {
             {
                 title: req.body.title,
                 description: req.body.description,
-                date_created: req.body.date_created,
                 user_id: req.params.id
             },
             {
