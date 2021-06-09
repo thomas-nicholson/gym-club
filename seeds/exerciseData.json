@@ -4,5 +4,53 @@
       "reps": 9,
       "sets": 3,
       "workout_id": 1
+    },
+    {
+      "exercise": "Squats",
+      "reps": 10,
+      "sets": 4,
+      "workout_id": 1
+    },
+    {
+      "exercise": "Push Ups",
+      "reps": 6,
+      "sets": 2,
+      "workout_id": 1
+    },
+    {
+      "exercise": "Neck Lift",
+      "reps": 50,
+      "sets": 5,
+      "workout_id": 2
+    },
+    {
+      "exercise": "Finger Curls",
+      "reps": 11,
+      "sets": 2,
+      "workout_id": 2
+    },
+    {
+      "exercise": "Toe Crunches",
+      "reps": 8,
+      "sets": 4,
+      "workout_id": 2
+    },
+    {
+      "exercise": "Belly Press",
+      "reps": 14,
+      "sets": 2,
+      "workout_id": 3
+    },
+    {
+      "exercise": "Ankle Twists",
+      "reps": 11,
+      "sets": 5,
+      "workout_id": 3
+    },
+    {
+      "exercise": "Knuckle Slaps",
+      "reps": 7,
+      "sets": 3,
+      "workout_id": 3
     }
   ]
