@@ -3,30 +3,30 @@
       "username": "ChadChapMan",
       "email": "chad@example.com",
       "password": "password",
-      "picture": "#"
+      "picture": "/images/avatars/043-panda.svg"
     },
     {
         "username": "BicepBilly",
         "email": "billy@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/044-parrot.svg"
     },
     {
         "username": "AbodominAbreham",
         "email": "abreham@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/045-penguin.svg"
     },
     {
         "username": "DeadliftDavid",
         "email": "david@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/038-walrus.svg"
     },
     {
         "username": "MaxSquatSpencer",
         "email": "spencer@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/037-monkey.svg"
     }
   ]
