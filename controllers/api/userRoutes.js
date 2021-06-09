@@ -2,12 +2,19 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 const Sequelize = require('sequelize');
+const { where } = require('sequelize');
+const number = require('../../utils/randomNumber');
 
 const Op = Sequelize.Op;
 
 router.post('/', async (req, res) => {
     try {
-      const userData = await User.create(req.body);
+      const userData = await User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.email,
+        picture: `/images/avatars/${number}.svg`
+      });
   
       req.session.save(() => {
         req.session.user_id = userData.id;
@@ -19,6 +26,26 @@ router.post('/', async (req, res) => {
       res.status(400).json(err);
     }
   });
+
+// This route allows you to update an image
+router.put('/update/:id', async (req, res) => {
+  try {
+    const pictureUpdate = await User.update(
+      {
+        picture: req.body.picture,
+      },
+      {
+        where: {
+          id: req.params.id,
+        }
+      }
+    )
+
+    res.status(200).json(pictureUpdate)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
 
 router.post('/login', async (req, res) => {
   try {

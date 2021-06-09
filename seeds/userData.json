@@ -3,30 +3,30 @@
       "username": "ChadChapMan",
       "email": "chad@example.com",
       "password": "password",
-      "picture": "#"
+      "picture": "/images/avatars/43.svg"
     },
     {
         "username": "BicepBilly",
         "email": "billy@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/44.svg"
     },
     {
         "username": "AbodominAbreham",
         "email": "abreham@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/45.svg"
     },
     {
         "username": "DeadliftDavid",
         "email": "david@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/38.svg"
     },
     {
         "username": "MaxSquatSpencer",
         "email": "spencer@example.com",
         "password": "password",
-        "picture": "#"
+        "picture": "/images/avatars/37.svg"
     }
   ]

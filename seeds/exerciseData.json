@@ -4,5 +4,89 @@
       "reps": 9,
       "sets": 3,
       "workout_id": 1
+    },
+    {
+      "exercise": "Squats",
+      "reps": 10,
+      "sets": 4,
+      "workout_id": 1
+    },
+    {
+      "exercise": "Push Ups",
+      "reps": 6,
+      "sets": 2,
+      "workout_id": 1
+    },
+    {
+      "exercise": "Neck Lift",
+      "reps": 50,
+      "sets": 5,
+      "workout_id": 2
+    },
+    {
+      "exercise": "Finger Curls",
+      "reps": 11,
+      "sets": 2,
+      "workout_id": 2
+    },
+    {
+      "exercise": "Toe Crunches",
+      "reps": 8,
+      "sets": 4,
+      "workout_id": 2
+    },
+    {
+      "exercise": "Belly Press",
+      "reps": 14,
+      "sets": 2,
+      "workout_id": 3
+    },
+    {
+      "exercise": "Ankle Twists",
+      "reps": 11,
+      "sets": 5,
+      "workout_id": 3
+    },
+    {
+      "exercise": "Knuckle Slaps",
+      "reps": 7,
+      "sets": 3,
+      "workout_id": 3
+    },
+    {
+      "exercise": "Smackdown Backtown",
+      "reps": 16,
+      "sets": 7,
+      "workout_id": 4
+    },
+    {
+      "exercise": "Squats",
+      "reps": 2,
+      "sets": 2,
+      "workout_id": 4
+    },
+    {
+      "exercise": "Sit Ups",
+      "reps": 5,
+      "sets": 1,
+      "workout_id": 4
+    },
+    {
+      "exercise": "Jumping Jacks",
+      "reps": 7,
+      "sets": 8,
+      "workout_id": 5
+    },
+    {
+      "exercise": "Burpee",
+      "reps": 14,
+      "sets": 3,
+      "workout_id": 5
+    },
+    {
+      "exercise": "Bench Press",
+      "reps": 9,
+      "sets": 2,
+      "workout_id": 5
     }
   ]
