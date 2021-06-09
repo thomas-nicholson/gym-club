@@ -8,7 +8,12 @@ const Op = Sequelize.Op;
 
 router.post('/', async (req, res) => {
     try {
-      const userData = await User.create(req.body);
+      const userData = await User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.email,
+        picture: "/images/avatars/042-owl.svg"
+      });
   
       req.session.save(() => {
         req.session.user_id = userData.id;
