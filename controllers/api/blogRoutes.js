@@ -3,7 +3,7 @@ const { User, Blog, Comment } = require('../../models');
 const auth = require('../../utils/auth');
 
 // The structure for this is very similar to workoutRoutes.js
-router.post('/newpost', auth, async (req, res) => {
+router.post('/newpost', async (req, res) => {
     try {
         const newBlog = await Blog.create({
             title: req.body.title,
@@ -18,7 +18,7 @@ router.post('/newpost', auth, async (req, res) => {
 });
 
  // This allows you to update the blogs
-router.put('/update/:id', auth, async (req, res) => {
+router.put('/update/:id', async (req, res) => {
     try {
         const blogUpdate = await Blog.update(
             {
@@ -27,7 +27,7 @@ router.put('/update/:id', auth, async (req, res) => {
             },
             {
                 where: {
-                    id: req.params.id,
+                    id: req.params.id
                  //   user_id: req.session.user_id
                 },
             }
@@ -39,7 +39,7 @@ router.put('/update/:id', auth, async (req, res) => {
 });
 
 // This allows you to delete blogs
-router.delete('/delete/:id', auth, async (req, res) => {
+router.delete('/delete/:id', async (req, res) => {
     try {
         const commentDelete = await Comment.destroy({
             where: {
