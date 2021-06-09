@@ -7,7 +7,7 @@ router.post('/newpost', async (req, res) => {
         const newBlog = await Blog.create({
             title: req.body.title,
             description: req.body.description,
-            user_id: req.session.user_id
+            user_id: 3
         })
         res.status(200).json(newBlog);
 
@@ -22,8 +22,7 @@ router.put('/update/:id', async (req, res) => {
         const blogUpdate = await Blog.update(
             {
                 title: req.body.title,
-                description: req.body.description,
-                user_id: req.params.id
+                description: req.body.description
             },
             {
                 where: {
