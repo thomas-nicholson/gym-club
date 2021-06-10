@@ -162,7 +162,8 @@ display: flex;
 flex-direction: row;
 top: 0px;
 justify-content: space-between;
-width: 100%
+width: 100%;
+z-index: 999
 /* height: 100px */
 }
 
@@ -226,7 +227,7 @@ border-style:unset;
 margin: 15px;
 width: 45%;
 border-radius: 10px;
-background-color: rgba(197, 9, 9, 0.527);
+background-color: rgba(233, 84, 84, 0.616);
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -242,7 +243,7 @@ cursor: pointer;
   margin: 20px;
   font-size: 30px;
   text-decoration: none;
-  color: rgb(63, 3, 141);
+  color: rgb(10, 6, 65);
   
 }
 .headingA{
@@ -255,6 +256,16 @@ cursor: pointer;
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+}
+
+.aStyle{
+  text-decoration: none;
+  color: rgb(10, 6, 65)
+}
+
+.aStyle:hover{
+  text-decoration:underline;
+  color: rgb(51, 44, 143)
 }
 
 /* Individual Blog */
