@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
             homeStatus,
             blogs,
             logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
@@ -77,7 +78,8 @@ router.get('/blog/:id', async (req, res) => {
     
         res.render('blog', {
           ...blog,
-          logged_in: req.session.logged_in
+          logged_in: req.session.logged_in,
+          user_id: req.session.user_id
         });
       } catch (err) {
         res.status(500).json(err);
@@ -101,7 +103,8 @@ router.get('/user/:id', async (req, res) => {
         const users = user.get({ plain: true});
         res.render('user', {
             ...users,
-            logged_in: req.session.logged_in 
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
@@ -133,7 +136,8 @@ router.get('/userBlogs/:id', async (req, res) => {
         res.render('userBlogs', {
           userBlog,
           id,
-          logged_in: req.session.logged_in
+          logged_in: req.session.logged_in,
+          user_id: req.session.user_id
         });
       } catch (err) {
         res.status(500).json(err);
@@ -142,7 +146,8 @@ router.get('/userBlogs/:id', async (req, res) => {
 
 router.get('/newBlog', async (req, res) => {
     res.render('newBlog', {
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        user_id: req.session.user_id
     })
 })
 
@@ -160,7 +165,8 @@ router.get('/userWorkouts/:id', async (req, res) => {
         res.render('userWorkouts', {
           workouts,
           id,
-          logged_in: req.session.logged_in
+          logged_in: req.session.logged_in,
+          user_id: req.session.user_id
         });
       } catch (err) {
         res.status(500).json(err);
@@ -181,7 +187,8 @@ router.get('/exercises/:id', async (req, res) => {
         res.render('exercises', {
           exercises,
           id,
-          logged_in: req.session.logged_in
+          logged_in: req.session.logged_in,
+          user_id: req.session.user_id
         });
       } catch (err) {
         res.status(500).json(err);
@@ -196,7 +203,8 @@ router.get('/newWorkout', async (req, res) => {
 
         res.render('newWorkout', {
             exercises,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
       } catch (err) {
         res.status(500).json(err);
@@ -208,7 +216,8 @@ router.get('/editStats/:id', async (req, res) => {
     console.log(id)
     res.render('editStats', {
         id,
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        user_id: req.session.user_id
     })
 })
 
