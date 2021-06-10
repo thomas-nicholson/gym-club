@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
- const routes = require('./controllers');
+const routes = require('./controllers');
 //Import helpers folder
 //const helpers = require('./utils/helpers');
 
@@ -22,11 +22,12 @@ const sess = {
     secret: 'Super secret secret',
     cookie: {},
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
+      db: sequelize
     })
-};
+  };
+  
 app.use(session(sess));
 
 //Handlebars+ helpers middleware
