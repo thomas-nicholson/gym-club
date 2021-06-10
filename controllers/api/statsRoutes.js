@@ -4,25 +4,6 @@ const router = require('express').Router();
 const { User, Stats } = require('../../models');
 const auth = require('../../utils/auth');
 
-router.post('/newstats', async (req, res) => {
-    try {
-        const newStats = await Stats.create({
-            age: 0,
-            description: "Put description here",
-            height: 0.00,
-            weight: 0,
-            max_bench: 0,
-            max_deadlift: 0,
-            max_squat: 0,
-            user_id: 50
-        })
-        res.status(200).json(newStats);
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
 // Updates the statistics of the user
 router.put('/update/:id', async (req, res) => {
     try {
