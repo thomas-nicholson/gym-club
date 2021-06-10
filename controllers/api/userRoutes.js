@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
       const userData = await User.create({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.email,
+        password: req.body.password,
         picture: `/images/avatars/${number}.svg`
       });
   
@@ -85,7 +85,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.post('/search', async (req,res) => {
-  console.log(req.body);
   try {
     const searchData = await User.findAll({
       where: {
@@ -95,7 +94,7 @@ router.post('/search', async (req,res) => {
       });
     res.status(200).json(searchData);
   } catch (err) {
-    console.log(err);
+    log(err);
     res.status(400).json(err);
   }
 })
