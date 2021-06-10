@@ -13,44 +13,26 @@
       <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
       
     </div>
-    
-    
 </header>
 
+
 <main class="body"> 
-  <a href="/user/{{id}}">Back</a>
-  <a href="/newWorkout">New Workout</a>
-    {{#each workouts as |workout| }}
+    <a href="/userWorkouts/{{id}}">Back</a>
+
+    {{#each exercises as |exercise| }}
     
       <div class="individual-blog">
-        
-        <a href="/exercises/{{workout.id}}" class="headingA"><h1 class="blog-heading">{{workout.title}}</h1></a>
     
         <div class="blog-para">
-          <p>
-            {{workout.description}}
-          </p>
+            <h2>{{exercise.exercise}}</h2>
+        
+            <div>
+                <p>Sets: {{exercise.sets}}</p>
+                <p>Reps: {{exercise.reps}}</p>
+            </div>
+        
         </div>
       </div>
     {{/each}}
-  </main>
-
-
-
-<script>
-    const rotate = 
-        anime({ 
-        targets: '.menu',
-        duration: 300,
-        rotate: 180,
-        easing: 'linear',
-        autoplay: false
-        })
     
-
-    const btn = document.querySelector(".menuBtn")
-
-    btn.onclick = rotate.play
-      
-
-  </script>
+</main>
