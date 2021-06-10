@@ -4,12 +4,12 @@
     <img class="logo" src="/Images/GymClub.png">
     <div class="menuflex">
       <div class="menudrop">
-          <a href="/">Home</a>
-          <a href="/user/{{user_id}}">Profile</a>
+          <a id="homeBtn" href="/">Home</a>
+          <a id="profileBtn" href="/user/{{user_id}}">Profile</a>
           {{#if logged_in}}
           <a id="logout-button" href="/">Logout</a>
           {{else}}
-          <a href="/login">Login</a>
+          <a href="/welcome">Login</a>
           {{/if}}
       </div>
       <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
@@ -21,9 +21,9 @@
   <main class="body"> 
     {{#each blogs as |blog| }}
     
-      <div class="individual-blog">
+      <div class="individual-blog" onclick="location.href='/blog/{{blog.id}}'">
         
-        <a href="/blog/{{blog.id}}" class="headingA"><h1 class="blog-heading">{{blog.title}}</h1></a>
+        <h1 class="blog-heading">{{blog.title}}</h1>
     
         <div class="blog-para">
           <p>
@@ -31,10 +31,12 @@
           </p>
         </div>
         <div class="row">
-          <a href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
-          <p>{{blog.date_created}}</p>
+          <a class="aStyle" href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
+          <p>{{format_time blog.date_created}}</p>
         </div>
+        
       </div>
+      
     
     {{/each}}
   </main>

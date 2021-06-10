@@ -4,11 +4,13 @@
     <div class="menuflex">
       <div class="menudrop">
           <a href="/">Home</a>
+          {{#if user_id}}
           <a href="/user/{{user_id}}">Profile</a>
+          {{/if}}
           {{#if logged_in}}
           <a id="logout-button" href="/">Logout</a>
           {{else}}
-          <a href="/login">Login</a>
+          <a href="/welcome">Login</a>
           {{/if}}
       </div>
       <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
@@ -19,13 +21,13 @@
 </header>
 
 <main class="body">
-    <a href="/user/{{id}}">Back</a>
+    <a href="/user/{{user_id}}">Back</a>
     <a href="/newBlog/{{id}}">New Blog</a>
 
     <div class="newBlogContainer">
         <h1>Post a Blog!</h1>
         <div class="formDiv">
-            <form>
+            <form class="newBlog">
                 <label for="Title">Blog Title:</label><br>
                 <input type="text" id="Title" name="Title"><br>
                 <label for="Description">Description:</label><br>
@@ -59,4 +61,4 @@
 
   </script>
 
-  <script src="./js/profile.js"></script>
+  <script src="./js/blog.js"></script>
