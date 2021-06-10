@@ -34,9 +34,9 @@
       </div>
 
       <div class='addcomment'>
-        <form>
-            <input type="text" id="fname" name="fname" value="Add Comment">
-            <button class="btn btn-primary log" type="submit" id="commentButton" post-id="{{viewPost.id}}">Post</button>
+        <form id="comment-form">
+            <input type="text" id="comment-box" name="comment-box" placeholder="Add your comment">
+            <button class="btn btn-primary log" type="submit" id="comment-button" data-post-id="{{id}}">Post</button>
         </form>
       </div>
 

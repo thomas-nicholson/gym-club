@@ -28,7 +28,6 @@ router.put('/update/:id', async (req, res) => {
             {
                 where: {
                     id: req.params.id
-                 //   user_id: req.session.user_id
                 },
             }
         )
@@ -46,6 +45,7 @@ router.post('/comment/:id', async (req, res) => {
             user_id: req.session.user_id,
             post_id: req.params.id
         })
+        console.log(newComment)
         res.status(200).json(newComment)
     }   catch(error) {
         res.status(400).json({error: error.toString()});
