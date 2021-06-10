@@ -8,7 +8,7 @@ router.post('/newstats', async (req, res) => {
     try {
         const newStats = await Stats.create({
             age: 0,
-            description: "Put des here",
+            description: "Put description here",
             height: 0.00,
             weight: 0,
             max_bench: 0,
@@ -48,5 +48,7 @@ router.put('/update/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
 
 module.exports = router;
