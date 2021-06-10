@@ -17,6 +17,24 @@
     
 </header>
 
+<main class="body"> 
+  <a href="/user/{{id}}">Back</a>
+  <a href="/newWorkout/{{id}}">New Workout</a>
+    {{#each workouts as |workout| }}
+    
+      <div class="individual-blog">
+        
+        <a href="/workout/{{workout.id}}" class="headingA"><h1 class="blog-heading">{{workout.title}}</h1></a>
+    
+        <div class="blog-para">
+          <p>
+            {{workout.description}}
+          </p>
+        </div>
+      </div>
+    
+    {{/each}}
+  </main>
 
 
 
