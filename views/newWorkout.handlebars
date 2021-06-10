@@ -1,0 +1,47 @@
+<header class="homeheader">
+    <img class="logo" src="/Images/GymClub.png">
+    <div class="menuflex">
+      <div class="menudrop">
+          <a href="/">Home</a>
+          <a href="/user/{{user_id}}">Profile</a>
+          {{#if loggedIn}}
+          <a href="/">Logout</a>
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+      </div>
+      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
+      
+    </div>
+</header>
+
+<main class="body">
+
+    <div class="newBlogContainer">
+        <h1>Create a New Workout!</h1>
+        <div class="formDiv">
+            <form class="firstForm">
+                <label for="Title">Workout Title:</label><br>
+                <input type="text" id="Title" name="Title"><br>
+                <label for="Description">Description:</label><br>
+                <input type="text" id="Description" name="Description">
+                <label for="Exercise">Exercise:</label><br>
+                <select id="Exercise" name="Exercise">
+                    {{#each exercises as |exercise|}}
+                    <option value="{{exercise.exercise}}">{{exercise.exercise}}</option>
+                    {{/each}}
+                </select>
+                <label for="Sets">Sets:</label><br>
+                <input type="text" id="Sets" name="Sets">
+                <label for="Reps">Reps:</label><br>
+                <input type="text" id="Reps" name="Reps">
+                <input type="submit" value="Add Exercise">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+
+    </div>
+
+</main>
+

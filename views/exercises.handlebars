@@ -1,0 +1,38 @@
+<header class="homeheader">
+    <img class="logo" src="/Images/GymClub.png">
+    <div class="menuflex">
+      <div class="menudrop">
+          <a href="/">Home</a>
+          <a href="/user/{{user_id}}">Profile</a>
+          {{#if loggedIn}}
+          <a href="/">Logout</a>
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+      </div>
+      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
+      
+    </div>
+</header>
+
+
+<main class="body"> 
+    <a href="/userWorkouts/{{id}}">Back</a>
+
+    {{#each exercises as |exercise| }}
+    
+      <div class="individual-blog">
+    
+        <div class="blog-para">
+            <h2>{{exercise.exercise}}</h2>
+        
+            <div>
+                <p>Sets: {{exercise.sets}}</p>
+                <p>Reps: {{exercise.reps}}</p>
+            </div>
+        
+        </div>
+      </div>
+    {{/each}}
+    
+</main>

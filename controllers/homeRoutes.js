@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog, Stats, Comment} = require('../models');
+const { User, Blog, Stats, Comment, Workout, Exercise} = require('../models');
 const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -59,7 +59,7 @@ router.get('/signup', async (req, res) => {
     }
 })
 
-router.get('/blog/:id', auth, async (req, res) => {
+router.get('/blog/:id', async (req, res) => {
     try {
 
         const blogData = await Blog.findByPk(req.params.id, {
@@ -86,7 +86,7 @@ router.get('/blog/:id', auth, async (req, res) => {
 })
 
 
-router.get('/user/:id', auth, async (req, res) => {
+router.get('/user/:id', async (req, res) => {
     try {
         const user = await User.findByPk(req.params.id, {
             include: [
@@ -109,5 +109,99 @@ router.get('/user/:id', auth, async (req, res) => {
     }
     
 });
+
+router.get('/userBlogs/:id', async (req, res) => {
+    try {
+        const userBlogData = await Blog.findAll({
+            where: {
+                user_id: req.params.id
+            },
+            include: [{
+                model: User,
+            },
+            {
+                model: Comment,
+                include: [{
+                    model:User,
+                }]
+            }],
+        });
+
+        const id = req.params.id
+    
+        const userBlog = userBlogData.map((blog) => blog.get({ plain: true}));
+
+        res.render('userBlogs', {
+          userBlog,
+          id,
+          logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }        
+})
+
+router.get('/newBlog', async (req, res) => {
+    res.render('newBlog', {
+        logged_in: req.session.logged_in
+    })
+})
+
+router.get('/userWorkouts/:id', async (req, res) => {
+    try {
+        const userWorkouts = await Workout.findAll({
+            where: {
+                user_id: req.params.id
+            }
+        })
+        const id = req.params.id
+    
+        const workouts = userWorkouts.map((workout) => workout.get({ plain: true}));
+
+        res.render('userWorkouts', {
+          workouts,
+          id,
+          logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/exercises/:id', async (req, res) => {
+    try {
+        const workoutExercises = await Exercise.findAll({
+            where: {
+                workout_id: req.params.id
+            }
+        })
+        const id = req.params.id
+    
+        const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
+
+        res.render('exercises', {
+          exercises,
+          id,
+          logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/newWorkout', async (req, res) => {
+    try {
+        const workoutExercises = await Exercise.findAll()
+    
+        const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
+
+        res.render('newWorkout', {
+            exercises,
+            logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+})
 
 module.exports = router;

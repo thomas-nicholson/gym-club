@@ -1,4 +1,3 @@
-{{!-- Comment --}}
 
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
@@ -18,29 +17,31 @@
     
     
 </header>
-    
-  <main class="body"> 
-    {{#each blogs as |blog| }}
-    
-      <div class="individual-blog">
-        
-        <a href="/blog/{{blog.id}}" class="headingA"><h1 class="blog-heading">{{blog.title}}</h1></a>
-    
-        <div class="blog-para">
-          <p>
-            {{blog.description}}
-          </p>
-        </div>
-        <div class="row">
-          <a href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
-          <p>{{blog.date_created}}</p>
-        </div>
-      </div>
-    
-    {{/each}}
-  </main>
 
-  <script>
+<main class="body">
+    <a href="/user/{{id}}">Back</a>
+    <a href="/newBlog/{{id}}">New Blog</a>
+
+    <div class="newBlogContainer">
+        <h1>Post a Blog!</h1>
+        <div class="formDiv">
+            <form>
+                <label for="fname">Blog Title:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Description:</label><br>
+                <input type="text" id="lname" name="lname">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+
+    </div>
+
+</main>
+
+
+
+<script>
     const rotate = 
         anime({ 
         targets: '.menu',

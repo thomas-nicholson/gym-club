@@ -1,33 +1,62 @@
 
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
-    <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
-    <div>
-        <a href="/">Home</a>
-        <a href="/user">Profile</a>
-        {{#if loggedIn}}
-        <a href="/">Logout</a>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-    </div>   
+    <div class="menuflex">
+      <div class="menudrop">
+          <a href="/">Home</a>
+          <a href="/user/{{user_id}}">Profile</a>
+          {{#if loggedIn}}
+          <a href="/">Logout</a>
+          {{else}}
+          <a href="/login">Login</a>
+          {{/if}}
+      </div>
+      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
+      
+    </div>
+    
+    
 </header>
 
-<a>Back</a>
 
-<div class="centering col-md-6 project-list">
-    <h3>Current Blogs:</h3>
 
-    {{#each blogs as |blog|}}
-    <div class="row">
-      <div class="row-md-8">
-        <h4 class="margin"><a href="/project/{{blog.id}}">{{blog.name}}</a></h4>
+<main class="body"> 
+  <a href="/user/{{id}}">Back</a>
+  <a href="/newBlog">New Blog</a>
+    {{#each userBlog as |blog| }}
+    
+      <div class="individual-blog">
+        
+        <a href="/blog/{{blog.id}}" class="headingA"><h1 class="blog-heading">{{blog.title}}</h1></a>
+    
+        <div class="blog-para">
+          <p>
+            {{blog.description}}
+          </p>
+        </div>
+        <div class="row">
+          <a href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
+          <p>{{blog.date_created}}</p>
+        </div>
       </div>
-      <div class="row-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
-      </div>
-    </div>
+    
     {{/each}}
-  </div>
-  {{!-- {{/if}} --}}
-</div>
+  </main>
+
+  <script>
+    const rotate = 
+        anime({ 
+        targets: '.menu',
+        duration: 300,
+        rotate: 180,
+        easing: 'linear',
+        autoplay: false
+        })
+    
+
+    const btn = document.querySelector(".menuBtn")
+
+    btn.onclick = rotate.play
+      
+
+  </script>
