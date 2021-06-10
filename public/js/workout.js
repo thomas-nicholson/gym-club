@@ -1,8 +1,8 @@
 const addWorkoutHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('#title').value.trim();
-    const description = document.querySelector('#description').value.trim();
+    const title = document.querySelector('#Title').value.trim();
+    const description = document.querySelector('#Description').value.trim();
 
     if (title && description) {
         const response = await fetch('/api/workout/add', {
@@ -18,6 +18,12 @@ const addWorkoutHandler = async (event) => {
         }
     }
 };
+
+if (document.querySelector('#new-workout-button')) {
+    document
+      .querySelector('#new-workout-button')
+      .addEventListener('click', addWorkoutHandler);
+}
 
 const updateWorkoutHandler = async (event) => {
     event.preventDefault();
