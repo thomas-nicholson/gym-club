@@ -24,7 +24,7 @@ if (document.querySelector('#new-workout-button')) {
       .querySelector('#new-workout-button')
       .addEventListener('click', addWorkoutHandler);
 }
-
+/* No Need to Edit workouts at this time
 const updateWorkoutHandler = async (event) => {
     event.preventDefault();
 
@@ -46,7 +46,7 @@ const updateWorkoutHandler = async (event) => {
             alert(response.statusText);
         }
     }
-};
+};*/
 
 const deleteWorkoutHandler = async (event) => {
     event.preventDefault();
