@@ -5,7 +5,9 @@
     <div class="menuflex">
       <div class="menudrop">
           <a id="homeBtn" href="/">Home</a>
-          <a id="profileBtn" href="/user/{{user_id}}">Profile</a>
+          {{#if user_id}}
+          <a href="/user/{{user_id}}">Profile</a>
+          {{/if}}
           {{#if logged_in}}
           <a id="logout-button" href="/">Logout</a>
           {{else}}
