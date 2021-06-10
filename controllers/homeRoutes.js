@@ -58,7 +58,6 @@ router.get('/signup', async (req, res) => {
         res.status(500).json(err);
     }
 })
-
 router.get('/blog/:id', async (req, res) => {
     try {
 
