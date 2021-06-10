@@ -7,7 +7,7 @@
           <a href="/">Home</a>
           <a href="/user/{{user_id}}">Profile</a>
           {{#if loggedIn}}
-          <a href="/">Logout</a>
+          <a id="logout-button" href="/">Logout</a>
           {{else}}
           <a href="/login">Login</a>
           {{/if}}
