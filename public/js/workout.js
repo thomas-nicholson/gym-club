@@ -25,7 +25,7 @@ const updateWorkoutHandler = async (event) => {
     const title = document.querySelector('#title').value.trim();
     const description = document.querySelector('#description').value.trim();
 
-    const id;
+    //const id;
 
     if (title && description) {
         const response = await fetch('/api/workout/update/'+id, {
@@ -45,7 +45,7 @@ const updateWorkoutHandler = async (event) => {
 const deleteWorkoutHandler = async (event) => {
     event.preventDefault();
 
-    const id;
+    //const id;
 
     const response = await fetch('/api/workout/delete/'+id, {
         method: 'DELETE',

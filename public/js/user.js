@@ -1,15 +1,14 @@
 const newUserHandler = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
-    const email = document.querySelector('#email').value.trim();
-    const picture = document.querySelector('#picture').value.trim();
+    const username = document.querySelector('#username-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
 
     if (username && password && email) {
         const response = await fetch('/api/users/', {
             method: 'POST',
-            body: JSON.stringify({ username, password, email, picture }),
+            body: JSON.stringify({ username, password, email }),
             headers: { 'Content-Type': 'application/json' },
         });
 
@@ -21,12 +20,17 @@ const newUserHandler = async (event) => {
     }
 };
 
+if (document.querySelector('#sign-up-button')) {
+    document
+      .querySelector('#sign-up-button')
+      .addEventListener('click', newUserHandler);
+}
+
 const loginUserHandler = async (event) => {
     event.preventDefault();
 
-    const email = document.querySelector('#email').value.trim();
-    const password = document.querySelector('#password').value.trim();
-
+    const email = document.querySelector('#email-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
     if (password && email) {
         const response = await fetch('/api/users/login', {
             method: 'POST',
@@ -41,6 +45,12 @@ const loginUserHandler = async (event) => {
         }
     }
 };
+
+if (document.querySelector('#login-button')) {
+    document
+      .querySelector('#login-button')
+      .addEventListener('click', loginUserHandler);
+}
 
 const logoutUserHandler = async (event) => {
     event.preventDefault();
