@@ -32,6 +32,12 @@ router.put('/update/:id', async (req, res) => {
                 },
             }
         )
+
+        if (!blogUpdate) {
+            res.status(404).json({ message: 'No project found with this id!' });
+            return;
+          }
+
         res.status(200).json(blogUpdate)
     } catch (err) {
         res.status(500).json(err);
