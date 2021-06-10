@@ -66,3 +66,9 @@ const logoutUserHandler = async (event) => {
         alert(response.statusText);
     }
 };
+
+if (document.querySelector('#logout-button')) {
+    document
+      .querySelector('#logout-button')
+      .addEventListener('click', logoutUserHandler);
+}
