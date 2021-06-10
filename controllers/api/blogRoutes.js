@@ -54,18 +54,18 @@ router.post('/comment/:id', async (req, res) => {
 
 
 // Delete comments, will need to figure out a way to tie it to only the blog owner or comment owner.
-router.delete('/commentdelete/:id', async (req, res) => {
-    try {
-        const commentDelete = await Comment.destroy({
-            where: {
-                post_id: req.params.id
-            }
-        })
-        res.status(200).json(commentDelete)
-    }   catch (err) {
-        res.status(500).json(err);
-    }
-})
+// router.delete('/commentdelete/:id', async (req, res) => {
+//     try {
+//         const commentDelete = await Comment.destroy({
+//             where: {
+//                 post_id: req.params.id
+//             }
+//         })
+//         res.status(200).json(commentDelete)
+//     }   catch (err) {
+//         res.status(500).json(err);
+//     }
+// })
 
 // This DELETE allows you to delete blogs
 router.delete('/delete/:id', async (req, res) => {
