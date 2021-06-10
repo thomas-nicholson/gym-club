@@ -1,9 +1,8 @@
 const newBlogHandler = async (event) => {
     event.preventDefault();
 
-    const title = document.querySelector('#title').value.trim();
-    const description = document.querySelector('#description').value.trim();
-
+    const title = document.querySelector('#Title').value.trim();
+    const description = document.querySelector('#Description').value.trim();
     if (title && description) {
         const response = await fetch('/api/blog/newpost', {
             method: 'POST',
@@ -18,3 +17,9 @@ const newBlogHandler = async (event) => {
         }
     }
 };
+
+if (document.querySelector('#new-blog-button')) {
+    document
+      .querySelector('#new-blog-button')
+      .addEventListener('click', newBlogHandler);
+}
