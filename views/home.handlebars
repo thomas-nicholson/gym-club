@@ -4,8 +4,8 @@
     <img class="logo" src="/Images/GymClub.png">
     <div class="menuflex">
       <div class="menudrop">
-          <a href="/">Home</a>
-          <a href="/user/{{user_id}}">Profile</a>
+          <a id="homeBtn" href="/">Home</a>
+          <a id="profileBtn" href="/user/{{user_id}}">Profile</a>
           {{#if logged_in}}
           <a id="logout-button" href="/">Logout</a>
           {{else}}
