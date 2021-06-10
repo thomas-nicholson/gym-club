@@ -59,7 +59,7 @@ router.get('/signup', async (req, res) => {
         res.status(500).json(err);
     }
 })
-router.get('/blog/:id', async (req, res) => {
+router.get('/blog/:id', auth,  async (req, res) => {
     try {
 
         const blogData = await Blog.findByPk(req.params.id, {
@@ -87,7 +87,7 @@ router.get('/blog/:id', async (req, res) => {
 })
 
 
-router.get('/user/:id', async (req, res) => {
+router.get('/user/:id', auth,  async (req, res) => {
     try {
         const user = await User.findByPk(req.params.id, {
             include: [
@@ -112,7 +112,7 @@ router.get('/user/:id', async (req, res) => {
     
 });
 
-router.get('/userBlogs/:id', async (req, res) => {
+router.get('/userBlogs/:id', auth,  async (req, res) => {
     try {
         const userBlogData = await Blog.findAll({
             where: {
@@ -144,14 +144,14 @@ router.get('/userBlogs/:id', async (req, res) => {
       }        
 })
 
-router.get('/newBlog', async (req, res) => {
+router.get('/newBlog', auth,  async (req, res) => {
     res.render('newBlog', {
         logged_in: req.session.logged_in,
         user_id: req.session.user_id
     })
 })
 
-router.get('/userWorkouts/:id', async (req, res) => {
+router.get('/userWorkouts/:id', auth,  async (req, res) => {
     try {
         const userWorkouts = await Workout.findAll({
             where: {
@@ -173,7 +173,7 @@ router.get('/userWorkouts/:id', async (req, res) => {
     }
 })
 
-router.get('/exercises/:id', async (req, res) => {
+router.get('/exercises/:id', auth,  async (req, res) => {
     try {
         const workoutExercises = await Exercise.findAll({
             where: {
@@ -195,7 +195,7 @@ router.get('/exercises/:id', async (req, res) => {
     }
 })
 
-router.get('/newWorkout', async (req, res) => {
+router.get('/newWorkout', auth,  async (req, res) => {
     try {
         const workoutExercises = await Exercise.findAll()
     
@@ -211,7 +211,7 @@ router.get('/newWorkout', async (req, res) => {
       }
 })
 
-router.get('/editStats/:id', async (req, res) => {
+router.get('/editStats/:id', auth,  async (req, res) => {
     const id = req.params.id
     console.log(id)
     res.render('editStats', {

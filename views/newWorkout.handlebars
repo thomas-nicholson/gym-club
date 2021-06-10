@@ -3,11 +3,13 @@
     <div class="menuflex">
       <div class="menudrop">
           <a href="/">Home</a>
+          {{#if user_id}}
           <a href="/user/{{user_id}}">Profile</a>
+          {{/if}}
           {{#if loggedIn}}
           <a id="logout-button" href="/">Logout</a>
           {{else}}
-          <a href="/login">Login</a>
+          <a href="/welcome">Login</a>
           {{/if}}
       </div>
       <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
