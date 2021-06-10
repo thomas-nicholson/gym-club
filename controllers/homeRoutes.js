@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog, Stats, Comment} = require('../models');
+const { User, Blog, Stats, Comment, Workout, Exercise} = require('../models');
 const auth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -130,7 +130,6 @@ router.get('/userBlogs/:id', async (req, res) => {
         const id = req.params.id
     
         const userBlog = userBlogData.map((blog) => blog.get({ plain: true}));
-        console.log(userBlog)
 
         res.render('userBlogs', {
           userBlog,
@@ -142,12 +141,67 @@ router.get('/userBlogs/:id', async (req, res) => {
       }        
 })
 
-router.get('/newBlog/:id', async (req, res) => {
-    const id = req.params.id
+router.get('/newBlog', async (req, res) => {
     res.render('newBlog', {
-        id,
         logged_in: req.session.logged_in
     })
+})
+
+router.get('/userWorkouts/:id', async (req, res) => {
+    try {
+        const userWorkouts = await Workout.findAll({
+            where: {
+                user_id: req.params.id
+            }
+        })
+        const id = req.params.id
+    
+        const workouts = userWorkouts.map((workout) => workout.get({ plain: true}));
+
+        res.render('userWorkouts', {
+          workouts,
+          id,
+          logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/exercises/:id', async (req, res) => {
+    try {
+        const workoutExercises = await Exercise.findAll({
+            where: {
+                workout_id: req.params.id
+            }
+        })
+        const id = req.params.id
+    
+        const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
+
+        res.render('exercises', {
+          exercises,
+          id,
+          logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
+router.get('/newWorkout', async (req, res) => {
+    try {
+        const workoutExercises = await Exercise.findAll()
+    
+        const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
+
+        res.render('newWorkout', {
+            exercises,
+            logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
 })
 
 module.exports = router;
