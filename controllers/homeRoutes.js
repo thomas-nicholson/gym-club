@@ -59,7 +59,7 @@ router.get('/signup', async (req, res) => {
     }
 })
 
-router.get('/blog/:id', auth, async (req, res) => {
+router.get('/blog/:id', async (req, res) => {
     try {
 
         const blogData = await Blog.findByPk(req.params.id, {
@@ -86,7 +86,7 @@ router.get('/blog/:id', auth, async (req, res) => {
 })
 
 
-router.get('/user/:id', auth, async (req, res) => {
+router.get('/user/:id', async (req, res) => {
     try {
         const user = await User.findByPk(req.params.id, {
             include: [
@@ -109,5 +109,45 @@ router.get('/user/:id', auth, async (req, res) => {
     }
     
 });
+
+router.get('/userBlogs/:id', async (req, res) => {
+    try {
+        const userBlogData = await Blog.findAll({
+            where: {
+                user_id: req.params.id
+            },
+            include: [{
+                model: User,
+            },
+            {
+                model: Comment,
+                include: [{
+                    model:User,
+                }]
+            }],
+        });
+
+        const id = req.params.id
+    
+        const userBlog = userBlogData.map((blog) => blog.get({ plain: true}));
+        console.log(userBlog)
+
+        res.render('userBlogs', {
+          userBlog,
+          id,
+          logged_in: req.session.logged_in
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }        
+})
+
+router.get('/newBlog/:id', async (req, res) => {
+    const id = req.params.id
+    res.render('newBlog', {
+        id,
+        logged_in: req.session.logged_in
+    })
+})
 
 module.exports = router;

@@ -286,10 +286,14 @@ align-items: center;
 }
 
 .userContainer {
-  border-style: solid;
-  width: 90%;
+  margin-top: 20px;
+
+  border-style: outset;
+  width: 70%;
+  min-height: 350px;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -306,6 +310,17 @@ align-items: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.bodyStats{
+  display: flex;
+  flex-direction: row;
+}
+.bodyStats h2{
+  margin-right: 10px;
+  margin-left: 10px;
+
 }
 
 .details h2 {
@@ -328,7 +343,9 @@ align-items: center;
 
 
 .description{
-  margin: 40px
+  margin: 40px;
+  text-align: center;
+
 }
 
 .addcomment{
@@ -339,4 +356,22 @@ input[type=text] {
   width: 100%;
   min-height: 30px;
 
+}
+
+
+.newBlogContainer{
+  width: 50%;
+  border: outset;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.formDiv form{
+  margin: 30px
+}
+
+.formDiv form label{
+  margin: 10px
 }
