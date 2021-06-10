@@ -3,8 +3,8 @@
     <div class="menuflex">
       <div class="menudrop">
           <a href="/">Home</a>
-          <a href="/user">Profile</a>
-          {{#if loggedIn}}
+          <a href="/user/{{user_id}}">Profile</a>
+          {{#if logged_in}}
           <a id="logout-button" href="/">Logout</a>
           {{else}}
           <a href="/login">Login</a>
