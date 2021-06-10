@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Stats } = require('../../models');
 
 const Sequelize = require('sequelize');
 const { where } = require('sequelize');
@@ -15,12 +15,23 @@ router.post('/', async (req, res) => {
         password: req.body.password,
         picture: `/images/avatars/${number}.svg`
       });
+
+      const newStats = await Stats.create({
+        age: 0,
+        description: "Put description here",
+        height: 0.00,
+        weight: 0,
+        max_bench: 0,
+        max_deadlift: 0,
+        max_squat: 0,
+        user_id: userData.id
+    })
   
       req.session.save(() => {
         req.session.user_id = userData.id;
         req.session.logged_in = true;
   
-        res.status(200).json(userData);
+        res.status(200).json(newStats);
       });
     } catch (err) {
       res.status(400).json(err);
