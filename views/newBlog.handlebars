@@ -21,18 +21,21 @@
 </header>
 
 <main class="body">
-    <a href="/userBlogs/{{user_id}}">Back</a>
-    <a href="/newBlog/{{id}}">New Blog</a>
+    
 
     <div class="newBlogContainer">
-        <h1>Post a Blog!</h1>
+        <div class="backBtn">
+            <a class="newBlogBackBtn" href="/userBlogs/{{user_id}}">Back</a>
+        </div>
+        
+        <h1 class="blogHeading">Post a Blog!</h1>
         <div class="formDiv">
             <form class="newBlog">
                 <label for="Title">Blog Title:</label><br>
                 <input type="text" id="Title" name="Title"><br>
                 <label for="Description">Description:</label><br>
-                <input type="text" id="Description" name="Description">
-                <input type="submit" id="new-blog-button" value="Submit">
+                <input type="text" id="Description" name="Description"><br><br>
+                <input class="btn" type="submit" id="new-blog-button" value="Submit">
             </form>
         </div>
         

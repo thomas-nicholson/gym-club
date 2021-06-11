@@ -17,6 +17,11 @@
 </header>
 
 <main class="body"> 
+    <div class="userBtns">
+        <a class="btn" href="/userBlogs/{{id}}">Blogs</a>
+        <a class="btn" href="/userWorkouts/{{id}}">Workouts</a>
+        <a class="btn" href="/editStats/{{id}}">Edit Profile</a>
+    </div>
     <div class='userContainer'>
         <section class="userImage font">
             <img class="theImage" src="{{picture}}"/>
@@ -94,6 +99,11 @@
         <div class="userDetails">
             <div class="details">
                 <h2>Username: {{username}}</h2>
+                <div class="description">
+                <h1>About Me</h1>
+                <p>{{stat.description}}</p>
+
+            </div>
                 <h2>Age: {{stat.age}}</h2>
             </div>
 
@@ -110,16 +120,8 @@
         </div>
         
     </div>
-    <div class="description">
-        <h1>About Me</h1>
-        <p>{{stat.description}}</p>
-
-    </div>
-    <div>
-        <a href="/userBlogs/{{id}}">Blogs</a>
-        <a href="/userWorkouts/{{id}}">Workouts</a>
-        <a href="/editStats/{{id}}">Edit Profile</a>
-    </div>
+    
+    
     
 </main>
 

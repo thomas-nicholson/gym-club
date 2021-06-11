@@ -420,7 +420,6 @@ header {
 }
 
 #comment-box{
-  margin-top: 15px;
   border-radius: 10px;
   min-height: 40px;
   outline: none;
@@ -453,6 +452,7 @@ header {
 }
 
 #comment-form{
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -462,12 +462,14 @@ header {
   cursor: pointer;
 }
 
+/* User Styling */
 .userContainer {
   margin-top: 20px;
-
   border-style: outset;
+  border-color: rgba(233, 84, 84, 0.616);
   width: 70%;
   min-height: 350px;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -517,13 +519,56 @@ header {
 }
 
 .stats h3 {
-  /* margin-top: 30px; */
   margin: 30px;
 }
 
 .description {
-  margin: 40px;
   text-align: center;
+  margin-bottom: 40px;
+}
+
+.userBtns{
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 35%
+}
+
+.userBtns .btn:nth-child(1){
+  margin-left: 10%;
+}
+
+.blogHeading{
+  font-size: 40px;
+  margin: 40px
+}
+
+.newBlogBackBtn{
+  padding-top: 10px;
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.13em solid rgba(238, 67, 67, 0.774);
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #3b0579;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 10%
+}
+
+.newBlogBackBtn:hover{
+  color: black;
+  background-color: rgba(238, 67, 67, 0.5);
+}
+
+.backBtn{
+  width: 40%;
 }
 
 .addcomment {
@@ -537,7 +582,6 @@ input[type="text"] {
 
 .newBlogContainer {
   width: 50%;
-  border: outset;
   text-align: center;
   justify-content: center;
   display: flex;
@@ -550,6 +594,30 @@ input[type="text"] {
 
 .formDiv form label {
   margin: 10px;
+}
+
+.formDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+
+#Title{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Description{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
 }
 
 @media (max-width: 580px) {
