@@ -68,6 +68,17 @@ html {
   transition: all 100ms ease-in-out;
 }
 
+.login-error {
+  color: brown;
+  opacity: 0%;
+  cursor: default;
+}
+
+#email-login,
+#password-login {
+  border: 0px solid rgba(165, 42, 42, 0.541);
+}
+
 .image-container {
   border-radius: 10px;
   margin: 10px;
@@ -190,6 +201,8 @@ html {
 
 .formContainer {
   display: block;
+  position: relative;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;

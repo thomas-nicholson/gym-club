@@ -41,7 +41,9 @@ const loginUserHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            $('.login-error').css('opacity', '80%')
+            $('#email-login').css('border', '2px solid rgba(165, 42, 42, 0.541)')
+            $('#password-login').css('border', '2px solid rgba(165, 42, 42, 0.541)')
         }
     }
 };
