@@ -7,8 +7,8 @@
           {{#if user_id}}
           <a class="navBtn" href="/user/{{user_id}}">Profile</a>
           {{/if}}
-          {{#if loggedIn}}
-          <a class="navBtn" href="/">Logout</a>
+          {{#if logged_in}}
+          <a class="navBtn" id="logout-button" href="/">Logout</a>
           {{else}}
           <a class="navBtn" href="/welcome">Login</a>
           {{/if}}
