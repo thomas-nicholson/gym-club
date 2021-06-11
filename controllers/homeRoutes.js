@@ -120,7 +120,7 @@ router.get('/user/:id', auth,  async (req, res) => {
     
 });
 
-router.get('', auth,  async (req, res) => {
+router.get('/userBlogs/:id', auth,  async (req, res) => {
     try {
         const userBlogData = await Blog.findAll({
             where: {
