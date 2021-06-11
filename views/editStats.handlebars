@@ -18,29 +18,31 @@
 
 
 <main class="body">
-    <a href="/user/{{id}}">Back</a>
-
+    
+    <div class="backBtn">
+    <a class="btn" href="/user/{{id}}">Back</a>
+  </div>
     <div class="newBlogContainer">
-        <h1>Edit Your Profile!</h1>
+        <h1 class="blogHeading">Edit Your Profile!</h1>
         <div class="formDiv">
             <form>
                 <label for="Username">Username:</label><br>
-                <input type="text" id="Username" name="Username"><br>
+                <input type="text" id="Username" name="Username"><br><br>
                 <label for="Age">Age:</label><br>
-                <input type="text" id="Age" name="Age">
+                <input type="text" id="Age" name="Age"><br><br>
                 <label for="Description">Description:</label><br>
-                <input type="text" id="Description" name="Description"><br>
+                <input type="text" id="Description" name="Description"><br><br>
                 <label for="Height">Height:</label><br>
-                <input type="text" id="Height" name="Height">
+                <input type="text" id="Height" name="Height"><br><br>
                 <label for="Weight">Weight:</label><br>
-                <input type="text" id="Weight" name="Weight">
+                <input type="text" id="Weight" name="Weight"><br><br>
                 <label for="Max-Deadlift">Max Deadlift:</label><br>
-                <input type="text" id="Max Deadlift" name="Max Deadlift">
+                <input type="text" id="Max-Deadlift" name="Max Deadlift"><br><br>
                 <label for="Max-Bench-Press">Max Bench Press:</label><br>
-                <input type="text" id="Max-Bench-Press" name="Max-Bench-Press">
+                <input type="text" id="Max-Bench-Press" name="Max-Bench-Press"><br><br>
                 <label for="Max-Squat">Max Squat:</label><br>
-                <input type="text" id="Max-Squat" name="Max-Squat">
-                <input type="submit" value="Submit">
+                <input type="text" id="Max-Squat" name="Max-Squat"><br><br>
+                <input class="btn" type="submit" value="Submit">
             </form>
         </div>
     </div>

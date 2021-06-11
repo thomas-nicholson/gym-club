@@ -305,9 +305,9 @@ header {
   align-items: center;
 }
 
-.body a {
+/* .body a {
   width: 40%;
-}
+} */
 
 .body a:hover {
   cursor: pointer;
@@ -356,8 +356,8 @@ header {
   text-align: center;
   text-decoration: none;
   color: rgb(10, 6, 65);
-  width: 60%;
-  margin-left: 10%;
+  width: 50%;
+  /* margin-left: 10%; */
 }
 
 .aStyle:hover {
@@ -366,7 +366,7 @@ header {
 
 .dateCreated{
   text-align: center;
-  width: 40%
+  width: 50%
 
 }
 
@@ -452,7 +452,7 @@ input[type="text"] {
   text-align: center;
   transition: all 0.5s;
   cursor: pointer;
-  width: 120px
+  /* width: 120px */
 }
 
 .btn:hover {
@@ -643,6 +643,8 @@ input[type="text"] {
   
 }
 
+/* Exercises page */
+
 #Exercise{
   margin-top: 15px;
   border-radius: 10px;
@@ -662,6 +664,118 @@ input[type="text"] {
 }
 
 #Reps{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+.individual-exercise{
+  text-align: center;
+  border-style: unset;
+  margin: 15px;
+  width: 70%;
+  border-radius: 10px;
+  background-color: rgba(233, 84, 84, 0.616);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.exerciseHeading{
+  margin: 15px;
+  font-size: 20px;
+}
+
+.routine{
+  display: flex;
+  flex-direction: row;
+}
+
+.routine p{
+  margin: 10px;
+}
+
+.newExerciseContainer{
+  margin-top: 20px;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.exerciseRow{
+  display: flex;
+  flex-direction: row;
+  width: 100%
+}
+
+.exerciseColumn{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 50%
+}
+
+/* Edit Profile Page */
+#Username{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Age{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Height{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Weight{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Max-Deadlift{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Max-Bench-Press{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Max-Squat{
   margin-top: 15px;
   border-radius: 10px;
   min-height: 40px;

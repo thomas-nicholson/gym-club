@@ -19,40 +19,43 @@
 
 
 <main class="body"> 
-    <div class="newBlogContainer">
-        <div class="backBtn">
-            <a class="newBlogBackBtn" href="/userWorkouts/{{user_id}}">Back</a>
-        </div>
-        <h1>Add some exercises to your workout!</h1>
-        <div class="formDiv">
-            <form class="firstForm">
-                <label for="Exercise">Exercise Name</label><br>
-                <input type="text" id="Exercise" name="Exercise"><br><br>
-                <label for="Sets">Sets</label><br>
-                <input type="text" id="Sets" name="Sets"><br><br>
-                <label for="Reps">Reps</label><br>
-                <input type="text" id="Reps" name="Reps"><br><br>
-                <input class="btn" type="submit" id="new-exercise-button" value="Submit" data-post-id="{{id}}">
-            </form>
-        </div>
-    </div>
-
-    {{#each exercises as |exercise| }}
-    
-      <div class="individual-blog">
-    
-        <div class="blog-para">
-            <h2>{{exercise.exercise}}</h2>
-        
-            <div>
-                <p>Sets: {{exercise.sets}}</p>
-                <p>Reps: {{exercise.reps}}</p>
+  <div class="backBtn">
+    <a class="btn" href="/userWorkouts/{{user_id}}">Back</a>
+  </div>
+  <h1 class="blogHeading">Exercises!</h1>
+  <div class="exerciseRow">
+    <div class="newExerciseContainer">
+          <div class="formDiv">
+              <form class="firstForm">
+                  <label for="Exercise">Exercise Name</label><br>
+                    <input type="text" id="Exercise" name="Exercise"><br><br>
+                    <label for="Sets">Sets</label><br>
+                    <input type="text" id="Sets" name="Sets"><br><br>
+                    <label for="Reps">Reps</label><br>
+                    <input type="text" id="Reps" name="Reps"><br><br>
+                    <input class="btn" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
+                </form>
             </div>
-        
         </div>
-      </div>
-    {{/each}}
+
+        <div class="exerciseColumn">
+          {{#each exercises as |exercise| }}
+            <div class="individual-exercise">
+              <div class="blog-para">
+                <h2 class="exerciseHeading">{{exercise.exercise}}</h2>
+                
+                <div class="routine">
+                    <p>Sets: {{exercise.sets}}</p>
+                    <p>Reps: {{exercise.reps}}</p>
+                </div>
+                
+              </div>
+            </div>
+          {{/each}}
+        </div>
+  </div>
+    
+    
     
 </main>
 
-{{!-- <script src="/js/exercise.js"></script> --}}
