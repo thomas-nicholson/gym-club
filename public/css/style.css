@@ -256,7 +256,31 @@ header {
   justify-content: space-between;
   width: 100%;
   z-index: 999;
-  /* height: 100px */
+}
+
+.navBtn{
+  position: relative;
+  top: 40px;
+  padding-top: 10px;
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.13em solid rgba(212, 98, 98, 0.774);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  background-color: rgba(212, 98, 98, 0.226);
+  color: #6040f0;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.navBtn:hover{
+  background-color: rgba(212, 98, 98, 0.774);
+  color: #2908a0;
 }
 
 .logo {
@@ -265,29 +289,6 @@ header {
   margin-top: 15px;
   margin-bottom: 15px;
   width: 300px;
-}
-
-.menu {
-  position: relative;
-  right: 20px;
-  margin-top: 40px;
-  height: 50px;
-  width: 50px;
-}
-
-.menuflex {
-  display: flex;
-  flex-direction: row;
-}
-
-.menudrop {
-  position: relative;
-  top: 55px;
-  left: -40px;
-}
-
-.menudrop a {
-  margin-left: 15px;
 }
 
 .blog-para {
@@ -304,10 +305,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-
-/* .body a {
-  width: 40%;
-} */
 
 .body a:hover {
   cursor: pointer;
@@ -792,6 +789,11 @@ input[type="text"] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 200px
+  }
+
+  .navBtn{
+    position:inherit
   }
 
   .logo {
