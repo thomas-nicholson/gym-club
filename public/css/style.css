@@ -82,6 +82,11 @@ html {
 .chooseImage {
   width: 200px;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.chooseImage:hover {
+  opacity: 90%;
 }
 
 .back-button:hover {
