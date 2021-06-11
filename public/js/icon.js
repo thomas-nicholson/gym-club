@@ -27,5 +27,8 @@ const updateIcon = async (event) => {
   
   $('#updateIconButton').on('click', updateIcon);
   $('.change-image').on('click', () => {
-    console.log('Hello')
+    $('.icon-model').css('display', 'flex')
+  })
+  $('.back-button').on('click', () => {
+    $('.icon-model').css('display', 'none')
   })
