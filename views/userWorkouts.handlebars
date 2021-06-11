@@ -1,30 +1,30 @@
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
     <div class="menuflex">
-      <div class="menudrop">
-          <a href="/">Home</a>
+          <a class="navBtn" href="/">Home</a>
           {{#if user_id}}
-          <a href="/user/{{user_id}}">Profile</a>
+          <a class="navBtn" href="/user/{{user_id}}">Profile</a>
           {{/if}}
           {{#if logged_in}}
-          <a id="logout-button" href="/">Logout</a>
+          <a class="navBtn" href="/">Logout</a>
           {{else}}
-          <a href="/welcome">Login</a>
+          <a class="navBtn" href="/welcome">Login</a>
           {{/if}}
-      </div>
-      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
-      
     </div>
-    
-    
 </header>
 
 <main class="body"> 
-  <a href="/user/{{id}}">Back</a>
-  <a href="/newWorkout">New Workout</a>
+  <div class="workoutBtns">
+    <a class="btn" href="/user/{{id}}">Back</a>
+    <a class="btn" href="/newWorkout">New Workout</a>
+  </div>
+
+    <h1 class="blogHeading">Your Workouts!</h1>
+
+    {{#if workouts.length}}
     {{#each workouts as |workout| }}
     
-      <div class="individual-blog">
+      <div class="individual-blog" onclick="location.href='/exercises/{{workout.id}}'">
         
         <a href="/exercises/{{workout.id}}" class="headingA"><h1 class="blog-heading">{{workout.title}}</h1></a>
     
@@ -35,24 +35,8 @@
         </div>
       </div>
     {{/each}}
+    {{else}}
+    <h2>You currently have no workouts, click "New Workout" to create one!</h2>
+    {{/if}}
   </main>
 
-
-
-<script>
-    const rotate = 
-        anime({ 
-        targets: '.menu',
-        duration: 300,
-        rotate: 180,
-        easing: 'linear',
-        autoplay: false
-        })
-    
-
-    const btn = document.querySelector(".menuBtn")
-
-    btn.onclick = rotate.play
-      
-
-  </script>

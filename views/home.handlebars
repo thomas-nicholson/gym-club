@@ -3,24 +3,21 @@
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
     <div class="menuflex">
-      <div class="menudrop">
-          <a id="homeBtn" href="/">Home</a>
+      
+          <a class="navBtn" href="/">Home</a>
           {{#if user_id}}
-          <a href="/user/{{user_id}}">Profile</a>
+          <a class="navBtn" href="/user/{{user_id}}">Profile</a>
           {{/if}}
           {{#if logged_in}}
-          <a id="logout-button" href="/">Logout</a>
+          <a class="navBtn" href="/">Logout</a>
           {{else}}
-          <a href="/welcome">Login</a>
+          <a class="navBtn" href="/welcome">Login</a>
           {{/if}}
-      </div>
-      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
-      
     </div>
-    
-    
 </header>
+
   <main class="body"> 
+    <h1 class="blogHeading">Gym Blogs!</h1>
     {{#each blogs as |blog| }}
     
       <div class="individual-blog" onclick="location.href='/blog/{{blog.id}}'">
@@ -34,7 +31,7 @@
         </div>
         <div class="row">
           <a class="aStyle" href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
-          <p>{{format_time blog.date_created}}</p>
+          <p class="dateCreated">{{format_time blog.date_created}}</p>
         </div>
         
       </div>
@@ -42,21 +39,3 @@
     
     {{/each}}
   </main>
-
-  <script>
-    const rotate = 
-        anime({ 
-        targets: '.menu',
-        duration: 300,
-        rotate: 180,
-        easing: 'linear',
-        autoplay: false
-        })
-    
-
-    const btn = document.querySelector(".menuBtn")
-
-    btn.onclick = rotate.play
-      
-
-  </script>

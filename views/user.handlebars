@@ -1,27 +1,31 @@
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
     <div class="menuflex">
-      <div class="menudrop">
-          <a href="/">Home</a>
+      
+          <a class="navBtn" href="/">Home</a>
           {{#if user_id}}
-          <a href="/user/{{user_id}}">Profile</a>
+          <a class="navBtn" href="/user/{{user_id}}">Profile</a>
           {{/if}}
           {{#if logged_in}}
-          <a id="logout-button" href="/">Logout</a>
+          <a class="navBtn" href="/">Logout</a>
           {{else}}
-          <a href="/welcome">Login</a>
+          <a class="navBtn" href="/welcome">Login</a>
           {{/if}}
-      </div>
-      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
     </div>
 </header>
 
 <main class="body"> 
+    <h1 class="blogHeading">{{username}}</h1>
+    <div class="userBtns">
+        <a class="btn" href="/userBlogs/{{id}}">Blogs</a>
+        <a class="btn" href="/userWorkouts/{{id}}">Workouts</a>
+        <a class="btn" href="/editStats/{{id}}">Edit Profile</a>
+    </div>
     <div class='userContainer'>
         <section class="userImage font">
             <img class="theImage" src="{{picture}}"/>
             {{#if allowIconEdit}}
-            <p class="change-image">Change Image</p>
+            <p class="btn change-image">Change Image</p>
             {{/if}}
         </section>
         <section class="icon-model font">
@@ -93,7 +97,11 @@
 
         <div class="userDetails">
             <div class="details">
-                <h2>Username: {{username}}</h2>
+                <div class="description">
+                <h1>About Me</h1>
+                <p>{{stat.description}}</p>
+
+            </div>
                 <h2>Age: {{stat.age}}</h2>
             </div>
 
@@ -110,33 +118,7 @@
         </div>
         
     </div>
-    <div class="description">
-        <h1>About Me</h1>
-        <p>{{stat.description}}</p>
-
-    </div>
-    <div>
-        <a href="/userBlogs/{{id}}">Blogs</a>
-        <a href="/userWorkouts/{{id}}">Workouts</a>
-        <a href="/editStats/{{id}}">Edit Stats</a>
-    </div>
+    
+    
     
 </main>
-
-<script>
-    const rotate = 
-        anime({ 
-        targets: '.menu',
-        duration: 300,
-        rotate: 180,
-        easing: 'linear',
-        autoplay: false
-        })
-    
-
-    const btn = document.querySelector(".menuBtn")
-
-    btn.onclick = rotate.play
-      
-
-</script>

@@ -2,37 +2,33 @@
 <header class="homeheader">
     <img class="logo" src="/Images/GymClub.png">
     <div class="menuflex">
-      <div class="menudrop">
-          <a href="/">Home</a>
+      
+          <a class="navBtn" href="/">Home</a>
           {{#if user_id}}
-          <a href="/user/{{user_id}}">Profile</a>
+          <a class="navBtn" href="/user/{{user_id}}">Profile</a>
           {{/if}}
           {{#if logged_in}}
-          <a id="logout-button" href="/">Logout</a>
+          <a class="navBtn" href="/">Logout</a>
           {{else}}
-          <a href="/welcome">Login</a>
+          <a class="navBtn" href="/welcome">Login</a>
           {{/if}}
-      </div>
-      <a class="menuBtn"><img class="menu" src="/Images/MenuBar.png"></a>
-      
     </div>
-    
-    
 </header>
 
 <main class="body">
-    <a href="/userBlogs/{{user_id}}">Back</a>
-    <a href="/newBlog/{{id}}">New Blog</a>
-
     <div class="newBlogContainer">
-        <h1>Post a Blog!</h1>
+        
+        
+        <h1 class="blogHeading">Post a Blog!</h1>
         <div class="formDiv">
             <form class="newBlog">
                 <label for="Title">Blog Title:</label><br>
                 <input type="text" id="Title" name="Title"><br>
                 <label for="Description">Description:</label><br>
-                <input type="text" id="Description" name="Description">
-                <input type="submit" id="new-blog-button" value="Submit">
+                <input type="text" id="Description" name="Description"><br><br>
+                <a class="btn" href="/userBlogs/{{user_id}}">Back</a>
+                <input class="btn" type="submit" id="new-blog-button" value="Submit">
+                
             </form>
         </div>
         

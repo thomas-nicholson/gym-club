@@ -1,19 +1,19 @@
 const addExerciseHandler = async (event) => {
     event.preventDefault();
 
-    const exercise = document.querySelector('#exercise').value.trim();
-    const reps = document.querySelector('#reps').value.trim();
-    const sets = document.querySelector('#sets').value.trim();
-    //const id;
+    const exercise = document.querySelector('#Exercise').value.trim();
+    const reps = document.querySelector('#Reps').value.trim();
+    const sets = document.querySelector('#Sets').value.trim();
+    const id = document.querySelector('#new-exercise-button').getAttribute("data-post-id")
     if (exercise && reps && sets && id) {
-        const response = await fetch('/api/exercise/add/'+ id, {
+        const response = await fetch('/api/exercise/add/'+id, {
             method: 'POST',
             body: JSON.stringify({ exercise, reps, sets }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.reload();
         } else {
             alert(response.statusText);
         }
@@ -59,3 +59,9 @@ const deleteExerciseHandler = async (event) => {
         }
     }
 };
+
+if (document.querySelector('#new-exercise-button')) {
+    document
+      .querySelector('#new-exercise-button')
+      .addEventListener('click', addExerciseHandler);
+}

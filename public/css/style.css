@@ -285,7 +285,31 @@ header {
   justify-content: space-between;
   width: 100%;
   z-index: 999;
-  /* height: 100px */
+}
+
+.navBtn{
+  position: relative;
+  top: 40px;
+  padding-top: 10px;
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.13em solid rgba(212, 98, 98, 0.774);
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  background-color: rgba(212, 98, 98, 0.226);
+  color: #6040f0;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.navBtn:hover{
+  background-color: rgba(212, 98, 98, 0.774);
+  color: #2908a0;
 }
 
 .logo {
@@ -294,29 +318,6 @@ header {
   margin-top: 15px;
   margin-bottom: 15px;
   width: 300px;
-}
-
-.menu {
-  position: relative;
-  right: 20px;
-  margin-top: 40px;
-  height: 50px;
-  width: 50px;
-}
-
-.menuflex {
-  display: flex;
-  flex-direction: row;
-}
-
-.menudrop {
-  position: relative;
-  top: 55px;
-  left: -40px;
-}
-
-.menudrop a {
-  margin-left: 15px;
 }
 
 .blog-para {
@@ -332,10 +333,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.body a {
-  width: 40%;
 }
 
 .body a:hover {
@@ -358,6 +355,7 @@ header {
 
 .individual-blog:hover {
   transform: scale(1.01);
+  background-color: rgba(228, 35, 35, 0.747)
 }
 
 .blog-heading {
@@ -373,34 +371,73 @@ header {
 }
 
 .row {
+  text-align: center;
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .aStyle {
+  text-align: center;
   text-decoration: none;
   color: rgb(10, 6, 65);
+  width: 50%;
+  /* margin-left: 10%; */
 }
 
 .aStyle:hover {
-  text-decoration: underline;
-  color: rgb(51, 44, 143);
+  color: rgb(61, 51, 201);
+}
+
+.dateCreated{
+  text-align: center;
+  width: 50%
+
 }
 
 /* Individual Blog */
+
+.individual-blog2 {
+  text-align: center;
+  border-style: unset;
+  margin: 15px;
+  width: 55%;
+  border-radius: 10px;
+  background-color: rgba(233, 84, 84, 0.616);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .row2 {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
+  width: 100%
 }
 
 .commentSection {
-  border-style: outset;
-  width: 60%;
+  border-style:inset;
+  border-radius: 10px;
+  border-color: rgba(233, 84, 84, 0.616);
+  width: 55%;
   text-align: center;
   font-size: 20px;
+}
+
+.commentSection h1{
+  margin-top: 10px;
+}
+
+.commentSection a{
+  text-decoration: none;
+}
+
+.commentSection a:hover{
+  text-decoration: none;
+  color: #8643d3;
 }
 
 .comment {
@@ -408,16 +445,67 @@ header {
   margin: 15px;
 }
 
+.addcomment {
+  width: 60%;
+  margin-bottom: 30px;
+}
+input[type="text"] {
+  width: 100%;
+  min-height: 30px;
+}
+
+#comment-box{
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+.btn {
+  padding-top: 10px;
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.13em solid rgba(238, 67, 67, 0.774);
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #3b0579;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  /* width: 120px */
+}
+
+.btn:hover {
+  background-color: rgba(238, 67, 67, 0.5);
+}
+
+#comment-form{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .menuBtn:hover {
   cursor: pointer;
 }
 
+/* User Page Styling */
+
 .userContainer {
   margin-top: 20px;
-
+  margin-bottom: 20px;
   border-style: outset;
+  border-color: rgba(233, 84, 84, 0.616);
   width: 70%;
   min-height: 350px;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -467,27 +555,59 @@ header {
 }
 
 .stats h3 {
-  /* margin-top: 30px; */
   margin: 30px;
 }
 
 .description {
-  margin: 40px;
+  margin-top: 50px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.addcomment {
-  width: 60%;
-  margin-bottom: 30px;
+.userBtns{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+  width: 35%
 }
-input[type="text"] {
-  width: 100%;
-  min-height: 30px;
+
+/* New Blog Page */
+.blogHeading{
+  font-size: 40px;
+  margin: 40px
+}
+
+.newBlogBackBtn{
+  padding-top: 10px;
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.13em solid rgba(238, 67, 67, 0.774);
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #3b0579;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 10%
+}
+
+.newBlogBackBtn:hover{
+  color: black;
+  background-color: rgba(238, 67, 67, 0.5);
+}
+
+.backBtn{
+  width: 40%;
 }
 
 .newBlogContainer {
   width: 50%;
-  border: outset;
   text-align: center;
   justify-content: center;
   display: flex;
@@ -502,11 +622,207 @@ input[type="text"] {
   margin: 10px;
 }
 
-@media (max-width: 580px) {
+.formDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+
+#Title{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Description{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+/* Workouts Page */
+.workouts-container {
+  text-align: center;
+  border-style: unset;
+  margin: 15px;
+  width: 55%;
+  border-radius: 10px;
+  background-color: rgba(233, 84, 84, 0.616);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.workoutBtns{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+  width: 35%
+  
+}
+
+/* Exercises page */
+
+#Exercise{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Sets{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Reps{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+.individual-exercise{
+  text-align: center;
+  border-style: unset;
+  margin: 15px;
+  width: 70%;
+  border-radius: 10px;
+  background-color: rgba(233, 84, 84, 0.616);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.exerciseHeading{
+  margin: 15px;
+  font-size: 20px;
+}
+
+.routine{
+  display: flex;
+  flex-direction: row;
+}
+
+.routine p{
+  margin: 10px;
+}
+
+.newExerciseContainer{
+  margin-top: 20px;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.exerciseRow{
+  display: flex;
+  flex-direction: row;
+  width: 100%
+}
+
+.exerciseColumn{
+  
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%
+}
+
+/* Edit Profile Page */
+#Username{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Age{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Height{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Weight{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Max-Deadlift{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Max-Bench-Press{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Max-Squat{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+@media (max-width: 1024px) {
   header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 200px
+  }
+
+  .navBtn{
+    position:inherit
   }
 
   .logo {
@@ -515,4 +831,62 @@ input[type="text"] {
   .menu {
     right: 0px;
   }
+
+  .individual-blog{
+    width: 90%
+  }
+
+  .individual-blog2{
+    width: 90%
+  }
+
+  .addcomment{
+    width: 80%
+  }
+
+  .commentSection{
+    width: 90%
+  }
+
+  .userContainer{
+    width: 90%
+  }
+
+  .blogHeading{
+    font-size: 25px;
+  }
+
+  .newBlogContainer{
+    width: 100%
+  }
+
+  .formDiv{
+    width: 100%
+  }
 }
+
+@media (max-width: 830px){
+  .exerciseRow{
+    display: block;
+    /* justify-content: center;
+    border-style: solid;
+    flex-direction: column; */
+  }
+
+  .newExerciseContainer{
+    width: 100%
+  }
+
+  .exerciseColumn{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
