@@ -74,6 +74,15 @@ html {
   cursor: default;
 }
 
+.signup-error {
+  width: 100%;
+  color: brown;
+  opacity: 0%;
+  cursor: default;
+  position: relative;
+  top: 30px;
+}
+
 #email-login,
 #password-login {
   border: 0px solid rgba(165, 42, 42, 0.541);
@@ -211,6 +220,8 @@ html {
 
 .formContainer1 {
   display: block;
+  position: relative;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;

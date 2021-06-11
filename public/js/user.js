@@ -15,7 +15,10 @@ const newUserHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/');
         } else {
-            alert(response.statusText);
+            $('.signup-error').css('opacity', '80%')
+            $('#username-signup').css('border', '2px solid rgba(165, 42, 42, 0.541)')
+            $('#email-signup').css('border', '2px solid rgba(165, 42, 42, 0.541)')
+            $('#password-signup').css('border', '2px solid rgba(165, 42, 42, 0.541)')
         }
     }
 };
