@@ -18,27 +18,21 @@
 </header>
 
 <main class="body">
-    <a href="/userWorkouts/{{user_id}}">Back</a>
+    
+    
 
     <div class="newBlogContainer">
+        <div class="backBtn">
+            <a class="newBlogBackBtn" href="/userWorkouts/{{user_id}}">Back</a>
+        </div>
         <h1>Create a New Workout!</h1>
         <div class="formDiv">
             <form class="firstForm">
-                <label for="Title">Workout Title:</label><br>
-                <input type="text" id="Title" name="Title"><br>
-                <label for="Description">Description:</label><br>
-                <input type="text" id="Description" name="Description">
-                <label for="Exercise">Exercise:</label><br>
-                <select id="Exercise" name="Exercise">
-                    {{#each exercises as |exercise|}}
-                    <option value="{{exercise.exercise}}">{{exercise.exercise}}</option>
-                    {{/each}}
-                </select>
-                <label for="Sets">Sets:</label><br>
-                <input type="text" id="Sets" name="Sets">
-                <label for="Reps">Reps:</label><br>
-                <input type="text" id="Reps" name="Reps">
-                <input type="submit" id="new-workout-button" value="Submit">
+                <label for="Title">Workout Title</label><br>
+                <input type="text" id="Title" name="Title"><br><br>
+                <label for="Description">Description</label><br>
+                <input type="text" id="Description" name="Description"><br><br>
+                <input class="btn" type="submit" id="new-workout-button" value="Submit">
             </form>
         </div>
         

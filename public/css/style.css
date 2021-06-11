@@ -419,6 +419,15 @@ header {
   margin: 15px;
 }
 
+.addcomment {
+  width: 60%;
+  margin-bottom: 30px;
+}
+input[type="text"] {
+  width: 100%;
+  min-height: 30px;
+}
+
 #comment-box{
   border-radius: 10px;
   min-height: 40px;
@@ -462,7 +471,8 @@ header {
   cursor: pointer;
 }
 
-/* User Styling */
+/* User Page Styling */
+
 .userContainer {
   margin-top: 20px;
   border-style: outset;
@@ -528,16 +538,14 @@ header {
 }
 
 .userBtns{
-  text-align: center;
   display: flex;
+  justify-content: center;
+  text-align: center;
   flex-direction: row;
   width: 35%
 }
 
-.userBtns .btn:nth-child(1){
-  margin-left: 10%;
-}
-
+/* New Blog Page */
 .blogHeading{
   font-size: 40px;
   margin: 40px
@@ -569,15 +577,6 @@ header {
 
 .backBtn{
   width: 40%;
-}
-
-.addcomment {
-  width: 60%;
-  margin-bottom: 30px;
-}
-input[type="text"] {
-  width: 100%;
-  min-height: 30px;
 }
 
 .newBlogContainer {
@@ -618,6 +617,30 @@ input[type="text"] {
   outline: none;
   margin-right: 3px;
   width: 60%
+}
+
+/* Workouts Page */
+.workouts-container {
+  text-align: center;
+  border-style: unset;
+  margin: 15px;
+  width: 55%;
+  border-radius: 10px;
+  background-color: rgba(233, 84, 84, 0.616);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.workoutBtns{
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
+  width: 35%
+  
 }
 
 @media (max-width: 580px) {
