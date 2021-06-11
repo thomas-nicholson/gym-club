@@ -68,6 +68,21 @@ html {
   transition: all 100ms ease-in-out;
 }
 
+.image-container {
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  background-color: rgba(220, 220, 220, 0.384);
+}
+
+.chooseImage {
+  width: 30%;
+  cursor: pointer;
+}
+
 .back-button:hover {
   opacity: 60%;
 }
