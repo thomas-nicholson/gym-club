@@ -68,6 +68,26 @@ html {
   transition: all 100ms ease-in-out;
 }
 
+.login-error {
+  color: brown;
+  opacity: 0%;
+  cursor: default;
+}
+
+.signup-error {
+  width: 100%;
+  color: brown;
+  opacity: 0%;
+  cursor: default;
+  position: relative;
+  top: 30px;
+}
+
+#email-login,
+#password-login {
+  border: 0px solid rgba(165, 42, 42, 0.541);
+}
+
 .image-container {
   border-radius: 10px;
   margin: 10px;
@@ -82,6 +102,11 @@ html {
 .chooseImage {
   width: 200px;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.chooseImage:hover {
+  opacity: 90%;
 }
 
 .back-button:hover {
@@ -185,6 +210,8 @@ html {
 
 .formContainer {
   display: block;
+  position: relative;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -193,6 +220,8 @@ html {
 
 .formContainer1 {
   display: block;
+  position: relative;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
