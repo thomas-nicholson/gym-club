@@ -643,6 +643,33 @@ input[type="text"] {
   
 }
 
+#Exercise{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Sets{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+#Reps{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
 @media (max-width: 580px) {
   header {
     flex-direction: column;

@@ -19,7 +19,23 @@
 
 
 <main class="body"> 
-    <a href="/userWorkouts/{{user_id}}">Back</a>
+    <div class="newBlogContainer">
+        <div class="backBtn">
+            <a class="newBlogBackBtn" href="/userWorkouts/{{user_id}}">Back</a>
+        </div>
+        <h1>Add some exercises to your workout!</h1>
+        <div class="formDiv">
+            <form class="firstForm">
+                <label for="Exercise">Exercise Name</label><br>
+                <input type="text" id="Exercise" name="Exercise"><br><br>
+                <label for="Sets">Sets</label><br>
+                <input type="text" id="Sets" name="Sets"><br><br>
+                <label for="Reps">Reps</label><br>
+                <input type="text" id="Reps" name="Reps"><br><br>
+                <input class="btn" type="submit" id="new-exercise-button" value="Submit" data-post-id="{{id}}">
+            </form>
+        </div>
+    </div>
 
     {{#each exercises as |exercise| }}
     
@@ -38,3 +54,5 @@
     {{/each}}
     
 </main>
+
+{{!-- <script src="/js/exercise.js"></script> --}}
