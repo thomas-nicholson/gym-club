@@ -21,10 +21,6 @@
 </header>
 
 <main class="body">
-    <div class="backBtn">
-            <a class="btn" href="/userBlogs/{{user_id}}">Back</a>
-    </div>
-
     <div class="newBlogContainer">
         
         
@@ -35,7 +31,9 @@
                 <input type="text" id="Title" name="Title"><br>
                 <label for="Description">Description:</label><br>
                 <input type="text" id="Description" name="Description"><br><br>
+                <a class="btn" href="/userBlogs/{{user_id}}">Back</a>
                 <input class="btn" type="submit" id="new-blog-button" value="Submit">
+                
             </form>
         </div>
         

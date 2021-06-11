@@ -18,20 +18,15 @@
 </header>
 
 <main class="body">
-    
-    
-
     <div class="newBlogContainer">
-        <div class="backBtn">
-            <a class="newBlogBackBtn" href="/userWorkouts/{{user_id}}">Back</a>
-        </div>
         <h1 class="blogHeading">Create a New Workout!</h1>
         <div class="formDiv">
-            <form class="firstForm">
+            <form class="newBlog">
                 <label for="Title">Workout Title</label><br>
                 <input type="text" id="Title" name="Title"><br><br>
                 <label for="Description">Description</label><br>
                 <input type="text" id="Description" name="Description"><br><br>
+                <a class="btn" href="/userWorkouts/{{user_id}}">Back</a>
                 <input class="btn" type="submit" id="new-workout-button" value="Submit">
             </form>
         </div>

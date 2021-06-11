@@ -456,7 +456,6 @@ input[type="text"] {
 }
 
 .btn:hover {
-  color: black;
   background-color: rgba(238, 67, 67, 0.5);
 }
 
@@ -475,6 +474,7 @@ input[type="text"] {
 
 .userContainer {
   margin-top: 20px;
+  margin-bottom: 20px;
   border-style: outset;
   border-color: rgba(233, 84, 84, 0.616);
   width: 70%;
@@ -533,8 +533,9 @@ input[type="text"] {
 }
 
 .description {
+  margin-top: 50px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .userBtns{
@@ -714,9 +715,11 @@ input[type="text"] {
 }
 
 .exerciseColumn{
+  
   margin-top: 50px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 50%
 }
 
@@ -784,7 +787,7 @@ input[type="text"] {
   width: 60%
 }
 
-@media (max-width: 580px) {
+@media (max-width: 1024px) {
   header {
     flex-direction: column;
     justify-content: center;
@@ -796,6 +799,57 @@ input[type="text"] {
   }
   .menu {
     right: 0px;
+  }
+
+  .individual-blog{
+    width: 90%
+  }
+
+  .individual-blog2{
+    width: 90%
+  }
+
+  .addcomment{
+    width: 80%
+  }
+
+  .commentSection{
+    width: 90%
+  }
+
+  .userContainer{
+    width: 90%
+  }
+
+  .blogHeading{
+    font-size: 25px;
+  }
+
+  .newBlogContainer{
+    width: 100%
+  }
+
+  .formDiv{
+    width: 100%
+  }
+}
+
+@media (max-width: 830px){
+  .exerciseRow{
+    display: block;
+    /* justify-content: center;
+    border-style: solid;
+    flex-direction: column; */
+  }
+
+  .newExerciseContainer{
+    width: 100%
+  }
+
+  .exerciseColumn{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 }
 

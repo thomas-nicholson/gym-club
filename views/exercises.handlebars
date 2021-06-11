@@ -19,9 +19,6 @@
 
 
 <main class="body"> 
-  <div class="backBtn">
-    <a class="btn" href="/userWorkouts/{{user_id}}">Back</a>
-  </div>
   <h1 class="blogHeading">Exercises!</h1>
   <div class="exerciseRow">
     <div class="newExerciseContainer">
@@ -33,6 +30,7 @@
                     <input type="text" id="Sets" name="Sets"><br><br>
                     <label for="Reps">Reps</label><br>
                     <input type="text" id="Reps" name="Reps"><br><br>
+                    <a class="btn" href="/userWorkouts/{{user_id}}">Back</a>
                     <input class="btn" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
                 </form>
             </div>
