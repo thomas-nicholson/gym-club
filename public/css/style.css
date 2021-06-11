@@ -329,6 +329,7 @@ header {
 
 .individual-blog:hover {
   transform: scale(1.01);
+  background-color: rgba(228, 35, 35, 0.747)
 }
 
 .blog-heading {
@@ -344,39 +345,117 @@ header {
 }
 
 .row {
+  text-align: center;
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+  width: 100%;
 }
 
 .aStyle {
+  text-align: center;
   text-decoration: none;
   color: rgb(10, 6, 65);
+  width: 60%;
+  margin-left: 10%;
 }
 
 .aStyle:hover {
-  text-decoration: underline;
-  color: rgb(51, 44, 143);
+  color: rgb(61, 51, 201);
+}
+
+.dateCreated{
+  text-align: center;
+  width: 40%
+
 }
 
 /* Individual Blog */
+
+.individual-blog2 {
+  text-align: center;
+  border-style: unset;
+  margin: 15px;
+  width: 55%;
+  border-radius: 10px;
+  background-color: rgba(233, 84, 84, 0.616);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .row2 {
   display: flex;
   flex-direction: row;
   margin-top: 10px;
+  width: 100%
 }
 
 .commentSection {
-  border-style: outset;
-  width: 60%;
+  border-style:inset;
+  border-radius: 10px;
+  border-color: rgba(233, 84, 84, 0.616);
+  width: 55%;
   text-align: center;
   font-size: 20px;
+}
+
+.commentSection h1{
+  margin-top: 10px;
+}
+
+.commentSection a{
+  text-decoration: none;
+}
+
+.commentSection a:hover{
+  text-decoration: none;
+  color: #8643d3;
 }
 
 .comment {
   font-size: 15px;
   margin: 15px;
+}
+
+#comment-box{
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%
+}
+
+.btn {
+  padding-top: 10px;
+  display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.13em solid rgba(238, 67, 67, 0.774);
+  background-color: #fdfdfd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #3b0579;
+  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 120px
+}
+
+.btn:hover {
+  color: black;
+  background-color: rgba(238, 67, 67, 0.5);
+}
+
+#comment-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menuBtn:hover {
@@ -487,3 +566,10 @@ input[type="text"] {
     right: 0px;
   }
 }
+
+
+
+
+
+
+
