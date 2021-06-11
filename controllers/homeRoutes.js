@@ -99,12 +99,20 @@ router.get('/user/:id', auth,  async (req, res) => {
                 },
             ],
         });
+
+        let allowIconEdit;
+        if (req.params.id == req.session.user_id) {
+            allowIconEdit = true;
+        } else {
+            allowIconEdit = false;
+        }
     
         const users = user.get({ plain: true});
         res.render('user', {
             ...users,
             logged_in: req.session.logged_in,
-            user_id: req.session.user_id
+            user_id: req.session.user_id,
+            allowIconEdit
         });
     } catch (err) {
         res.status(500).json(err);
