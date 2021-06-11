@@ -26,3 +26,6 @@ const updateIcon = async (event) => {
   };
   
   $('#updateIconButton').on('click', updateIcon);
+  $('.change-image').on('click', () => {
+    console.log('Hello')
+  })
