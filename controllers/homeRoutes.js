@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Blog, Stats, Comment, Workout, Exercise} = require('../models');
 const auth = require('../utils/auth');
+const correctUser = require('../utils/correctUser');
 
 router.get('/', async (req, res) => {
     try {
@@ -219,7 +220,7 @@ router.get('/newWorkout', auth,  async (req, res) => {
       }
 })
 
-router.get('/editStats/:id', auth,  async (req, res) => {
+router.get('/editStats/:id', auth, correctUser,  async (req, res) => {
     const id = req.params.id
     console.log(id)
     res.render('editStats', {
