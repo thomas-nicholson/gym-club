@@ -18,7 +18,12 @@
 
 <main class="body"> 
     <div class='userContainer'>
-        <div class="userImage"><img class="theImage" src="{{picture}}"></div>
+        <section class="userImage">
+            <img class="theImage" src="{{picture}}"/>
+            {{#if allowIconEdit}}
+            <p class="change-image">Change Image</p>
+            {{/if}}
+        </section>
 
         <div class="userDetails">
             <div class="details">
