@@ -71,10 +71,9 @@ html {
 .image-container {
   border-radius: 10px;
   margin: 10px;
-  padding: 20px;
+  padding: 20px 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
   width: 60%;
   overflow-y: hidden;
   background-color: rgba(220, 220, 220, 0.185);
