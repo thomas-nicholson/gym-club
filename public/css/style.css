@@ -919,7 +919,21 @@ input[type="text"] {
     width: 240px;
   }
 
-  .formContainer {
+  .formContainer,
+  .formContainer1 {
     width: 280px;
+  }
+
+  .enterField {
+    width: 250px;
+  }
+
+  .title1,
+  .title2 {
+    width: 150px;
+  }
+
+  .title {
+    width: 100px;
   }
 }
