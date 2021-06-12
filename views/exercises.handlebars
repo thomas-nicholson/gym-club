@@ -10,15 +10,16 @@
                     <input type="text" id="Sets" name="Sets"><br><br>
                     <label for="Reps">Reps</label><br>
                     <input type="text" id="Reps" name="Reps"><br><br>
-                    <a class="btn" href="/userWorkouts/{{user_id}}">Back</a>
-                    <input class="btn" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
+                    <a class="back-button" href="/userWorkouts/{{user_id}}">Back</a>
+                    <input class="back-button" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
                 </form>
             </div>
         </div>
 
         <div class="exerciseColumn">
+          {{#if exercises.length}}
           {{#each exercises as |exercise| }}
-            <div class="individual-blog">
+            <div class="individual-exercise">
               <button id="deleteExercise" class="back-button" data-id="{{exercise.id}}">Delete</button>
               <div class="blog-para">
                 <h2 class="exerciseHeading">{{exercise.exercise}}</h2>
@@ -31,6 +32,9 @@
               </div>
             </div>
           {{/each}}
+          {{else}}
+          <h2>You currently have no exercises, add an exercise using the form on this page!</h2>
+          {{/if}}
         </div>
   </div>
     
