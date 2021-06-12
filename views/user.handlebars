@@ -3,7 +3,9 @@
     <div class="userBtns">
         <a class="btn" href="/userBlogs/{{id}}">Blogs</a>
         <a class="btn" href="/userWorkouts/{{id}}">Workouts</a>
+        {{#if allowIconEdit}}
         <a class="btn" href="/editStats/{{id}}">Edit Profile</a>
+        {{/if}}
     </div>
     <div class='userContainer'>
         <section class="userImage font">
