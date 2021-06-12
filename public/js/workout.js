@@ -51,15 +51,23 @@ const updateWorkoutHandler = async (event) => {
 const deleteWorkoutHandler = async (event) => {
     event.preventDefault();
 
-    //const id;
+        if (event.target.hasAttribute('data-id')) {
+            const id = event.target.getAttribute('data-id')
 
-    const response = await fetch('/api/workout/delete/'+id, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json'},
-    });
-    if (response.ok) {
-        document.location.replace('/');
-    } else {
-        alert(response.statusText);
+        const response = await fetch('/api/workout/delete/'+id, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json'},
+        });
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert(response.statusText);
+        }
     }
+}
+
+if (document.querySelector('#deleteWorkout')) {
+    document
+      .querySelector('#deleteWorkout')
+      .addEventListener('click', deleteWorkoutHandler);
 }

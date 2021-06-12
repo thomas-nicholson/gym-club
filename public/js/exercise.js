@@ -45,7 +45,7 @@ const updateExerciseHandler = async (event) => {
 const deleteExerciseHandler = async (event) => {
     event.preventDefault();
 
-    //const id;
+    const id = event.target.getAttribute('data-id')
     if (id) {
         const response = await fetch('/api/exercise/delete/'+ id, {
             method: 'DELETE',
@@ -53,7 +53,7 @@ const deleteExerciseHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.reload();
         } else {
             alert(response.statusText);
         }
@@ -64,4 +64,10 @@ if (document.querySelector('#new-exercise-button')) {
     document
       .querySelector('#new-exercise-button')
       .addEventListener('click', addExerciseHandler);
+}
+
+if (document.querySelector('#deleteExercise')) {
+    document
+      .querySelector('#deleteExercise')
+      .addEventListener('click', deleteExerciseHandler);
 }

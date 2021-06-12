@@ -15,13 +15,13 @@
       <div class='addcomment'>
         <form id="comment-form">
             <input type="text" id="comment-box" name="comment-box" placeholder="Add your comment">
-            <button class="btn btn-primary log" type="submit" id="comment-button" data-post-id="{{id}}">Post</button>
+            <button class="back-button btn-primary log" type="submit" id="comment-button" data-post-id="{{id}}">Post</button>
         </form>
       </div>
 
       <div class="commentSection">
           
-          <h1>Comments</h1>
+          <h1 class="commentHeader">Comments</h1>
           {{#each comments as |comment|}}
           <div class="comment">
               <a href="/user/{{comment.user.id}}"><h3>{{comment.user.username}}</h3></a>
