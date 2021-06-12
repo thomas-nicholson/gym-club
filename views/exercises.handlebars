@@ -18,7 +18,8 @@
 
         <div class="exerciseColumn">
           {{#each exercises as |exercise| }}
-            <div class="individual-exercise">
+            <div class="individual-blog">
+              <button id="deleteExercise" class="back-button" data-id="{{exercise.id}}">Delete</button>
               <div class="blog-para">
                 <h2 class="exerciseHeading">{{exercise.exercise}}</h2>
                 

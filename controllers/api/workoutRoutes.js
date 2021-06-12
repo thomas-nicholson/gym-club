@@ -42,13 +42,6 @@ router.put('/update/:id', auth, async (req, res) => {
 //   This allows you to delete workouts
 router.delete('/delete/:id', auth, async (req, res) => {
   try {
-
-    // const exerciseDelete = await Exercise.destroy({
-    //   where: {
-    //     workout_id: req.params.id,
-    //   }
-    // })
-
     const workoutDelete = await Workout.destroy({
         where: {
             id: req.params.id,
