@@ -937,4 +937,8 @@ input[type="text"] {
   .title {
     width: 100px;
   }
+
+  .logo {
+    width: 200px;
+  }
 }
