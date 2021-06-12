@@ -625,7 +625,16 @@ input[type="text"] {
 /* New Blog Page */
 .blogHeading {
   font-size: 60px;
+  padding-top: 35px;
   margin: 40px;
+  color: rgba(5, 3, 36, 0.884);
+}
+
+#headingBlog {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.7;
 }
 
 .newBlogBackBtn {
