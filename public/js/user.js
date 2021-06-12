@@ -77,3 +77,7 @@ if (document.querySelector('#logout-button')) {
       .querySelector('#logout-button')
       .addEventListener('click', logoutUserHandler);
 }
+const pathname = document.location.pathname
+if ( pathname === '/welcome' || pathname === '/login' || pathname === '/signup') {
+    $('header').css('display', 'none')
+}

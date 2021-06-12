@@ -1,40 +1,18 @@
-{{!-- Comment --}}
-
-<header class="homeheader">
-    <img class="logo" src="/Images/GymClub.png">
-    <div class="menuflex">
-      
-          <a class="navBtn" href="/">Home</a>
-          {{#if user_id}}
-          <a class="navBtn" href="/user/{{user_id}}">Profile</a>
-          {{/if}}
-          {{#if logged_in}}
-          <a class="navBtn" id="logout-button" href="/">Logout</a>
-          {{else}}
-          <a class="navBtn" href="/welcome">Login</a>
-          {{/if}}
-    </div>
-</header>
-
-  <main class="body"> 
-    <h1 class="blogHeading">Gym Blogs!</h1>
+<main class="body feed"> 
+    <p class="blogHeading" id="headingBlog">Blogs</p>
     {{#each blogs as |blog| }}
     
-      <div class="individual-blog" onclick="location.href='/blog/{{blog.id}}'">
+      <section class="individual-blog" onclick="location.href='/blog/{{blog.id}}'">
         
         <h1 class="blog-heading">{{blog.title}}</h1>
-    
-        <div class="blog-para">
-          <p>
-            {{blog.description}}
-          </p>
+        <div class="blog-para datey">
+          <p>{{format_time blog.date_created}} | <a class="aStyle" href="/user/{{blog.user.id}}">{{blog.user.username}}</a></p>
         </div>
-        <div class="row">
-          <a class="aStyle" href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
-          <p class="dateCreated">{{format_time blog.date_created}}</p>
+        <div class="blog-para descy">
+          <p>{{blog.description}}</p>
         </div>
         
-      </div>
+      </section>
       
     
     {{/each}}

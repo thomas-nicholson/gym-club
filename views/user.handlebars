@@ -1,25 +1,11 @@
-<header class="homeheader">
-    <img class="logo" src="/Images/GymClub.png">
-    <div class="menuflex">
-      
-          <a class="navBtn" href="/">Home</a>
-          {{#if user_id}}
-          <a class="navBtn" href="/user/{{user_id}}">Profile</a>
-          {{/if}}
-          {{#if logged_in}}
-          <a class="navBtn" id="logout-button" href="/">Logout</a>
-          {{else}}
-          <a class="navBtn" href="/welcome">Login</a>
-          {{/if}}
-    </div>
-</header>
-
 <main class="body"> 
     <h1 class="blogHeading">{{username}}</h1>
     <div class="userBtns">
         <a class="btn" href="/userBlogs/{{id}}">Blogs</a>
         <a class="btn" href="/userWorkouts/{{id}}">Workouts</a>
+        {{#if allowIconEdit}}
         <a class="btn" href="/editStats/{{id}}">Edit Profile</a>
+        {{/if}}
     </div>
     <div class='userContainer'>
         <section class="userImage font">
