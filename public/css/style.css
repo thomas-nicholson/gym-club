@@ -910,6 +910,12 @@ input[type="text"] {
   }
 }
 
+@media screen and (max-width: 424px) {
+  .homeNav {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .gym-club-img {
     width: 250px;
@@ -940,5 +946,18 @@ input[type="text"] {
 
   .logo {
     width: 200px;
+  }
+
+  header {
+    height: 150px;
+    padding: none;
+  }
+
+  .menuflex {
+    display: flex;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
   }
 }
