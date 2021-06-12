@@ -11,7 +11,22 @@
     <link rel="shortcut icon" type="img/svg" href="/images/favi.svg">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font">
+    <header class="homeheader">
+        <img class="logo" src="/Images/GymClub.png">
+        <div class="menuflex">
+        
+              <a class="navBtn" href="/">Home</a>
+              {{#if user_id}}
+              <a class="navBtn" href="/user/{{user_id}}">Profile</a>
+              {{/if}}
+              {{#if logged_in}}
+              <a class="navBtn" id="logout-button" href="/">Logout</a>
+              {{else}}
+              <a class="navBtn" href="/welcome">Login</a>
+              {{/if}}
+        </div>
+    </header>
     {{{ body }}}
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="/js/anime.js"></script>
