@@ -16,7 +16,6 @@ router.put('/update/:id', async (req, res) => {
                 max_bench: req.body.max_bench,
                 max_deadlift: req.body.max_deadlift,
                 max_squat: req.body.max_squat,
-                user_id: req.session.user_id
             },
             {
                 where: {
@@ -29,7 +28,5 @@ router.put('/update/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-
-
 
 module.exports = router;

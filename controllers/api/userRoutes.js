@@ -18,7 +18,7 @@ router.post('/', async (req, res) => {
 
       const newStats = await Stats.create({
         age: 0,
-        description: "Put description here",
+        description: "Description of yourself",
         height: 0.00,
         weight: 0,
         max_bench: 0,
