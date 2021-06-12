@@ -8,8 +8,10 @@
 
     {{#if workouts.length}}
     {{#each workouts as |workout| }}
+      
     
       <div class="individual-blog" onclick="location.href='/exercises/{{workout.id}}'">
+      <button id="deleteWorkout" class="back-button" data-id="{{workout.id}}">Delete</button>
         
         <a href="/exercises/{{workout.id}}" class="headingA"><h1 class="blog-heading">{{workout.title}}</h1></a>
     
