@@ -1,21 +1,20 @@
 <main class="body"> 
     <h1 class="blogHeading">{{username}}</h1>
     <div class="userBtns">
-        <a class="btn" href="/userBlogs/{{id}}">Blogs</a>
-        <a class="btn" href="/userWorkouts/{{id}}">Workouts</a>
+        <a class="back-button" href="/userBlogs/{{id}}">Blogs</a>
+        <a class="back-button" href="/userWorkouts/{{id}}">Workouts</a>
         {{#if allowIconEdit}}
-        <a class="btn" href="/editStats/{{id}}">Edit Profile</a>
+        <a class="back-button" href="/editStats/{{id}}">Edit Profile</a>
         {{/if}}
     </div>
     <div class='userContainer'>
         <section class="userImage font">
             <img class="theImage" src="{{picture}}"/>
-            {{#if allowIconEdit}}
-            <p class="btn change-image">Change Image</p>
-            {{/if}}
         </section>
+        {{#if allowIconEdit}}
+            <p class="change-image">Change Image</p>
+            {{/if}}
         <section class="icon-model font">
-          
             <section class="image-container">
                 <img src="/images/avatars/1.svg" class="chooseImage" value="/images/avatars/1.svg" data-id="{{user_id}}"/>
                 <img src="/images/avatars/2.svg" class="chooseImage" value="/images/avatars/2.svg" data-id="{{user_id}}"/>
