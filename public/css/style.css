@@ -347,6 +347,7 @@ header {
   margin-top: 15px;
   margin-bottom: 15px;
   width: 300px;
+  cursor: pointer;
 }
 
 .blog-para {
@@ -355,7 +356,6 @@ header {
 
 .body {
   background-color: rgb(255, 255, 255);
-  margin-top: 30px;
   width: 100%;
   min-height: 70vh;
   display: flex;
