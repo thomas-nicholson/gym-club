@@ -85,7 +85,8 @@ html {
 
 #email-login,
 #password-login {
-  border: 0px solid rgba(165, 42, 42, 0.541);
+  border: 2px solid rgba(116, 57, 255, 0.473);
+  border-radius: 8px;
 }
 
 .image-container {
@@ -247,10 +248,10 @@ html {
 }
 
 .enterField {
-  box-shadow: 1px 1px 5px 5px rgb(39, 2, 99);
-  border-style: block;
-  font-size: 20px;
-  color: white;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  margin: 10px;
   width: 300px;
   height: 60px;
   background-color: transparent;
@@ -883,5 +884,14 @@ input[type="text"] {
 @media screen and (max-width: 375px) {
   .gym-club-img {
     width: 250px;
+  }
+
+  #email-login,
+  #password-login {
+    width: 240px;
+  }
+
+  .formContainer {
+    width: 280px;
   }
 }
