@@ -8,6 +8,10 @@ html {
   border: 1px solid black;
 }
 
+#font {
+  font-family: "Roboto", sans-serif;
+}
+
 .font {
   font-family: "Roboto", sans-serif;
 }
@@ -355,6 +359,15 @@ header {
   margin-bottom: 30px;
 }
 
+.datey {
+  opacity: 40%;
+  font-weight: 300;
+}
+
+.descy {
+  line-height: 2rem;
+}
+
 .body {
   background-color: rgb(255, 255, 255);
   width: 100%;
@@ -372,27 +385,35 @@ header {
 .individual-blog {
   text-align: center;
   border-style: unset;
-  margin: 15px;
+  margin: 25px;
   width: 45%;
-  border-radius: 10px;
-  background-color: rgba(233, 84, 84, 0.616);
+  width: 600px;
+  border-radius: 7px;
+  padding: 40px;
+  color: rgba(255, 255, 255, 0.877) !important;
+  background-color: rgba(5, 3, 36, 0.884);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all 100ms ease-in-out;
 }
 
 .individual-blog:hover {
   transform: scale(1.01);
-  background-color: rgba(228, 35, 35, 0.747);
+  background-color: rgba(5, 3, 36, 0.774);
+}
+
+.feed {
+  padding-bottom: 60px;
 }
 
 .blog-heading {
   margin: 20px;
   font-size: 30px;
   text-decoration: none;
-  color: rgb(10, 6, 65);
+  line-height: 3rem;
 }
 .headingA {
   width: 100%;
@@ -411,13 +432,13 @@ header {
 .aStyle {
   text-align: center;
   text-decoration: none;
-  color: rgb(10, 6, 65);
+  color: rgba(255, 255, 255, 0.877) !important;
   width: 50%;
   /* margin-left: 10%; */
 }
 
 .aStyle:hover {
-  color: rgb(61, 51, 201);
+  color: rgba(255, 255, 255, 0.568) !important;
 }
 
 .dateCreated {

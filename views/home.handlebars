@@ -1,22 +1,18 @@
-<main class="body"> 
+<main class="body feed"> 
     <h1 class="blogHeading">Blogs</h1>
     {{#each blogs as |blog| }}
     
-      <div class="individual-blog" onclick="location.href='/blog/{{blog.id}}'">
+      <section class="individual-blog" onclick="location.href='/blog/{{blog.id}}'">
         
         <h1 class="blog-heading">{{blog.title}}</h1>
-    
-        <div class="blog-para">
-          <p>
-            {{blog.description}}
-          </p>
+        <div class="blog-para datey">
+          <p>{{format_time blog.date_created}} | <a class="aStyle" href="/user/{{blog.user.id}}">{{blog.user.username}}</a></p>
         </div>
-        <div class="row">
-          <a class="aStyle" href="/user/{{blog.user.id}}">{{blog.user.username}}</a>
-          <p class="dateCreated">{{format_time blog.date_created}}</p>
+        <div class="blog-para descy">
+          <p>{{blog.description}}</p>
         </div>
         
-      </div>
+      </section>
       
     
     {{/each}}
