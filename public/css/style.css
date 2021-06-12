@@ -62,6 +62,7 @@ html {
 }
 
 .back-button,
+.change-image,
 #icon-button {
   padding: 15px;
   margin: 10px;
@@ -551,16 +552,16 @@ input[type="text"] {
 .userContainer {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-style: outset;
-  border-color: rgba(233, 84, 84, 0.616);
   width: 70%;
   min-height: 350px;
   border-radius: 10px;
   display: flex;
-  flex-direction: row;
+  position: relative;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  width: 60%;
 }
 
 .userImage {
@@ -575,11 +576,21 @@ input[type="text"] {
 }
 
 .userDetails {
+  background-color: rgba(220, 220, 220, 0.116);
+  border-radius: 8px;
+  padding: 50px;
+  width: 85%;
+  margin: 50px;
+  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.bit {
+  padding: 10px 20px;
 }
 
 .bodyStats {
@@ -609,7 +620,6 @@ input[type="text"] {
 }
 
 .description {
-  margin-top: 50px;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -619,7 +629,6 @@ input[type="text"] {
   justify-content: center;
   text-align: center;
   flex-direction: row;
-  width: 35%;
 }
 
 /* New Blog Page */
@@ -802,6 +811,7 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 50%;
 }
 

@@ -1,21 +1,23 @@
 <main class="body"> 
     <h1 class="blogHeading">{{username}}</h1>
     <div class="userBtns">
-        <a class="btn" href="/userBlogs/{{id}}">Blogs</a>
-        <a class="btn" href="/userWorkouts/{{id}}">Workouts</a>
+        <a class="back-button" href="/userBlogs/{{id}}">Blogs</a>
+        <a class="back-button" href="/userWorkouts/{{id}}">Workouts</a>
         {{#if allowIconEdit}}
-        <a class="btn" href="/editStats/{{id}}">Edit Profile</a>
+        <a class="back-button" href="/editStats/{{id}}">Edit Profile</a>
         {{/if}}
     </div>
     <div class='userContainer'>
         <section class="userImage font">
             <img class="theImage" src="{{picture}}"/>
-            {{#if allowIconEdit}}
-            <p class="btn change-image">Change Image</p>
-            {{/if}}
         </section>
+
+        {{#if allowIconEdit}}
+        <section class=">
+            <p class="change-image">Change Image</p>
+        </section>
+            {{/if}}
         <section class="icon-model font">
-          
             <section class="image-container">
                 <img src="/images/avatars/1.svg" class="chooseImage" value="/images/avatars/1.svg" data-id="{{user_id}}"/>
                 <img src="/images/avatars/2.svg" class="chooseImage" value="/images/avatars/2.svg" data-id="{{user_id}}"/>
@@ -84,22 +86,22 @@
         <div class="userDetails">
             <div class="details">
                 <div class="description">
-                <h1>About Me</h1>
+                <p class="f500">About Me</p>
                 <p>{{stat.description}}</p>
 
             </div>
-                <h2>Age: {{stat.age}}</h2>
+                <p class="bit"><span class="f500">Age</span> | {{stat.age}}</p>
             </div>
 
             <div class="bodyStats">
-                <h2>Height: {{stat.height}}</h2>
-                <h2>Weight: {{stat.weight}}</h2>
+                <p class="bit"><span class="f500">Height</span> | {{stat.height}} m</p>
+                <p class="bit"><span class="f500">Weight</span> | {{stat.weight}}kg</p>
             </div>
             
             <div class="stats">
-                <h3>Max Bench: {{stat.max_bench}}kg</h3>
-                <h3>Max Deadlift: {{stat.max_deadlift}}kg</h3>
-                <h3>Max Squat: {{stat.max_squat}}kg</h3>
+                <p class="bit"><span class="f500">Max Bench</span> | {{stat.max_bench}}kg</p>
+                <p class="bit"><span class="f500">Max Deadlift</span>| {{stat.max_deadlift}}kg</p>
+                <p class="bit"><span class="f500">Max Squat</span> | {{stat.max_squat}}kg</p>
             </div>
         </div>
         

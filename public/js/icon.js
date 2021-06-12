@@ -23,11 +23,17 @@ const updateIcon = async (event) => {
           }
       }
   };
+
+  function noScroll() {
+    window.scrollTo(0, 0);
+  }
   
   $('.chooseImage').on('click', updateIcon);
   $('.change-image').on('click', () => {
     $('.icon-model').css('display', 'flex')
+    window.addEventListener('scroll', noScroll);
   })
   $('.back-button').on('click', () => {
     $('.icon-model').css('display', 'none')
+    window.removeEventListener('scroll', noScroll);
   })
