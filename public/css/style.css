@@ -314,31 +314,27 @@ header {
   justify-content: space-between;
   width: 100%;
   z-index: 999;
+  padding: 12px 25px;
 }
 
 .navBtn {
   position: relative;
   top: 40px;
-  padding-top: 10px;
   display: inline-block;
-  padding: 0.5em 1.7em;
-  margin: 0 0.1em 0.1em 0;
-  border: 0.13em solid rgba(212, 98, 98, 0.774);
+  padding: 0.7em 1.7em;
+  margin: 0px 10px;
   border-radius: 10px;
-  box-sizing: border-box;
   text-decoration: none;
-  font-weight: 300;
-  background-color: rgba(212, 98, 98, 0.226);
-  color: #6040f0;
-  text-shadow: 0 0.04em 0.04em rgba(255, 255, 255, 0.253);
+  background-color: rgba(255, 255, 255, 0.123);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.747);
   text-align: center;
-  transition: all 0.5s;
+  transition: all 100ms ease-in-out;
   cursor: pointer;
 }
 
 .navBtn:hover {
-  background-color: rgba(212, 98, 98, 0.774);
-  color: #2908a0;
+  background-color: rgba(255, 255, 255, 0.089);
 }
 
 .logo {
@@ -348,6 +344,11 @@ header {
   margin-bottom: 15px;
   width: 300px;
   cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+.logo:hover {
+  opacity: 90%;
 }
 
 .blog-para {
