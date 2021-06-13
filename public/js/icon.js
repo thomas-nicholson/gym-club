@@ -32,6 +32,8 @@ const updateIcon = async (event) => {
   $('.change-image').on('click', () => {
     $('.icon-model').css('display', 'flex')
     window.addEventListener('scroll', noScroll);
+    window.scrollTo(0, 0);
+
   })
   $('.back-button').on('click', () => {
     $('.icon-model').css('display', 'none')
