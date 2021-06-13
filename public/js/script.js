@@ -9,10 +9,10 @@ const searchHandler = async (event) => {
             body: JSON.stringify({ query }),
             headers: { 'Content-Type': 'application/json' },
         });
-
-        if (response.ok) {
-        } else {
-        }
+        const res = response.json()
+        res.then((body) => {
+            console.log(body);
+        });
     }
 };
 

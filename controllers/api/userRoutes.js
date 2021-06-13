@@ -106,9 +106,8 @@ router.post('/search', async (req,res) => {
           [Op.like] : "%"+ req.body.query +"%" }
         }
       });
-      const search = searchData.map((user) => user.get({ plain: true}));
-      console.log(search);
-    //res.status(200).json(search);
+    const search = searchData.map((user) => user.get({ plain: true}));
+    res.status(200).send(search);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
