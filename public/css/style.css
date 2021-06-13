@@ -1,14 +1,21 @@
 :root {
-/*Used for all titles: 
+/* Used for all titles: 
 Blog title, 
 Comment title, 
 Workout title, 
-Excercise title*/
---titleHeadings: 30px;
-/*Used for all body text below titles*/
---titleBodyText: 16px;
+Exercise title */
+--title-headings: 30px;
+--title-color: rgba(255, 255, 255, 0.877);
+/* Used for all body text below titles*
+Blog bodytext
+Comment bodytext
+Workout bodytext
+Exercise bodytext */
+--title-bodytext: 16px;
 /*Button text for white buttons*/
---mainTitleHeadings: 60px;
+--main-title-headings: 60px;
+--button-text: 16px;
+--button-text-color: black; 
 }
 
 body,
@@ -54,7 +61,8 @@ html {
 }
 
 .change-image {
-  font-size: 14px;
+  font-size: var(--button-text);
+  color: var(--button-text-color);
   cursor: pointer;
   transition: all 100ms ease-in-out;
 }
@@ -371,6 +379,7 @@ header {
 
 .blog-para {
   margin-bottom: 30px;
+  word-break: break-word;
 }
 
 .datey {
@@ -424,8 +433,10 @@ header {
 }
 
 .blog-heading {
+  word-break: break-word;
+  color: var(--title-color);
   margin: 20px;
-  font-size: 30px;
+  font-size: var(--title-headings);
   text-decoration: none;
   line-height: 3rem;
 }
@@ -511,7 +522,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: var(--titleHeadings);
+  font-size: var(--title-headings);
 }
 
 .commentSection h1 {
@@ -533,7 +544,7 @@ header {
 
 .comment {
   font-size: 15px;
-  word-break: break-all;
+  word-break: break-word;
   margin: 20px;
 }
 
@@ -811,7 +822,8 @@ input[type="text"] {
   border-style: unset;
   margin: 25px;
   width: 70%;
-  height: 200px;
+  /* ccc changed from height: 200px to min-height: 200px */
+  min-height: 200px;
   border-radius: 7px;
   padding: 40px;
   color: rgba(255, 255, 255, 0.877) !important;
@@ -826,12 +838,13 @@ input[type="text"] {
 
 .exerciseHeading {
   margin: 15px;
-  font-size: var(--titleHeadings);
+  font-size: var(--title-headings);
 }
 
 .routine {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .routine p {
@@ -935,7 +948,7 @@ input[type="text"] {
   }
 
   .blogHeading {
-    font-size: var(--mainTitleHeadings);
+    font-size: var(--main-title-headings);
     margin: 0;
   }
 
@@ -1062,7 +1075,7 @@ header {
 }
 
 .blogHeading {
-  font-size: var(--mainTitleHeadings);
+  font-size: var(--main-title-headings);
   margin: 0;
 }
 
