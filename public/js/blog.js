@@ -21,7 +21,7 @@ const newBlogHandler = async (event) => {
 const deleteBlogHandler = async (event) => {
     event.preventDefault();
 
-    const id = event.target.getAttribute('data-id')
+    const id = event.target.getAttribute('data-blogs-id')
     if (id) {
         const response = await fetch('/api/blog/delete/' +id, {
             method: 'DELETE',
