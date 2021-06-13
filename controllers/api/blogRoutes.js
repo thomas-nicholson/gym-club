@@ -19,17 +19,11 @@ router.post('/newpost', async (req, res) => {
 
  // This PUT allows you to update the blogs
 router.put('/update/:id', async (req, res) => {
+
     try {
-        const blogUpdate = await Blog.update(
-            {
-                title: req.body.title,
-                description: req.body.description,
-            },
-            {
-                where: {
-                    id: req.params.id
-                },
-            }
+        const blogUpdate = await Blog.increment('likes', {by: 1, where: {
+            id: req.params.id
+        }}
         )
         res.status(200).json(blogUpdate)
     } catch (err) {
