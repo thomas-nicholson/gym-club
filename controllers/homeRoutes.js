@@ -76,11 +76,19 @@ router.get('/blog/:id', auth,  async (req, res) => {
         });
     
         const blog = blogData.get({ plain: true });
+
+        let allowEdit;
+        if (blog.user_id == req.session.user_id) {
+            allowEdit = true;
+        } else {
+            allowEdit = false;
+        }
     
         res.render('blog', {
           ...blog,
           logged_in: req.session.logged_in,
-          user_id: req.session.user_id
+          user_id: req.session.user_id,
+          allowEdit
         });
       } catch (err) {
         res.status(500).json(err);

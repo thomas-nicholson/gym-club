@@ -28,6 +28,58 @@ const updateStatsHandler = async (event) => {
     }
 };
 
+const age = document.getElementById("Age");
+const height = document.getElementById("Height");
+const weight = document.getElementById("Weight");
+const deadlift = document.getElementById("Max-Deadlift");
+const bench = document.getElementById("Max-Bench-Press");
+const squat = document.getElementById("Max-Squat");
+const invalidChars = [
+  "-",
+  "+",
+  "e",
+];
+
+if (age) {
+    age.addEventListener("keydown", function(event) {
+        if (invalidChars.includes(event.key)) {
+          event.preventDefault();
+        }
+      });
+      
+      height.addEventListener("keydown", function(event) {
+          if (invalidChars.includes(event.key)) {
+            event.preventDefault();
+          }
+        });
+      
+      weight.addEventListener("keydown", function(event) {
+          if (invalidChars.includes(event.key)) {
+          event.preventDefault();
+          }
+      });
+      
+      deadlift.addEventListener("keydown", function(event) {
+          if (invalidChars.includes(event.key)) {
+          event.preventDefault();
+          }
+      });
+      
+      bench.addEventListener("keydown", function(event) {
+          if (invalidChars.includes(event.key)) {
+          event.preventDefault();
+          }
+      });
+      
+      squat.addEventListener("keydown", function(event) {
+          if (invalidChars.includes(event.key)) {
+          event.preventDefault();
+          }
+      });
+}
+
+
+
 // event listner on submit button, will run the updateStatsHandler 
 if (document.querySelector('#update-stats-button')) {
     document
