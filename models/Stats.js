@@ -13,30 +13,31 @@ Stats.init(
       },
       age: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       description: {
         type: DataTypes.STRING,
+        allowNull: true,
       },
       height: {
         type: DataTypes.DECIMAL(3, 2),
-        allowNull: false,
+        allowNull: true,
       },
       weight: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       max_bench: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       max_deadlift: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       max_squat: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       user_id: {
         type: DataTypes.INTEGER,

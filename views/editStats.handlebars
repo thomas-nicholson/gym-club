@@ -3,12 +3,10 @@
         <h1 class="blogHeading">Edit Your Profile!</h1>
         <div class="formDiv">
             <form>
-                <label for="Username">Username:</label><br>
-                <input type="text" id="Username" name="Username"><br><br>
-                <label for="Age">Age:</label><br>
-                <input type="text" id="Age" name="Age"><br><br>
                 <label for="Description">Description:</label><br>
                 <input type="text" id="Description" name="Description"><br><br>
+                <label for="Age">Age:</label><br>
+                <input type="text" id="Age" name="Age"><br><br>
                 <label for="Height">Height:</label><br>
                 <input type="text" id="Height" name="Height"><br><br>
                 <label for="Weight">Weight:</label><br>
@@ -20,7 +18,7 @@
                 <label for="Max-Squat">Max Squat:</label><br>
                 <input type="text" id="Max-Squat" name="Max-Squat"><br><br>
                 <a class="back-button" href="/user/{{id}}">Back</a>
-                <input class="back-button" type="submit" value="Submit">
+                <input class="back-button" type="submit" id="update-stats-button" value="Submit" data-post-id="{{id}}">
             </form>
         </div>
     </div>
