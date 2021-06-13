@@ -136,6 +136,7 @@ router.get('/userBlogs/:id', auth,  async (req, res) => {
                     model:User,
                 }]
             }],
+            order: [['id', 'DESC']]
         });
 
         const id = req.params.id
