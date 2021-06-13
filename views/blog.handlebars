@@ -1,6 +1,8 @@
 <main class="body"> 
       <div class="individual-blog2">
+        {{#if allowEdit}}
           <button id="delete-blog-button" class="back-button" data-blogs-id="{{id}}" user-id="{{user.id}}">Delete</button>
+          {{/if}}
           <div class="row2">
           <a class="aStyle" href="/user/{{user.id}}">{{user.username}}</a>
           <p class="dateCreated">{{format_time date_created}}</p>
