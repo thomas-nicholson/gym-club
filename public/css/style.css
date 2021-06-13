@@ -8,6 +8,7 @@ Excercise title*/
 /*Used for all body text below titles*/
 --titleBodyText: 16px;
 /*Button text for white buttons*/
+--mainTitleHeadings: 60px;
 
 }
 
@@ -933,6 +934,11 @@ input[type="text"] {
     height: 200px;
   }
 
+  .blogHeading {
+    font-size: var(--mainTitleHeadings);
+    margin: 0;
+  }
+
   .navBtn {
     position: inherit;
   }
@@ -1055,22 +1061,42 @@ header {
   display: flex;
 }
 
+.blogHeading {
+  font-size: var(--mainTitleHeadings);
+  margin: 0;
+}
+
+.logo {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
 }
 
 @media (orientation: landscape) {
   header {
-    height: 100px;
+    height: 80px;
     display: flex;
     flex-direction: column;
   }
 
+  .blogHeading {
+    font-size: var(--mainTitleHeadings);
+    margin: 0;
+  }
+
   .logo {
-    position: relative;
-    left: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 200px;
-    cursor: pointer;
-    transition: all 100ms ease-in-out;
+    display: none;
+  }
+
+  .navBtn {
+  }
+  
+  .navBtn:hover {
+    background-color: rgba(255, 255, 255, 0.089);
   }
 }
