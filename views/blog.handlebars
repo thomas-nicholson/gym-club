@@ -1,11 +1,10 @@
 <main class="body"> 
       <div class="individual-blog2">
           <button id="delete-blog-button" class="back-button" data-blogs-id="{{id}}" user-id="{{user.id}}">Delete</button>
-          <div class="row2">
-          <a class="aStyle" href="/user/{{user.id}}">{{user.username}}</a>
-          <p class="dateCreated">{{format_time date_created}}</p>
-        </div>
         <h1 class="blog-heading">{{title}}</h1>
+        <div class="row2">
+          <p class="blog-para datey">{{format_time date_created}} |  <a class="aStyle" href="/user/{{user.id}}">{{user.username}}</a></p>
+        </div>
         <div class="blog-para">
           <p>
             {{description}}

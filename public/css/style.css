@@ -1,6 +1,14 @@
 :root {
---heading: 30px;
---bodytext: 16px;
+/*Used for all titles: 
+Blog title, 
+Comment title, 
+Workout title, 
+Excercise title*/
+--titleHeadings: 30px;
+/*Used for all body text below titles*/
+--titleBodyText: 16px;
+/*Button text for white buttons*/
+
 }
 
 body,
@@ -501,7 +509,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: var(--heading);
+  font-size: var(--titleHeadings);
 }
 
 .commentSection h1 {
