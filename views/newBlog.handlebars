@@ -10,7 +10,7 @@
                 <label for="Description">Description:</label><br>
                 <input type="text" id="Description" name="Description"><br><br>
                 <a class="back-button" href="/userBlogs/{{user_id}}">Back</a>
-                <input class="back-button" type="submit" id="new-blog-button" value="Submit">
+                <input class="back-button" type="submit" id="new-blog-button" data-new-id="{{user_id}}" value="Submit">
                 
             </form>
         </div>
@@ -31,13 +31,5 @@
         easing: 'linear',
         autoplay: false
         })
-    
-
-    const btn = document.querySelector(".menuBtn")
-
-    btn.onclick = rotate.play
-      
 
   </script>
-
-  <script src="./js/blog.js"></script>
