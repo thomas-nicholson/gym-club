@@ -51,8 +51,9 @@ const updateWorkoutHandler = async (event) => {
 
 const deleteWorkoutHandler = async (event) => {
     event.preventDefault();
-
+    
         if (event.target.hasAttribute('data-id')) {
+            console.log("hllo")
             const id = event.target.getAttribute('data-id')
 
         const response = await fetch('/api/workout/delete/'+id, {
@@ -67,8 +68,6 @@ const deleteWorkoutHandler = async (event) => {
     }
 }
 
-if (document.querySelector('#deleteWorkout')) {
-    document
-      .querySelector('#deleteWorkout')
-      .addEventListener('click', deleteWorkoutHandler);
+if ($('.deleteWorkout')) {
+    $('.deleteWorkout').on('click', deleteWorkoutHandler)
 }

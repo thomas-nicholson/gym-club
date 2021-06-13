@@ -60,14 +60,37 @@ const deleteExerciseHandler = async (event) => {
     }
 };
 
+const sets = document.getElementById("Sets");
+const reps = document.getElementById("Reps");
+
+const invalidChar = [
+  "-",
+  "+",
+  "e",
+];
+
+if (sets) {
+    sets.addEventListener("keydown", function(event) {
+        if (invalidChar.includes(event.key)) {
+          event.preventDefault();
+        }
+      });
+      
+    reps.addEventListener("keydown", function(event) {
+        if (invalidChar.includes(event.key)) {
+        event.preventDefault();
+        }
+    });
+}
+
+
+
 if (document.querySelector('#new-exercise-button')) {
     document
       .querySelector('#new-exercise-button')
       .addEventListener('click', addExerciseHandler);
 }
 
-if (document.querySelector('#deleteExercise')) {
-    document
-      .querySelector('#deleteExercise')
-      .addEventListener('click', deleteExerciseHandler);
+if ($('.deleteExercise')) {
+    $('.deleteExercise').on('click', deleteExerciseHandler)
 }
