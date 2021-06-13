@@ -60,27 +60,30 @@ const deleteExerciseHandler = async (event) => {
     }
 };
 
-const Sets = document.getElementById("Sets");
+const sets = document.getElementById("Sets");
+const reps = document.getElementById("Reps");
 
-const Reps = document.getElementById("Reps");
-
-const invalidChars = [
+const invalidChar = [
   "-",
   "+",
   "e",
 ];
 
-Sets.addEventListener("keydown", function(event) {
-  if (invalidChars.includes(event.key)) {
-    event.preventDefault();
-  }
-});
+if (sets) {
+    sets.addEventListener("keydown", function(event) {
+        if (invalidChar.includes(event.key)) {
+          event.preventDefault();
+        }
+      });
+      
+    reps.addEventListener("keydown", function(event) {
+        if (invalidChar.includes(event.key)) {
+        event.preventDefault();
+        }
+    });
+}
 
-Reps.addEventListener("keydown", function(event) {
-    if (invalidChars.includes(event.key)) {
-      event.preventDefault();
-    }
-  });
+
 
 if (document.querySelector('#new-exercise-button')) {
     document
