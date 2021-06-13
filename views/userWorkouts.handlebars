@@ -5,14 +5,16 @@
   </div>
 
     <h1 class="blogHeading">Workouts!</h1>
-
+    {{log allowWorkoutEdit}}
     {{#if workouts.length}}
     {{#each workouts as |workout| }}
       
     
       <div class="individual-blog">
+        {{log ../this}}
+        {{#if ../allowWorkoutEdit}}
         <button class="deleteWorkout back-button" data-id="{{workout.id}}">Delete</button>
-        
+          {{/if}}
         <a href="/exercises/{{workout.id}}" class="headingA"><h1 class="blog-heading">{{workout.title}}</h1></a>
     
         <div class="blog-para">
