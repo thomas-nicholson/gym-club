@@ -136,6 +136,7 @@ router.get('/userBlogs/:id', auth,  async (req, res) => {
                     model:User,
                 }]
             }],
+            order: [['id', 'DESC']]
         });
 
         const id = req.params.id
@@ -165,7 +166,8 @@ router.get('/userWorkouts/:id', auth,  async (req, res) => {
         const userWorkouts = await Workout.findAll({
             where: {
                 user_id: req.params.id
-            }
+            },
+            order: [['id', 'DESC']]
         })
         const id = req.params.id
     
@@ -221,12 +223,20 @@ router.get('/newWorkout', auth,  async (req, res) => {
 })
 
 router.get('/editStats/:id', auth, correctUser,  async (req, res) => {
+    const userStats = await Stats.findAll({
+        where: {
+            user_id: req.params.id,
+        }
+    })
+
     const id = req.params.id
-    console.log(id)
+    const statsy = userStats.map((staty) => staty.get({ plain: true } ));
+    console.log(statsy[0])
     res.render('editStats', {
         id,
+        statsy,
         logged_in: req.session.logged_in,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
     })
 })
 
