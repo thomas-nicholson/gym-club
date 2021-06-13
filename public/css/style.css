@@ -481,6 +481,8 @@ header {
 
 
 .row2 {
+  text-align: center;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   margin-top: 10px;
