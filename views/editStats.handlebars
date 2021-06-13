@@ -4,19 +4,19 @@
         <div class="formDiv">
             <form>
                 <label for="Description">Description:</label><br>
-                <input type="text" id="Description" name="Description" value="{{statsy.description}}" required><br><br>
+                <input type="text" id="Description" name="Description" value="{{statsy.[0].description}}" required><br><br>
                 <label for="Age">Age:</label><br>
-                <input type="text" id="Age" name="Age" required><br><br>
+                <input min="5" type="number" id="Age" name="Age" value="{{statsy.[0].age}}" required><br><br>
                 <label for="Height">Height:</label><br>
-                <input type="text" id="Height" name="Height" required><br><br>
+                <input type="text" id="Height" name="Height" value="{{statsy.[0].height}}" required><br><br>
                 <label for="Weight">Weight:</label><br>
-                <input type="text" id="Weight" name="Weight" required><br><br>
+                <input min="0" type="number" id="Weight" name="Weight" value="{{statsy.[0].weight}}" required><br><br>
                 <label for="Max-Deadlift">Max Deadlift:</label><br>
-                <input type="text" id="Max-Deadlift" name="Max Deadlift" required><br><br>
+                <input min="0" type="number" id="Max-Deadlift" name="Max Deadlift" value="{{statsy.[0].max_deadlift}}" required><br><br>
                 <label for="Max-Bench-Press">Max Bench Press:</label><br>
-                <input type="text" id="Max-Bench-Press" name="Max-Bench-Press" required><br><br>
+                <input min="0" type="number" id="Max-Bench-Press" name="Max-Bench-Press" value="{{statsy.[0].max_bench}}"" required><br><br>
                 <label for="Max-Squat">Max Squat:</label><br>
-                <input type="text" id="Max-Squat" name="Max-Squat" required><br><br>
+                <input min="0" type="number" id="Max-Squat" name="Max-Squat" value="{{statsy.[0].max_squat}}" required><br><br>
                 <a class="back-button" href="/user/{{id}}">Back</a>
                 <input class="back-button" type="submit" id="update-stats-button" value="Submit" data-post-id="{{id}}">
             </form>
