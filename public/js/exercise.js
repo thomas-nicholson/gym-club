@@ -66,8 +66,6 @@ if (document.querySelector('#new-exercise-button')) {
       .addEventListener('click', addExerciseHandler);
 }
 
-if (document.querySelector('#deleteExercise')) {
-    document
-      .querySelector('#deleteExercise')
-      .addEventListener('click', deleteExerciseHandler);
+if ($('.deleteExercise')) {
+    $('.deleteExercise').on('click', deleteExerciseHandler)
 }
