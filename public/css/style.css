@@ -825,7 +825,7 @@ input[type="text"] {
 
 .exerciseHeading {
   margin: 15px;
-  font-size: 20px;
+  font-size: var(--titleHeadings);
 }
 
 .routine {
@@ -1045,5 +1045,32 @@ input[type="text"] {
     height: auto;
     align-items: center;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 280px) {
+
+header {
+  height: 250px;
+  display: flex;
+}
+
+}
+
+@media (orientation: landscape) {
+  header {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo {
+    position: relative;
+    left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 200px;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
   }
 }
