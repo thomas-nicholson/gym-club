@@ -18,8 +18,31 @@ const newBlogHandler = async (event) => {
     }
 };
 
+const deleteBlogHandler = async (event) => {
+    event.preventDefault();
+
+    const id = event.target.getAttribute('data-id')
+    if (id) {
+        const response = await fetch('/api/blog/delete/' +id, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if(response.ok) {
+            document.location.reload();
+        } else {
+            alert(response.statusText);
+        }
+    }
+};
+
 if (document.querySelector('#new-blog-button')) {
     document
       .querySelector('#new-blog-button')
       .addEventListener('click', newBlogHandler);
-}
+};
+
+if (document.querySelector('#delete-blog-button')) {
+    document
+        .querySelector('#delete-blog-button')
+        .addEventListener('click', deleteBlogHandler)
+};
