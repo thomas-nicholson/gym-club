@@ -467,7 +467,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 100ms ease-in-out;
 }
 
@@ -501,7 +501,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  font-size: var(--heading);
 }
 
 .commentSection h1 {
