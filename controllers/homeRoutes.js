@@ -166,7 +166,8 @@ router.get('/userWorkouts/:id', auth,  async (req, res) => {
         const userWorkouts = await Workout.findAll({
             where: {
                 user_id: req.params.id
-            }
+            },
+            order: [['id', 'DESC']]
         })
         const id = req.params.id
     
