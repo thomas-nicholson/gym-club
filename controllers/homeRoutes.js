@@ -221,12 +221,20 @@ router.get('/newWorkout', auth,  async (req, res) => {
 })
 
 router.get('/editStats/:id', auth, correctUser,  async (req, res) => {
+    const userStats = await Stats.findAll({
+        where: {
+            user_id: req.params.id,
+        }
+    })
+
     const id = req.params.id
-    console.log(id)
+    const statsy = userStats.map((staty) => staty.get({ plain: true } ));
+    
     res.render('editStats', {
         id,
+        statsy,
         logged_in: req.session.logged_in,
-        user_id: req.session.user_id
+        user_id: req.session.user_id,
     })
 })
 

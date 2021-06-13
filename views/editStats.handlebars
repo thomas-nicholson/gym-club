@@ -4,19 +4,19 @@
         <div class="formDiv">
             <form>
                 <label for="Description">Description:</label><br>
-                <input type="text" id="Description" name="Description"><br><br>
+                <input type="text" id="Description" name="Description" value="{{statsy.description}}" required><br><br>
                 <label for="Age">Age:</label><br>
-                <input type="text" id="Age" name="Age"><br><br>
+                <input type="text" id="Age" name="Age" required><br><br>
                 <label for="Height">Height:</label><br>
-                <input type="text" id="Height" name="Height"><br><br>
+                <input type="text" id="Height" name="Height" required><br><br>
                 <label for="Weight">Weight:</label><br>
-                <input type="text" id="Weight" name="Weight"><br><br>
+                <input type="text" id="Weight" name="Weight" required><br><br>
                 <label for="Max-Deadlift">Max Deadlift:</label><br>
-                <input type="text" id="Max-Deadlift" name="Max Deadlift"><br><br>
+                <input type="text" id="Max-Deadlift" name="Max Deadlift" required><br><br>
                 <label for="Max-Bench-Press">Max Bench Press:</label><br>
-                <input type="text" id="Max-Bench-Press" name="Max-Bench-Press"><br><br>
+                <input type="text" id="Max-Bench-Press" name="Max-Bench-Press" required><br><br>
                 <label for="Max-Squat">Max Squat:</label><br>
-                <input type="text" id="Max-Squat" name="Max-Squat"><br><br>
+                <input type="text" id="Max-Squat" name="Max-Squat" required><br><br>
                 <a class="back-button" href="/user/{{id}}">Back</a>
                 <input class="back-button" type="submit" id="update-stats-button" value="Submit" data-post-id="{{id}}">
             </form>
