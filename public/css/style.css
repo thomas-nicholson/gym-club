@@ -9,7 +9,6 @@ Excercise title*/
 --titleBodyText: 16px;
 /*Button text for white buttons*/
 --mainTitleHeadings: 60px;
-
 }
 
 body,
@@ -534,6 +533,7 @@ header {
 
 .comment {
   font-size: 15px;
+  word-break: break-all;
   margin: 20px;
 }
 
@@ -1077,7 +1077,7 @@ header {
 
 }
 
-@media (orientation: landscape) {
+/* @media (orientation: landscape) {
   header {
     height: 80px;
     display: flex;
@@ -1099,4 +1099,4 @@ header {
   .navBtn:hover {
     background-color: rgba(255, 255, 255, 0.089);
   }
-}
+} */
