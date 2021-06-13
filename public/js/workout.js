@@ -3,6 +3,7 @@ const addWorkoutHandler = async (event) => {
 
     const title = document.querySelector('#Title').value.trim();
     const description = document.querySelector('#Description').value.trim();
+    const id = event.target.getAttribute('data-id');
 
     if (title && description) {
         const response = await fetch('/api/workout/add', {
@@ -12,7 +13,7 @@ const addWorkoutHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.reload();
+            document.location.replace(`/userWorkouts/${id}`)
         } else {
             alert(response.statusText);
         }
