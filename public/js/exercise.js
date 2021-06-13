@@ -60,6 +60,28 @@ const deleteExerciseHandler = async (event) => {
     }
 };
 
+const Sets = document.getElementById("Sets");
+
+const Reps = document.getElementById("Reps");
+
+const invalidChars = [
+  "-",
+  "+",
+  "e",
+];
+
+Sets.addEventListener("keydown", function(event) {
+  if (invalidChars.includes(event.key)) {
+    event.preventDefault();
+  }
+});
+
+Reps.addEventListener("keydown", function(event) {
+    if (invalidChars.includes(event.key)) {
+      event.preventDefault();
+    }
+  });
+
 if (document.querySelector('#new-exercise-button')) {
     document
       .querySelector('#new-exercise-button')
