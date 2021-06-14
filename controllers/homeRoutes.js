@@ -74,6 +74,7 @@ router.get('/blog/:id', auth,  async (req, res) => {
                 }],
                 order: [['id', 'DESC']],
             }],
+            order: [['id', 'DESC']],
         });
     
         const blog = blogData.get({ plain: true });
