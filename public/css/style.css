@@ -9,6 +9,7 @@ Exercise title */
 --main-color-heading: rgba(5, 3, 36, 0.884);
 --color-heading: rgb(116, 57, 255);
 --color-heading-hover: rgb(116, 57, 255, 0.5);
+--form-background-color: rgba(116, 57, 255, 0.2);
 /* Used for all body text below titles *
 Blog bodytext
 Comment bodytext
@@ -28,8 +29,21 @@ Exercise bodytext */
   line-height: 3rem;
 }
 
-.input-box {
+.body-text-forms {
+  color: var(--main-color-heading);
+  font-size: var(--body-text);
   background-color: red;
+}
+
+.input-box {
+  background-color: var(--form-background-color);
+  font-size: var(--body-text);
+  color: var(--color-heading);
+  height: 1.5 rem;
+  margin: 10px;
+  border: 2px solid rgba(116, 57, 255, 0.473);
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(116, 57, 255, 0.2);
 }
 
 body,
