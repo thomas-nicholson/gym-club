@@ -1,22 +1,21 @@
 <main class="body"> 
   <h1 class="blogHeading">Exercises!</h1>
-  <div class="exerciseRow">
-    <div class="newExerciseContainer">
+  <div class="exercise-container">
+
           <div class="formDiv">
               <form class="firstForm">
                   <label class="body-text-forms" for="Exercise">Exercise Name</label><br>
-                    <input class="input-box"type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
+                    <input class="input-box" type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
                     <label class="body-text-forms" for="Sets">Sets</label><br>
-                    <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
+                    <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
                     <label class="body-text-forms" for="Reps">Reps</label><br>
-                    <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
+                    <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
                     <a class="back-button" href="/userWorkouts/{{user_id}}">Back</a>
                     <input class="back-button" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
                 </form>
             </div>
-        </div>
 
-        <div class="exerciseColumn">
+        <div class="exercise-box-container">
           {{#if exercises.length}}
           {{#each exercises as |exercise| }}
             <div class="individual-exercise">
@@ -33,7 +32,7 @@
             </div>
           {{/each}}
           {{else}}
-          <h2>You currently have no exercises, add an exercise using the form on this page!</h2>
+          <h2 class="exercise-message">You currently have no exercises, add an exercise using the form on this page!</h2>
           {{/if}}
         </div>
   </div>

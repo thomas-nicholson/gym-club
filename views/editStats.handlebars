@@ -3,19 +3,19 @@
         <h1 class="blogHeading">Edit Your Profile!</h1>
         <div class="formDiv">
             <form>
-                <label class="body-text-forms" for="Description">Description:</label><br>
+                <label class="profile-stats" for="Description">Description:</label><br>
                 <input class="input-box" type="text" maxlength="80" id="Description" name="Description" value="{{statsy.[0].description}}" required><br><br>
-                <label class="body-text-forms" for="Age">Age:</label><br>
+                <label class="profile-stats" for="Age">Age:</label><br>
                 <input class="input-box" min="5" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Age" name="Age" value="{{statsy.[0].age}}" required><br><br>
-                <label class="body-text-forms" for="Height">Height:</label><br>
+                <label class="profile-stats" for="Height">Height:</label><br>
                 <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;"  type="number" id="Height" name="Height" value="{{statsy.[0].height}}" required><br><br>
-                <label class="body-text-forms" for="Weight">Weight:</label><br>
+                <label class="profile-stats" for="Weight">Weight:</label><br>
                 <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Weight" name="Weight" value="{{statsy.[0].weight}}" required><br><br>
-                <label class="body-text-forms" for="Max-Deadlift">Max Deadlift:</label><br>
+                <label class="profile-stats" for="Max-Deadlift">Max Deadlift:</label><br>
                 <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Max-Deadlift" name="Max Deadlift" value="{{statsy.[0].max_deadlift}}" required><br><br>
-                <label class="body-text-forms" for="Max-Bench-Press">Max Bench Press:</label><br>
+                <label class="profile-stats" for="Max-Bench-Press">Max Bench Press:</label><br>
                 <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Max-Bench-Press" name="Max-Bench-Press" value="{{statsy.[0].max_bench}}" required><br><br>
-                <label class="body-text-forms" for="Max-Squat">Max Squat:</label><br>
+                <label class="profile-stats" for="Max-Squat">Max Squat:</label><br>
                 <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Max-Squat" name="Max-Squat" value="{{statsy.[0].max_squat}}" required><br><br>
                 <a class="back-button" href="/user/{{id}}">Back</a>
                 <input class="back-button" type="submit" id="update-stats-button" value="Submit" data-post-id="{{id}}">
