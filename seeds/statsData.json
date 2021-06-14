@@ -2,7 +2,7 @@
     {
       "age": 25,
       "description": "Yay this is describing me!",
-      "height": 1.88,
+      "height": 188,
       "weight": 72,
       "max_bench": 101,
       "max_deadlift": 82,
@@ -12,7 +12,7 @@
     {
       "age": 26,
       "description": "Yay this is describing me!",
-      "height": 1.62,
+      "height": 162,
       "weight": 86,
       "max_bench": 82,
       "max_deadlift": 91,
@@ -22,7 +22,7 @@
     {
       "age": 27,
       "description": "Yay this is describing me!",
-      "height": 1.75,
+      "height": 175,
       "weight": 63,
       "max_bench": 98,
       "max_deadlift": 145,
@@ -32,7 +32,7 @@
     {
       "age": 28,
       "description": "Yay this is describing me!",
-      "height": 1.78,
+      "height": 178,
       "weight": 91,
       "max_bench": 67,
       "max_deadlift": 103,
@@ -42,7 +42,7 @@
     {
       "age": 29,
       "description": "Yay this is describing me!",
-      "height": 1.83,
+      "height": 183,
       "weight": 120,
       "max_bench": 238,
       "max_deadlift": 145,
