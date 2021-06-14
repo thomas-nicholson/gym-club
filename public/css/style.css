@@ -53,14 +53,14 @@ Exercise bodytext */
 }
 
 .input-box {
-  background-color: var(--form-background-color);
+  background-color: rgba(220, 220, 220, 0.329);
   font-size: var(--body-text);
-  color: var(--color-heading);
-  height: 1.5 rem;
+  color: #333333;
+  height: 50px;
+  padding: 10px;
   margin: 10px;
-  border: 2px solid rgba(116, 57, 255, 0.473);
+  border: none;
   border-radius: 8px;
-  box-shadow: 0 0 25px rgba(116, 57, 255, 0.2);
 }
 
 .input-box-exercise {
@@ -346,7 +346,7 @@ html {
 
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: rgba(116, 57, 255, 0.623);
+  color: #7439ff9f;
 }
 ::-moz-placeholder {
   /* Firefox 19+ */
@@ -475,6 +475,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .body a:hover {
@@ -521,23 +522,6 @@ header {
   width: 100%;
 }
 
-/* Changed comment section to be the same as blog */
-.commentSection {
-  text-align: center;
-  border-style: unset;
-  margin: 25px;
-  width: 55%;
-  border-radius: 7px;
-  padding: 40px;
-  color: rgba(255, 255, 255, 0.877) !important;
-  background-color: rgba(5, 3, 36, 0.884);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: var(--title-headings);
-}
-
 .commentSection h1 {
   margin-top: 10px;
 }
@@ -548,17 +532,15 @@ header {
 
 .commentSection a:hover {
   text-decoration: none;
-  color: #8643d3;
+  color: white;
 }
 
 .commentHeader {
-  font-size: var(--title-headings);
-  color: var(--title-color);
-  margin-bottom: 10px;
+  color: white;
 }
 
 .commentHeader :nth-child(odd) {
-  color: var(--color-heading);
+  color: #333333;
 }
 
 .commentHeader :hover {
@@ -567,9 +549,36 @@ header {
 
 .comment {
   font-size: var(--body-text);
-  color: var(--title-color);
+  color: #333333;
   word-break: break-word;
-  margin: 20px;
+  background-color: rgba(220, 220, 220, 0.329);
+  border-radius: 8px;
+  margin: 25px 35px;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 1.5rem;
+  position: relative;
+}
+
+.comment-picture {
+  width: 50px;
+}
+
+.real-comment {
+  padding-left: 15px;
+  font-size: 15px;
+}
+
+.name-comment {
+  position: absolute;
+  bottom: -25px;
+  left: 18px;
+  font-size: 11px;
+  opacity: 30%;
 }
 
 /* .addcomment {
@@ -912,14 +921,7 @@ header {
   .userBtns {
     flex-direction: row;
   }
-  .back-button {
-    font-size: 12px;
-    font-weight: bolder;
-    padding: 5px;
-    margin: 5px;
-  }
-  .userContainer {
-  }
+
   .userDetails {
     padding: 20px;
     margin: 20px;

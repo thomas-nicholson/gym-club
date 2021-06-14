@@ -87,7 +87,7 @@
 
 .addcomment {
   width: 60%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 #comment-form {
@@ -95,22 +95,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.commentSection {
-  text-align: center;
-  border-style: unset;
-  margin: 25px;
-  width: 55%;
-  border-radius: 7px;
-  padding: 40px;
-  color: rgba(255, 255, 255, 0.877) !important;
-  background-color: rgba(5, 3, 36, 0.884);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: var(--title-headings);
 }
 
 .commentSection h1 {
@@ -124,27 +108,6 @@
 .commentSection a:hover {
   text-decoration: none;
   color: #8643d3;
-}
-
-.commentHeader {
-  font-size: var(--title-headings);
-  color: var(--title-color);
-  margin-bottom: 10px;
-}
-
-.commentHeader :nth-child(odd) {
-  color: var(--color-heading);
-}
-
-.commentHeader :hover {
-  color: var(--color-heading-hover);
-}
-
-.comment {
-  font-size: var(--body-text);
-  color: var(--title-color);
-  word-break: break-word;
-  margin: 20px;
 }
 
 #comment-box {
