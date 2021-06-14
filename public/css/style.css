@@ -791,6 +791,7 @@ input[type="text"] {
 
 .formDiv form {
   margin: 30px;
+  width: 100%;
 }
 
 .formDiv form label {
@@ -908,7 +909,7 @@ input[type="text"] {
 
 .newExerciseContainer {
   margin-top: 20px;
-  width: 50%;
+  width: 100%;
   text-align: center;
   justify-content: center;
   display: flex;
@@ -916,19 +917,25 @@ input[type="text"] {
 }
 
 .exerciseRow {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
+  padding: 10px;
+  width: 100%; */
   width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  
 }
 
 .exerciseColumn {
   /* margin-top: 50px; */
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  /* flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 50%;
+  align-items: center; */
+  width: 100%;
 }
 
 /* Edit Profile Page */
@@ -1003,6 +1010,9 @@ input[type="text"] {
     height: 200px;
   }
 
+  .blog-layout {
+    grid-template-columns:1fr;
+  }
   /* .blogHeading {
     font-size: var(--main-headings);
     margin: 0;
@@ -1056,7 +1066,8 @@ input[type="text"] {
 
 @media (max-width: 830px) {
   .exerciseRow {
-    display: block;
+    display: flex;
+    justify-content: center;
     /* justify-content: center;
     border-style: solid;
     flex-direction: column; */
@@ -1081,7 +1092,8 @@ input[type="text"] {
 
 @media screen and (max-width: 375px) {
   .gym-club-img {
-    width: 250px;
+    /* width: 250px; */
+    width: 1/3fr;
   }
 
   #email-login,
