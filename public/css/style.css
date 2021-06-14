@@ -1,24 +1,24 @@
 :root {
-/* Used for all titles within purple boxes: 
+  /* Used for all titles within purple boxes: 
 Blog title, 
 Comment title, 
 Workout title, 
 Exercise title */
---title-headings: 30px;
---title-color: rgba(255, 255, 255, 0.877);
---main-color-heading: rgba(5, 3, 36, 0.884);
---color-heading: rgb(116, 57, 255);
---color-heading-hover: rgb(116, 57, 255, 0.5);
---form-background-color: rgba(116, 57, 255, 0.2);
-/* Used for all body text below titles
+  --title-headings: 30px;
+  --title-color: rgba(255, 255, 255, 0.877);
+  --main-color-heading: rgba(5, 3, 36, 0.884);
+  --color-heading: rgb(116, 57, 255);
+  --color-heading-hover: rgb(116, 57, 255, 0.5);
+  --form-background-color: rgba(116, 57, 255, 0.2);
+  /* Used for all body text below titles
 Blog bodytext
 Comment bodytext
 Workout bodytext
 Exercise bodytext */
---body-text: 16px;
---main-headings: 80px;
---button-text: 16px;
---button-text-color: black; 
+  --body-text: 16px;
+  --main-headings: 80px;
+  --button-text: 16px;
+  --button-text-color: black;
 }
 
 .heading {
@@ -37,7 +37,7 @@ Exercise bodytext */
   padding: 0px;
   border: 0px;
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
 
 .body-text {
@@ -72,9 +72,7 @@ Exercise bodytext */
   width: 60%;
 }
 
-
 body,
-
 html {
   background-color: rgb(5, 3, 36);
   width: 100%;
@@ -264,6 +262,15 @@ html {
   width: 120px;
 }
 
+.like-button {
+  width: 25px;
+  cursor: pointer;
+}
+
+.like-button-back {
+  background-color: #fdfdfd00;
+}
+
 .signUp {
   width: 120px;
 }
@@ -423,7 +430,6 @@ header {
 
 .logo {
   position: relative;
-  left: 20px;
   margin-top: 15px;
   margin-bottom: 15px;
   width: 300px;
@@ -500,7 +506,8 @@ header {
 .dateCreated {
   text-align: center;
   width: 50%;
-} */
+}
+*/
 
 /* Individual Blog */
 
@@ -544,7 +551,7 @@ header {
   color: #8643d3;
 }
 
-.commentHeader{
+.commentHeader {
   font-size: var(--title-headings);
   color: var(--title-color);
   margin-bottom: 10px;
@@ -579,9 +586,8 @@ header {
   outline: none;
   margin-right: 3px;
   width: 60%;
-} */
-
-.btn {
+}
+*/ .btn {
   padding-top: 10px;
   display: inline-block;
   padding: 0.5em 1.7em;
@@ -743,7 +749,8 @@ header {
   flex-direction: column;
 }
 
-#Title, #Description {
+#Title,
+#Description {
   margin-top: 15px;
   border-radius: 10px;
   min-height: 40px;
@@ -777,7 +784,9 @@ header {
 
 /* Exercises page */
 
-#Exercise, #Sets, #Reps {
+#Exercise,
+#Sets,
+#Reps {
   min-height: 40px;
   width: 60%;
 }
@@ -817,7 +826,7 @@ header {
 }
 
 .exercise-container {
-  background-color: rgb(0,0,0,0.5);
+  background-color: rgb(0, 0, 0, 0.5);
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -847,14 +856,36 @@ header {
 
 /* ================================================== media querys ================================================== */
 @media (max-width: 1024px) {
-  header {flex-direction: column;justify-content: center; align-items: center;height: 200px;}
-  .heading {font-size: 60px;margin: 20px;}
-  .exercise-container {grid-template-columns: 2fr 3fr;}
-  .exercise-box-container {grid-template-columns: 1fr;}
-  .blog-layout {grid-template-columns: 1fr;} 
-  .navBtn {position: inherit;}
-  .logo {margin-top: 10px;margin-bottom: 10px; width: 200px;}
-  .menu {right: 0px;}
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  .heading {
+    font-size: 60px;
+    margin: 20px;
+  }
+  .exercise-container {
+    grid-template-columns: 2fr 3fr;
+  }
+  .exercise-box-container {
+    grid-template-columns: 1fr;
+  }
+  .blog-layout {
+    grid-template-columns: 1fr;
+  }
+  .navBtn {
+    position: inherit;
+  }
+  .logo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+  .menu {
+    right: 0px;
+  }
 }
 
 @media (max-width: 830px) {
@@ -874,25 +905,37 @@ header {
 }
 
 @media screen and (max-width: 424px) {
-  .heading {font-size: 30px; margin:10px;}
-  .userBtns {flex-direction: row;}
-  .back-button {font-size: 12px; font-weight: bolder; padding: 5px; margin: 5px;}
+  .heading {
+    font-size: 30px;
+    margin: 10px;
+  }
+  .userBtns {
+    flex-direction: row;
+  }
+  .back-button {
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 5px;
+    margin: 5px;
+  }
   .userContainer {
-  
   }
   .userDetails {
-    padding:20px;
+    padding: 20px;
     margin: 20px;
     width: 90%;
   }
   .bit {
-    padding:5px;
-    margin:5px;
+    padding: 5px;
+    margin: 5px;
   }
-  .stats, .bodyStats{
+  .stats,
+  .bodyStats {
     flex-direction: column;
   }
-  .homeNav {display: none;}
+  .homeNav {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -943,34 +986,32 @@ header {
 }
 
 @media screen and (max-width: 280px) {
+  .exercise-container {
+    grid-template-rows: 0fr;
+  }
 
-.exercise-container {
-  grid-template-rows: 0fr;
-}
+  .exercise-box-container {
+    grid-template-columns: 0fr;
+  }
 
-.exercise-box-container {
-  grid-template-columns: 0fr;
-}
+  header {
+    height: 200px;
+    display: flex;
+  }
 
-header {
-  height: 200px;
-  display: flex;
-}
+  .blogHeading {
+    font-size: var(--main-headings);
+    margin: 0;
+  }
 
-.blogHeading {
-  font-size: var(--main-headings);
-  margin: 0;
-}
-
-.logo {
-  position: relative;
-  margin-top: 10x;
-  margin-bottom: 10px;
-  width: 150px;
-  cursor: pointer;
-  transition: all 100ms ease-in-out;
-}
-
+  .logo {
+    position: relative;
+    margin-top: 10x;
+    margin-bottom: 10px;
+    width: 150px;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+  }
 }
 
 /* @media (orientation: landscape) {

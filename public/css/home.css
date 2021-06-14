@@ -4,7 +4,6 @@
   width: 95%;
   text-align: center;
 }
-
 .newBlogContainer {
   width: 50%;
   text-align: center;
@@ -20,7 +19,7 @@
   margin: 25px auto;
   width: 90%;
   border-radius: 7px;
-  padding: 40px;
+  padding: 60px;
   color: rgba(255, 255, 255, 0.877) !important;
   background-color: rgba(5, 3, 36, 0.884);
   display: flex;
