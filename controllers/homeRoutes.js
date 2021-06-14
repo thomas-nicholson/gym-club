@@ -71,8 +71,10 @@ router.get('/blog/:id', auth,  async (req, res) => {
                 model: Comment,
                 include: [{
                     model:User,
-                }]
+                }],
+                order: [['id', 'DESC']],
             }],
+            order: [['id', 'DESC']],
         });
     
         const blog = blogData.get({ plain: true });
@@ -142,7 +144,8 @@ router.get('/userBlogs/:id', auth,  async (req, res) => {
                 model: Comment,
                 include: [{
                     model:User,
-                }]
+                }],
+                order: [['id', 'DESC']],
             }],
             order: [['id', 'DESC']]
         });
@@ -239,7 +242,6 @@ router.get('/editStats/:id', auth, correctUser,  async (req, res) => {
 
     const id = req.params.id
     const statsy = userStats.map((staty) => staty.get({ plain: true } ));
-    console.log(statsy[0])
     res.render('editStats', {
         id,
         statsy,
