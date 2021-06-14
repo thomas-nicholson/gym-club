@@ -1,40 +1,46 @@
 <main class="body"> 
   <h1 class="blogHeading">Exercises!</h1>
-  <div class="exercise-container">
-
-          <div class="formDiv">
-              <form class="firstForm">
-                <label class="body-text-forms" for="Exercise">Exercise Name</label><br>
-                <input class="input-box" type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
+  <div class="exerciseRow">
+    {{#if allowExerciseEdit}}
+    <div class="newExerciseContainer">
+      <div class="formDiv">
+          <form class="firstForm">
+              <label class="body-text-forms" for="Exercise">Exercise Name</label><br>
+                <input class="input-box"type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
                 <label class="body-text-forms" for="Sets">Sets</label><br>
-                <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
+                <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
                 <label class="body-text-forms" for="Reps">Reps</label><br>
-                <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
+                <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
                 <a class="back-button" href="/userWorkouts/{{user_id}}">Back</a>
                 <input class="back-button" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
-              </form>
-            </div>
-
-        <div class="exercise-box-container">
-          {{#if exercises.length}}
-          {{#each exercises as |exercise| }}
-            <div class="individual-exercise">
-              <button class="deleteExercise back-button" data-id="{{exercise.id}}">Delete</button>
-              <div class="blog-para">
-                <h2 class="exerciseHeading">{{exercise.exercise}}</h2>
-                
-                <div class="routine">
-                    <p>Sets: {{exercise.sets}}</p>
-                    <p>Reps: {{exercise.reps}}</p>
-                </div>
-                
-              </div>
-            </div>
-          {{/each}}
-          {{else}}
-          <h2 class="exercise-message">You currently have no exercises, add an exercise using the form on this page!</h2>
-          {{/if}}
+            </form>
         </div>
+    </div>
+    {{/if}}
+    <div class="exerciseColumn">
+      {{#if exercises.length}}
+      {{#each exercises as |exercise| }}
+        <div class="individual-exercise">
+          {{#if ../allowExerciseEdit}}
+          <button class="deleteExercise back-button" data-id="{{exercise.id}}">Delete</button>
+          {{/if}}
+          <div class="blog-para">
+            <h2 class="exerciseHeading">{{exercise.exercise}}</h2>
+            
+            <div class="routine">
+                <p>Sets: {{exercise.sets}}</p>
+                <p>Reps: {{exercise.reps}}</p>
+            </div>
+            
+          </div>
+        </div>
+      {{/each}}
+      {{else}}
+      {{#if allowExerciseEdit}}
+      <h2>You currently have no exercises, add an exercise using the form on this page!</h2>
+      {{/if}}
+      {{/if}}
+    </div>
   </div>
     
     

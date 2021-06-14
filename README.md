@@ -7,7 +7,7 @@ A gym blog where gym junkies can meet, greet and share their insights and workou
 ## Deployment
 
 Gym Club has been deployed here:
-[Gym Club](https://github.com/thomas-nicholson/gym-club)
+[Gym Club](https://gym-club-28324.herokuapp.com)
 
 ## About
 
@@ -27,19 +27,19 @@ The dependencies will all be in the package.json file. Please simply use "npm i"
 
 This is the page that most users are redirected to when they need to create an account or login
 
-![Welcome](./public/images/welcome-page.png)
+![Welcome](./public/Images/welcome-page.png)
 
 ## Login
 
 This is the login page
 
-![Login](./public/images/login-page.png)
+![Login](./public/Images/login-page.png)
 
 ## Signup
 
 This is the signup page
 
-![Signup](./public/images/signup-page.png)
+![Signup](./public/Images/signup-page.png)
 
 ## Test
 
