@@ -6,6 +6,7 @@ Workout title,
 Exercise title */
 --title-headings: 30px;
 --title-color: rgba(255, 255, 255, 0.877);
+--main-color-heading: rgba(5, 3, 36, 0.884);
 --color-heading: rgb(116, 57, 255);
 --color-heading-hover: rgb(116, 57, 255, 0.5);
 /* Used for all body text below titles *
@@ -21,10 +22,14 @@ Exercise bodytext */
 }
 
 .body-text {
-  color: black;
+  color: var(--main-color-heading);
   font-size: var(--body-text);
   text-decoration: none;
   line-height: 3rem;
+}
+
+.input-box {
+  background-color: red;
 }
 
 body,
@@ -710,7 +715,7 @@ input[type="text"] {
   font-size: var(--main-headings);
   padding-top: 35px;
   margin: 40px;
-  color: rgba(5, 3, 36, 0.884);
+  color: var(--main-color-heading);
 }
 
 #headingBlog {
