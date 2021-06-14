@@ -98,14 +98,18 @@ router.post('/logout', (req, res) => {
 router.post('/search', async (req,res) => {
   try {
     const searchData = await User.findAll({
+      attributes: {
+        exclude: ["email", "password", ]
+      },
       where: {
         username: { 
-          [Op.like] : "%"+ req.body.searchQuery +"%" }
+          [Op.like] : "%"+ req.body.query +"%" }
         }
       });
-    res.status(200).json(searchData);
+    const search = searchData.map((user) => user.get({ plain: true}));
+    res.status(200).send(search);
   } catch (err) {
-    log(err);
+    console.log(err);
     res.status(400).json(err);
   }
 })
