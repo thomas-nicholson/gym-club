@@ -184,6 +184,7 @@ router.get('/userWorkouts/:id', auth,  async (req, res) => {
     
         const workouts = userWorkouts.map((workout) => workout.get({ plain: true}));
 
+
         let allowWorkoutEdit;
         if (req.params.id == req.session.user_id) {
             allowWorkoutEdit = true;
@@ -208,15 +209,28 @@ router.get('/exercises/:id', auth,  async (req, res) => {
         const workoutExercises = await Exercise.findAll({
             where: {
                 workout_id: req.params.id
-            }
+            },
+            include: {
+                model: Workout,
+            },
         })
         const id = req.params.id
     
         const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
 
+        console.log(exercises);
+
+        let allowExerciseEdit;
+        if (exercises[0].workout.user_id == req.session.user_id) {
+            allowExerciseEdit = true;
+        } else {
+            allowExerciseEdit = false;
+        }
+
         res.render('exercises', {
           exercises,
           id,
+          allowExerciseEdit,
           logged_in: req.session.logged_in,
           user_id: req.session.user_id
         });
