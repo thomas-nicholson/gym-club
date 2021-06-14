@@ -71,7 +71,8 @@ router.get('/blog/:id', auth,  async (req, res) => {
                 model: Comment,
                 include: [{
                     model:User,
-                }]
+                }],
+                order: [['id', 'DESC']],
             }],
         });
     
@@ -142,7 +143,8 @@ router.get('/userBlogs/:id', auth,  async (req, res) => {
                 model: Comment,
                 include: [{
                     model:User,
-                }]
+                }],
+                order: [['id', 'DESC']],
             }],
             order: [['id', 'DESC']]
         });
