@@ -58,6 +58,16 @@ Exercise bodytext */
   box-shadow: 0 0 25px rgba(116, 57, 255, 0.2);
 }
 
+.input-box-exercise {
+  margin-top: 15px;
+  border-radius: 10px;
+  min-height: 40px;
+  outline: none;
+  margin-right: 3px;
+  width: 60%;
+}
+
+
 body,
 
 html {
@@ -609,11 +619,9 @@ header {
   width: 60%;
   margin-bottom: 30px;
 }
-input[type="text"] {
+/* input[type="text"] {
   font-size: var(--body-text);
-  width: 100%;
-  min-height: 30px;
-}
+} */
 
 #comment-box {
   border-radius: 10px;
@@ -793,7 +801,8 @@ input[type="text"] {
 }
 
 .formDiv form {
-  margin: 30px;
+  /* margin: 30px; */
+  width: 100%;
 }
 
 .formDiv form label {
@@ -848,30 +857,8 @@ input[type="text"] {
 
 /* Exercises page */
 
-#Exercise {
-  margin-top: 15px;
-  border-radius: 10px;
+#Exercise, #Sets, #Reps {
   min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Sets {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Reps {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
   width: 60%;
 }
 
@@ -909,93 +896,42 @@ input[type="text"] {
   margin: 10px;
 }
 
-.newExerciseContainer {
-  margin-top: 20px;
-  width: 50%;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+.exercise-container {
+  /* display: flex;
+  flex-direction: row;
+  padding: 10px;
+  width: 100%; */
+  background-color: rgb(0,0,0,0.5);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 }
 
-.exerciseRow {
-  display: flex;
-  flex-direction: row;
+.exercise-message {
+  column-span: 2;
+}
+
+.exercise-box-container {
+  /* margin-top: 50px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
   width: 100%;
 }
 
-.exerciseColumn {
-  /* margin-top: 50px; */
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-}
-
-/* Edit Profile Page */
-#Username {
+/* =================================================== Edit Profile Page =================================================== */
+.profile-stats {
   margin-top: 15px;
   border-radius: 10px;
   min-height: 40px;
   outline: none;
   margin-right: 3px;
   width: 60%;
-}
-
-#Age {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Height {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Weight {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Max-Deadlift {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Max-Bench-Press {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Max-Squat {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
+  color: var(--main-color-heading);
+  font-size: var(--body-text);
 }
 
 @media (max-width: 1024px) {
@@ -1006,17 +942,22 @@ input[type="text"] {
     height: 200px;
   }
 
+  .exercise-container {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .exercise-box-container {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-layout {
+    grid-template-columns:1fr;
+
+
   #search-bar {
     position: inherit;
   }
-
-  /* .blogHeading {
-    font-size: var(--main-headings);
-    margin: 0;
-
-    ABC - Was the original class for user.handlebars ln 2
-  } */
-
+    
   .navBtn {
     position: inherit;
   }
@@ -1028,16 +969,16 @@ input[type="text"] {
     right: 0px;
   }
 
-  .individual-blog {
+  .individual-blog, .individual-blog2,  .addcomment, .commentSection, .userContainer {
     width: 90%;
   }
-
+/* 
   .individual-blog2 {
     width: 90%;
   }
 
   .addcomment {
-    width: 80%;
+    width: 90%;
   }
 
   .commentSection {
@@ -1046,7 +987,7 @@ input[type="text"] {
 
   .userContainer {
     width: 90%;
-  }
+  } */
 
   .blogHeading {
     font-size: 25px;
@@ -1062,18 +1003,20 @@ input[type="text"] {
 }
 
 @media (max-width: 830px) {
-  .exerciseRow {
-    display: block;
-    /* justify-content: center;
+  .exercise-container {
+    /* display: flex;
+    justify-content: center;
+    justify-content: center;
     border-style: solid;
     flex-direction: column; */
+    grid-template-columns: 1fr;
   }
 
   .newExerciseContainer {
     width: 100%;
   }
 
-  .exerciseColumn {
+  .exercise-box-container {
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -1088,7 +1031,8 @@ input[type="text"] {
 
 @media screen and (max-width: 375px) {
   .gym-club-img {
-    width: 250px;
+    /* width: 250px; */
+    width: 1/3fr;
   }
 
   #email-login,
@@ -1133,6 +1077,14 @@ input[type="text"] {
 }
 
 @media screen and (max-width: 280px) {
+
+.exercise-container {
+  grid-template-rows: 0fr;
+}
+
+.exercise-box-container {
+  grid-template-columns: 0fr;
+}
 
 header {
   height: 250px;
