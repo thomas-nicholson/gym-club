@@ -63,18 +63,27 @@ router.post('/comment/:id', async (req, res) => {
 
 // This DELETE allows you to delete blogs
 router.delete('/delete/:id', async (req, res) => {
+
     try {
-        const commentDelete = await Comment.destroy({
-            where: {
-                post_id: req.params.id
-            }
-        })
-        const blogDelete = await Blog.destroy({
-            where: {
-                id: req.params.id,
-              //  user_id: 2
-            }
-        })
+        const blogData = await Blog.findByPk(req.params.id);
+        const blog = blogData.get({ plain: true });
+
+        if (blog.user_id == req.session.user_id) {
+            const commentDelete = await Comment.destroy({
+                where: {
+                    post_id: req.params.id
+                }
+            })
+            const blogDelete = await Blog.destroy({
+                where: {
+                    id: req.params.id,
+                  //  user_id: 2
+                }
+            })
+            res.status(200).json(blogDelete)
+        } else {
+            res.status(200).json({"message": "Could not delete blog"})
+        }
         res.status(200).json(blogDelete)
     } catch (err) {
         res.status(500).json(err);
