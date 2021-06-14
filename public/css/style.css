@@ -1,4 +1,65 @@
+:root {
+/* Used for all titles within purple boxes: 
+Blog title, 
+Comment title, 
+Workout title, 
+Exercise title */
+--title-headings: 30px;
+--title-color: rgba(255, 255, 255, 0.877);
+--main-color-heading: rgba(5, 3, 36, 0.884);
+--color-heading: rgb(116, 57, 255);
+--color-heading-hover: rgb(116, 57, 255, 0.5);
+--form-background-color: rgba(116, 57, 255, 0.2);
+/* Used for all body text below titles *
+Blog bodytext
+Comment bodytext
+Workout bodytext
+Exercise bodytext */
+--body-text: 16px;
+/* */
+--main-headings: 60px;
+--button-text: 16px;
+--button-text-color: black; 
+}
+
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button-container {
+  width: 100%;
+  padding: 0px;
+  border: 0px;
+  display: flex;
+  justify-content:flex-end;
+}
+
+.body-text {
+  color: var(--main-color-heading);
+  font-size: var(--body-text);
+  text-decoration: none;
+  line-height: 3rem;
+}
+
+.body-text-forms {
+  color: var(--main-color-heading);
+  font-size: var(--body-text);
+}
+
+.input-box {
+  background-color: var(--form-background-color);
+  font-size: var(--body-text);
+  color: var(--color-heading);
+  height: 1.5 rem;
+  margin: 10px;
+  border: 2px solid rgba(116, 57, 255, 0.473);
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(116, 57, 255, 0.2);
+}
+
 body,
+
 html {
   background-color: rgb(5, 3, 36);
   width: 100%;
@@ -41,7 +102,8 @@ html {
 }
 
 .change-image {
-  font-size: 14px;
+  font-size: var(--button-text);
+  color: var(--button-text-color);
   cursor: pointer;
   transition: all 100ms ease-in-out;
 }
@@ -64,6 +126,8 @@ html {
 .back-button,
 .change-image,
 #icon-button {
+  font-size: var(--body-text);
+  color: var(--main-color-heading);
   padding: 15px;
   margin: 10px;
   background-color: rgba(220, 220, 220, 0.384);
@@ -247,7 +311,7 @@ html {
 }
 
 .enterField {
-  font-size: 16px;
+  font-size: var(--body-text);
   color: rgb(255, 255, 255);
   padding: 10px;
   margin: 10px;
@@ -369,6 +433,7 @@ header {
 
 .blog-para {
   margin-bottom: 30px;
+  word-break: break-word;
 }
 
 .datey {
@@ -422,8 +487,10 @@ header {
 }
 
 .blog-heading {
-  margin: 20px;
-  font-size: 30px;
+  word-break: break-word;
+  color: var(--title-color);
+  margin: 40px;
+  font-size: var(--title-headings);
   text-decoration: none;
   line-height: 3rem;
 }
@@ -473,25 +540,43 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 100ms ease-in-out;
 }
 
 
 .row2 {
+  text-align: center;
+  justify-content: center;
   display: flex;
   flex-direction: row;
   margin-top: 10px;
   width: 100%;
 }
 
-.commentSection {
+/* .commentSection {
   border-style: inset;
   border-radius: 10px;
   border-color: rgba(5, 3, 36, 0.884);
   width: 55%;
   text-align: center;
   font-size: 20px;
+} */
+/* Changed comment section to be the same as blog */
+.commentSection {
+  text-align: center;
+  border-style: unset;
+  margin: 25px;
+  width: 55%;
+  border-radius: 7px;
+  padding: 40px;
+  color: rgba(255, 255, 255, 0.877) !important;
+  background-color: rgba(5, 3, 36, 0.884);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--title-headings);
 }
 
 .commentSection h1 {
@@ -508,11 +593,23 @@ header {
 }
 
 .commentHeader{
+  font-size: var(--title-headings);
+  color: var(--title-color);
   margin-bottom: 10px;
 }
 
+.commentHeader :nth-child(odd) {
+  color: var(--color-heading);
+}
+
+.commentHeader :hover {
+  color: var(--color-heading-hover);
+}
+
 .comment {
-  font-size: 15px;
+  font-size: var(--body-text);
+  color: var(--title-color);
+  word-break: break-word;
   margin: 20px;
 }
 
@@ -521,6 +618,7 @@ header {
   margin-bottom: 30px;
 }
 input[type="text"] {
+  font-size: var(--body-text);
   width: 100%;
   min-height: 30px;
 }
@@ -653,10 +751,10 @@ input[type="text"] {
 
 /* New Blog Page */
 .blogHeading {
-  font-size: 60px;
+  font-size: var(--main-headings);
   padding-top: 35px;
   margin: 40px;
-  color: rgba(5, 3, 36, 0.884);
+  color: var(--main-color-heading);
 }
 
 #headingBlog {
@@ -790,7 +888,8 @@ input[type="text"] {
   border-style: unset;
   margin: 25px;
   width: 70%;
-  height: 200px;
+  /* ccc changed from height: 200px to min-height: 200px */
+  min-height: 200px;
   border-radius: 7px;
   padding: 40px;
   color: rgba(255, 255, 255, 0.877) !important;
@@ -805,12 +904,13 @@ input[type="text"] {
 
 .exerciseHeading {
   margin: 15px;
-  font-size: 20px;
+  font-size: var(--title-headings);
 }
 
 .routine {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .routine p {
@@ -833,7 +933,8 @@ input[type="text"] {
 }
 
 .exerciseColumn {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -913,9 +1014,18 @@ input[type="text"] {
     height: 200px;
   }
 
+<<<<<<< HEAD
   #search-bar {
     position: inherit;
   }
+=======
+  /* .blogHeading {
+    font-size: var(--main-headings);
+    margin: 0;
+
+    ABC - Was the original class for user.handlebars ln 2
+  } */
+>>>>>>> 5559047d9985b2b0e4e3667562e92925b2bdffaf
 
   .navBtn {
     position: inherit;
@@ -1031,3 +1141,50 @@ input[type="text"] {
     justify-content: center;
   }
 }
+
+@media screen and (max-width: 280px) {
+
+header {
+  height: 250px;
+  display: flex;
+}
+
+.blogHeading {
+  font-size: var(--main-headings);
+  margin: 0;
+}
+
+.logo {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 200px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+}
+
+/* @media (orientation: landscape) {
+  header {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blogHeading {
+    font-size: var(--mainTitleHeadings);
+    margin: 0;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navBtn {
+  }
+  
+  .navBtn:hover {
+    background-color: rgba(255, 255, 255, 0.089);
+  }
+} */

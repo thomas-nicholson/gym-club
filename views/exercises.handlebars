@@ -4,12 +4,12 @@
     <div class="newExerciseContainer">
           <div class="formDiv">
               <form class="firstForm">
-                  <label for="Exercise">Exercise Name</label><br>
-                    <input type="text" id="Exercise" name="Exercise"><br><br>
-                    <label for="Sets">Sets</label><br>
-                    <input type="text" id="Sets" name="Sets"><br><br>
-                    <label for="Reps">Reps</label><br>
-                    <input type="text" id="Reps" name="Reps"><br><br>
+                  <label class="body-text-forms" for="Exercise">Exercise Name</label><br>
+                    <input class="input-box"type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
+                    <label class="body-text-forms" for="Sets">Sets</label><br>
+                    <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
+                    <label class="body-text-forms" for="Reps">Reps</label><br>
+                    <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
                     <a class="back-button" href="/userWorkouts/{{user_id}}">Back</a>
                     <input class="back-button" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
                 </form>
@@ -20,7 +20,7 @@
           {{#if exercises.length}}
           {{#each exercises as |exercise| }}
             <div class="individual-exercise">
-              <button id="deleteExercise" class="back-button" data-id="{{exercise.id}}">Delete</button>
+              <button class="deleteExercise back-button" data-id="{{exercise.id}}">Delete</button>
               <div class="blog-para">
                 <h2 class="exerciseHeading">{{exercise.exercise}}</h2>
                 

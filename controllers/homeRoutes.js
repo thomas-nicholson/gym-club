@@ -71,16 +71,26 @@ router.get('/blog/:id', auth,  async (req, res) => {
                 model: Comment,
                 include: [{
                     model:User,
-                }]
+                }],
+                order: [['id', 'DESC']],
             }],
+            order: [['id', 'DESC']],
         });
     
         const blog = blogData.get({ plain: true });
+
+        let allowEdit;
+        if (blog.user_id == req.session.user_id) {
+            allowEdit = true;
+        } else {
+            allowEdit = false;
+        }
     
         res.render('blog', {
           ...blog,
           logged_in: req.session.logged_in,
-          user_id: req.session.user_id
+          user_id: req.session.user_id,
+          allowEdit
         });
       } catch (err) {
         res.status(500).json(err);
@@ -134,7 +144,8 @@ router.get('/userBlogs/:id', auth,  async (req, res) => {
                 model: Comment,
                 include: [{
                     model:User,
-                }]
+                }],
+                order: [['id', 'DESC']],
             }],
             order: [['id', 'DESC']]
         });
@@ -231,7 +242,6 @@ router.get('/editStats/:id', auth, correctUser,  async (req, res) => {
 
     const id = req.params.id
     const statsy = userStats.map((staty) => staty.get({ plain: true } ));
-    console.log(statsy[0])
     res.render('editStats', {
         id,
         statsy,
