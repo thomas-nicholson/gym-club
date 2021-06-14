@@ -162,8 +162,8 @@
 @media (max-width: 1024px) {
   .blog-layout, .exercise-box-container {grid-template-columns: 1fr;}
   .navBtn {position: inherit;}
-  .individual-blog, .individual-blog2,  .addcomment, .commentSection, .userContainer {width: 90% !important;}
-  .heading {font-size: 60px;margin: 20px;}
+  .individual-blog,  .addcomment, .commentSection, .userContainer {width: 90%;}
+  .individual-blog2 {width: 90% !important;}
   .newBlogContainer {width: 100%;}
   .formDiv {display: none;width: 100%;justify-content: center;}
 }
@@ -172,11 +172,7 @@
 }
 
 @media screen and (max-width: 424px) {
-
-
-  .homeNav {
-    display: none;
-  }
+  .individual-blog, .individual-blog2 {padding:10px;}
 }
 
 @media screen and (max-width: 375px) {

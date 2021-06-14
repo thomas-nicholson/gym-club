@@ -848,6 +848,7 @@ header {
 /* ================================================== media querys ================================================== */
 @media (max-width: 1024px) {
   header {flex-direction: column;justify-content: center; align-items: center;height: 200px;}
+  .heading {font-size: 60px;margin: 20px;}
   .exercise-container {grid-template-columns: 2fr 3fr;}
   .exercise-box-container {grid-template-columns: 1fr;}
   .blog-layout {grid-template-columns: 1fr;} 
@@ -873,9 +874,25 @@ header {
 }
 
 @media screen and (max-width: 424px) {
-  .homeNav {
-    display: none;
+  .heading {font-size: 30px; margin:10px;}
+  .userBtns {flex-direction: row;}
+  .back-button {font-size: 12px; font-weight: bolder; padding: 5px; margin: 5px;}
+  .userContainer {
+  
   }
+  .userDetails {
+    padding:20px;
+    margin: 20px;
+    width: 90%;
+  }
+  .bit {
+    padding:5px;
+    margin:5px;
+  }
+  .stats, .bodyStats{
+    flex-direction: column;
+  }
+  .homeNav {display: none;}
 }
 
 @media screen and (max-width: 375px) {
