@@ -564,14 +564,6 @@ header {
   width: 100%;
 }
 
-/* .commentSection {
-  border-style: inset;
-  border-radius: 10px;
-  border-color: rgba(5, 3, 36, 0.884);
-  width: 55%;
-  text-align: center;
-  font-size: 20px;
-} */
 /* Changed comment section to be the same as blog */
 .commentSection {
   text-align: center;
@@ -950,7 +942,6 @@ header {
     height: 200px;
   }
 
-
   .exercise-container {
     grid-template-columns: 2fr 3fr;
   }
@@ -966,7 +957,7 @@ header {
   #search-bar {
     position: inherit;
   }
-
+    
   .navBtn {
     position: inherit;
   }

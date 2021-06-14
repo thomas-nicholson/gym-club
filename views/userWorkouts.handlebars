@@ -1,18 +1,20 @@
 <main class="body"> 
   <div class="workoutBtns">
     <a class="back-button" href="/user/{{id}}">Back</a>
+    {{#if allowWorkoutEdit}}
     <a class="back-button" href="/newWorkout">New Workout</a>
+    {{/if}}
   </div>
 
     <h1 class="blogHeading">Workouts!</h1>
-
     {{#if workouts.length}}
     {{#each workouts as |workout| }}
       
     
       <div class="individual-blog">
+        {{#if ../allowWorkoutEdit}}
         <button class="deleteWorkout back-button" data-id="{{workout.id}}">Delete</button>
-        
+          {{/if}}
         <a href="/exercises/{{workout.id}}" class="headingA"><h1 class="blog-heading">{{workout.title}}</h1></a>
     
         <div class="blog-para">
@@ -23,7 +25,11 @@
       </div>
     {{/each}}
     {{else}}
+    {{#if allowWorkoutEdit}}
     <h2>You currently have no workouts, click "New Workout" to create one!</h2>
+    {{else}}
+    <h2>This user currently has no workouts</h2>
+    {{/if}}
     {{/if}}
   </main>
 
