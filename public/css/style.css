@@ -727,14 +727,6 @@ header {
   width: 40%;
 }
 
-.newBlogContainer {
-  width: 50%;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
 .formDiv form {
   /* margin: 30px; */
   width: 100%;

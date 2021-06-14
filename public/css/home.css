@@ -1,8 +1,15 @@
 
-
 .blog-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+
+.newBlogContainer {
+    width: 50%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .individual-blog, .individual-blog2 {
@@ -40,10 +47,10 @@
 
 .blog-heading {
     word-break: break-word;
+    width: 100%;
     color: var(--title-color);
-    margin: 40px;
+    margin: 20px;
     font-size: var(--title-headings);
-    text-decoration: none;
     line-height: 3rem;
 }
 
@@ -166,10 +173,6 @@
     .blog-layout, .exercise-box-container {
       grid-template-columns: 1fr;
     }
-  
-    #search-bar {
-        display: none;
-    } 
     
     .navBtn {
       position: inherit;
