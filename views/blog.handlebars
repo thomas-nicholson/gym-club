@@ -12,13 +12,12 @@
         <div class="blog-para datey">
           <p>{{format_time date_created}} | <a class="aStyle" href="/user/{{user.id}}">{{user.username}}</a></p>
         </div>
-        <div class="blog-para desy">
+        <div class="blog-para desy lil-description">
           <p>
             {{description}}
           </p>
         </div>
-        <button class="back-button btn-primary log" type="submit" id="like-button" data-update-id="{{id}}">Like</button>
-        <p>Likes: {{likes}}</p>
+        <button class="back-button btn-primary log likey" type="submit" id="like-button" data-update-id="{{id}}">Like {{likes}}</button>
       </div>
 
       <div class='addcomment'>

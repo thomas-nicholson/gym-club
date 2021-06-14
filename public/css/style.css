@@ -252,6 +252,11 @@ html {
   width: 350px;
 }
 
+.likey {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.918) !important;
+}
+
 #buttons {
   position: relative;
   left: -1000px;
@@ -576,7 +581,7 @@ header {
 .name-comment {
   position: absolute;
   bottom: -25px;
-  left: 18px;
+  left: 5px;
   font-size: 11px;
   opacity: 30%;
 }
