@@ -4,7 +4,7 @@
         <div class="formDiv">
             <form>
                 <label for="Description">Description:</label><br>
-                <input type="text" maxlength="30" id="Description" name="Description" value="{{statsy.[0].description}}" required><br><br>
+                <input type="text" maxlength="80" id="Description" name="Description" value="{{statsy.[0].description}}" required><br><br>
                 <label for="Age">Age:</label><br>
                 <input min="5" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Age" name="Age" value="{{statsy.[0].age}}" required><br><br>
                 <label for="Height">Height:</label><br>
