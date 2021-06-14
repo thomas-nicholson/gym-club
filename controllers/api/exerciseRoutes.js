@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Exercise } = require('../../models');
+const { Exercise, Workout } = require('../../models');
 const auth = require('../../utils/auth');
 
 //   This allows you to add exercises to the workout
@@ -43,15 +43,24 @@ router.put('/update/:id', auth, async (req, res) => {
 
   //   This allows you to delete exercises
 router.delete('/delete/:id', auth, async (req, res) => {
+
   try {
 
-    const exerciseDelete = await Exercise.destroy({
-      where: {
-        id: req.params.id,
-      }
-    })
+    const exerciseData = await Exercise.findByPk(req.params.id, {include: {model: Workout}});
+    const exercise = exerciseData.get({ plain: true });
 
-    res.status(200).json(exerciseDelete)
+    if (exercise.workout.user_id == req.session.user_id) {
+
+      const exerciseDelete = await Exercise.destroy({
+        where: {
+          id: req.params.id,
+        }
+      });
+      res.status(200).json(exerciseDelete)
+    } else {
+      res.status(200).json({"message": "Could not delete exercise"});
+
+    }
   } catch (err) {
     res.status(500).json(err);
   }

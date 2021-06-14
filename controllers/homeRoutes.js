@@ -218,8 +218,6 @@ router.get('/exercises/:id', auth,  async (req, res) => {
     
         const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
 
-        console.log(exercises);
-
         let allowExerciseEdit;
         if (exercises[0].workout.user_id == req.session.user_id) {
             allowExerciseEdit = true;

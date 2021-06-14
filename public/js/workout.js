@@ -53,7 +53,6 @@ const deleteWorkoutHandler = async (event) => {
     event.preventDefault();
     
         if (event.target.hasAttribute('data-id')) {
-            console.log("hllo")
             const id = event.target.getAttribute('data-id')
 
         const response = await fetch('/api/workout/delete/'+id, {
