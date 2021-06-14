@@ -8,7 +8,7 @@
                 <label for="Age">Age:</label><br>
                 <input min="5" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Age" name="Age" value="{{statsy.[0].age}}" required><br><br>
                 <label for="Height">Height:</label><br>
-                <input type="number" id="Height" name="Height" value="{{statsy.[0].height}}" required><br><br>
+                <input min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;"  type="number" id="Height" name="Height" value="{{statsy.[0].height}}" required><br><br>
                 <label for="Weight">Weight:</label><br>
                 <input min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Weight" name="Weight" value="{{statsy.[0].weight}}" required><br><br>
                 <label for="Max-Deadlift">Max Deadlift:</label><br>
