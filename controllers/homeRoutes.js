@@ -239,7 +239,6 @@ router.get('/editStats/:id', auth, correctUser,  async (req, res) => {
 
     const id = req.params.id
     const statsy = userStats.map((staty) => staty.get({ plain: true } ));
-    console.log(statsy[0])
     res.render('editStats', {
         id,
         statsy,
