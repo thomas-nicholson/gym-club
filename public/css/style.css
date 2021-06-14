@@ -16,14 +16,14 @@ Comment bodytext
 Workout bodytext
 Exercise bodytext */
 --body-text: 16px;
---main-headings: 60px;
+--main-headings: 80px;
 --button-text: 16px;
 --button-text-color: black; 
 }
 
 .heading {
   font-size: var(--main-headings);
-  padding-top: 35px;
+  /* padding-top: 35px; */
   margin: 40px;
   color: var(--main-color-heading);
   font-weight: 900;
@@ -432,6 +432,7 @@ header {
 }
 
 #search-bar {
+  display: none;
   text-align: center;
   margin: 0;
   position: absolute;
@@ -816,10 +817,6 @@ header {
 }
 
 .exercise-container {
-  /* display: flex;
-  flex-direction: row;
-  padding: 10px;
-  width: 100%; */
   background-color: rgb(0,0,0,0.5);
   width: 100%;
   display: grid;
@@ -831,13 +828,8 @@ header {
 }
 
 .exercise-box-container {
-  /* margin-top: 50px; */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   width: 100%;
 }
 
@@ -853,50 +845,15 @@ header {
   font-size: var(--body-text);
 }
 
+/* ================================================== media querys ================================================== */
 @media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-  }
-
-  .exercise-container {
-    grid-template-columns: 2fr 3fr;
-  }
-
-  .exercise-box-container {
-    grid-template-columns: 1fr;
-  }
-
-  .blog-layout {
-    grid-template-columns: 1fr;
-  }
-    
-  .navBtn {
-    position: inherit;
-  }
-
-  .logo {left: 0px;}
+  header {flex-direction: column;justify-content: center; align-items: center;height: 200px;}
+  .exercise-container {grid-template-columns: 2fr 3fr;}
+  .exercise-box-container {grid-template-columns: 1fr;}
+  .blog-layout {grid-template-columns: 1fr;} 
+  .navBtn {position: inherit;}
+  .logo {margin-top: 10px;margin-bottom: 10px; width: 200px;}
   .menu {right: 0px;}
-
-  .individual-blog, .individual-blog2,  .addcomment, .commentSection, .userContainer {
-    width: 90%;
-  }
-
-  .blogHeading {
-    font-size: 25px;
-  }
-
-  .newBlogContainer {
-    width: 100%;
-  }
-
-  .formDiv {
-    display: none;
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 830px) {
@@ -979,7 +936,7 @@ header {
 }
 
 header {
-  height: 250px;
+  height: 200px;
   display: flex;
 }
 
@@ -990,11 +947,16 @@ header {
 
 .logo {
   position: relative;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 200px;
+  margin-top: 10x;
+  margin-bottom: 10px;
+  width: 150px;
   cursor: pointer;
   transition: all 100ms ease-in-out;
 }
 
 }
+
+/* @media (orientation: landscape) {
+  header {height: 60px;}
+  .logo {display: none;}
+} */
