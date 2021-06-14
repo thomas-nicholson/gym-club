@@ -922,7 +922,8 @@ input[type="text"] {
 }
 
 .exerciseColumn {
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
