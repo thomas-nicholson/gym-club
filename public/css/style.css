@@ -1,24 +1,34 @@
 :root {
-/* Used for all titles: 
+/* Used for all titles within purple boxes: 
 Blog title, 
 Comment title, 
 Workout title, 
 Exercise title */
 --title-headings: 30px;
 --title-color: rgba(255, 255, 255, 0.877);
-/* Used for all body text below titles*
+--color-heading: rgb(116, 57, 255);
+--color-heading-hover: rgb(116, 57, 255, 0.5);
+/* Used for all body text below titles *
 Blog bodytext
 Comment bodytext
 Workout bodytext
 Exercise bodytext */
---title-bodytext: 16px;
-/*Button text for white buttons*/
---main-title-headings: 60px;
+--body-text: 16px;
+/* */
+--main-headings: 60px;
 --button-text: 16px;
 --button-text-color: black; 
 }
 
+.body-text {
+  color: black;
+  font-size: var(--body-text);
+  text-decoration: none;
+  line-height: 3rem;
+}
+
 body,
+
 html {
   background-color: rgb(5, 3, 36);
   width: 100%;
@@ -268,7 +278,7 @@ html {
 }
 
 .enterField {
-  font-size: 16px;
+  font-size: var(--body-text);
   color: rgb(255, 255, 255);
   padding: 10px;
   margin: 10px;
@@ -435,7 +445,7 @@ header {
 .blog-heading {
   word-break: break-word;
   color: var(--title-color);
-  margin: 20px;
+  margin: 40px;
   font-size: var(--title-headings);
   text-decoration: none;
   line-height: 3rem;
@@ -539,11 +549,22 @@ header {
 }
 
 .commentHeader{
+  font-size: var(--title-headings);
+  color: var(--title-color);
   margin-bottom: 10px;
 }
 
+.commentHeader :nth-child(odd) {
+  color: var(--color-heading);
+}
+
+.commentHeader :hover {
+  color: var(--color-heading-hover);
+}
+
 .comment {
-  font-size: 15px;
+  font-size: var(--body-text);
+  color: var(--title-color);
   word-break: break-word;
   margin: 20px;
 }
@@ -553,6 +574,7 @@ header {
   margin-bottom: 30px;
 }
 input[type="text"] {
+  font-size: var(--body-text);
   width: 100%;
   min-height: 30px;
 }
@@ -685,7 +707,7 @@ input[type="text"] {
 
 /* New Blog Page */
 .blogHeading {
-  font-size: 60px;
+  font-size: var(--main-headings);
   padding-top: 35px;
   margin: 40px;
   color: rgba(5, 3, 36, 0.884);
@@ -947,10 +969,12 @@ input[type="text"] {
     height: 200px;
   }
 
-  .blogHeading {
-    font-size: var(--main-title-headings);
+  /* .blogHeading {
+    font-size: var(--main-headings);
     margin: 0;
-  }
+
+    ABC - Was the original class for user.handlebars ln 2
+  } */
 
   .navBtn {
     position: inherit;
@@ -1075,7 +1099,7 @@ header {
 }
 
 .blogHeading {
-  font-size: var(--main-title-headings);
+  font-size: var(--main-headings);
   margin: 0;
 }
 

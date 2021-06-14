@@ -16,7 +16,7 @@
           </p>
         </div>
         <button class="back-button btn-primary log" type="submit" id="like-button" data-update-id="{{id}}">Like</button>
-        <p>Likes: {{likes}}</p>
+        <p class="comment">Likes: {{likes}}</p>
       </div>
 
       <div class='addcomment'>
@@ -31,8 +31,8 @@
           <h1 class="commentHeader">Comments</h1>
           {{#each comments as |comment|}}
           <div class="comment">
-              <a href="/user/{{comment.user.id}}"><h3>{{comment.user.username}}</h3></a>
-              <p>{{comment.comment}}</p>
+              <a class="commentHeader" href="/user/{{comment.user.id}}"><h3>{{comment.user.username}}</h3></a>
+              <p class="comment">{{comment.comment}}</p>
           </div>
           {{/each}}
       </div>
