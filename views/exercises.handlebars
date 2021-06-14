@@ -5,11 +5,11 @@
           <div class="formDiv">
               <form class="firstForm">
                   <label for="Exercise">Exercise Name</label><br>
-                    <input type="text" id="Exercise" name="Exercise" required><br><br>
+                    <input type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
                     <label for="Sets">Sets</label><br>
-                    <input min="0" type="number" id="Sets" name="Sets" required><br><br>
+                    <input min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
                     <label for="Reps">Reps</label><br>
-                    <input min="0" type="number" id="Reps" name="Reps" required><br><br>
+                    <input min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
                     <a class="back-button" href="/userWorkouts/{{user_id}}">Back</a>
                     <input class="back-button" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
                 </form>
