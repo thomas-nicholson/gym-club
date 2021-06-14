@@ -1,6 +1,7 @@
 <main class="body feed"> 
     <p class="blogHeading" id="headingBlog">Blogs</p>
-    {{#each blogs as |blog| }}
+    <div class="blog-layout">
+      {{#each blogs as |blog| }}
     
       <section class="individual-blog" onclick="location.href='/blog/{{blog.id}}'">
         
@@ -16,4 +17,5 @@
       
     
     {{/each}}
+    </div>
   </main>

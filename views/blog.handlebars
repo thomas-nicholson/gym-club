@@ -1,7 +1,9 @@
 <main class="body"> 
       <div class="individual-blog2">
         {{#if allowEdit}}
+        <div class="button-container">
           <button id="delete-blog-button" class="back-button" data-blogs-id="{{id}}" user-id="{{user.id}}">Delete</button>
+        </div>
           {{/if}}
         <h1 class="blog-heading">{{title}}</h1>
         {{!-- <div class="row2">
@@ -16,12 +18,12 @@
           </p>
         </div>
         <button class="back-button btn-primary log" type="submit" id="like-button" data-update-id="{{id}}">Like</button>
-        <p>Likes: {{likes}}</p>
+        <p class="comment">Likes: {{likes}}</p>
       </div>
 
       <div class='addcomment'>
         <form id="comment-form">
-            <input type="text" id="comment-box" name="comment-box" placeholder="Add your comment">
+            <input class="input-box" type="text" id="comment-box" name="comment-box" placeholder="Add your comment">
             <button class="back-button btn-primary log" type="submit" id="comment-button" data-post-id="{{id}}">Post</button>
         </form>
       </div>
@@ -31,8 +33,8 @@
           <h1 class="commentHeader">Comments</h1>
           {{#each comments as |comment|}}
           <div class="comment">
-              <a href="/user/{{comment.user.id}}"><h3>{{comment.user.username}}</h3></a>
-              <p>{{comment.comment}}</p>
+              <a class="commentHeader" href="/user/{{comment.user.id}}"><h3>{{comment.user.username}}</h3></a>
+              <p class="comment">{{comment.comment}}</p>
           </div>
           {{/each}}
       </div>
