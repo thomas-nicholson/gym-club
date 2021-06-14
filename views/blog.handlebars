@@ -12,32 +12,28 @@
         <div class="blog-para datey">
           <p>{{format_time date_created}} | <a class="aStyle" href="/user/{{user.id}}">{{user.username}}</a></p>
         </div>
-        <div class="blog-para desy">
+        <div class="blog-para desy lil-description">
           <p>
             {{description}}
           </p>
         </div>
-        <button class="back-button btn-primary log" type="submit" id="like-button" data-update-id="{{id}}">Like</button>
-        <p class="comment">Likes: {{likes}}</p>
+        <button class="back-button btn-primary log likey" type="submit" id="like-button" data-update-id="{{id}}">Like {{likes}}</button>
       </div>
 
       <div class='addcomment'>
         <form id="comment-form">
-            <input class="input-box" type="text" id="comment-box" name="comment-box" placeholder="Add your comment">
-            <button class="back-button btn-primary log" type="submit" id="comment-button" data-post-id="{{id}}">Post</button>
+            <input class="input-box" type="text" id="comment-box" name="comment-box">
+            <button class="back-button btn-primary log" type="submit" id="comment-button" data-post-id="{{id}}">Comment</button>
         </form>
       </div>
-
-      <div class="commentSection">
-          
-          <h1 class="commentHeader">Comments</h1>
-          {{#each comments as |comment|}}
-          <div class="comment">
-              <a class="commentHeader" href="/user/{{comment.user.id}}"><h3>{{comment.user.username}}</h3></a>
-              <p class="comment">{{comment.comment}}</p>
-          </div>
+     
+      {{#each comments as |comment|}}
+          <section class="comment">
+              <a class="commentHeader name-comment" href="/user/{{comment.user.id}}"><p>{{comment.user.username}}</p></a>
+              <img src="{{comment.user.picture}}" class="comment-picture"/>
+              <p class="real-comment">{{comment.comment}}</p>
+          </section>
           {{/each}}
-      </div>
     
     
   </main>
