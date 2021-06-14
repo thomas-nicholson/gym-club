@@ -1,5 +1,5 @@
 <main class="body feed"> 
-    <p class="blogHeading" id="headingBlog">Blogs</p>
+    <p class="heading">Blogs</p>
     <div class="blog-layout">
       {{#each blogs as |blog| }}
     
@@ -9,7 +9,7 @@
         <div class="blog-para datey">
           <p>{{format_time blog.date_created}} | <a class="aStyle" href="/user/{{blog.user.id}}">{{blog.user.username}}</a></p>
         </div>
-        <div class="blog-para descy">
+        <div>
           <p>{{blog.description}}</p>
         </div>
         

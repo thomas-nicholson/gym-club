@@ -10,21 +10,26 @@ Exercise title */
 --color-heading: rgb(116, 57, 255);
 --color-heading-hover: rgb(116, 57, 255, 0.5);
 --form-background-color: rgba(116, 57, 255, 0.2);
-/* Used for all body text below titles *
+/* Used for all body text below titles
 Blog bodytext
 Comment bodytext
 Workout bodytext
 Exercise bodytext */
 --body-text: 16px;
-/* */
---main-headings: 60px;
+--main-headings: 80px;
 --button-text: 16px;
 --button-text-color: black; 
 }
 
-.blog-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.heading {
+  font-size: var(--main-headings);
+  /* padding-top: 35px; */
+  margin: 40px;
+  color: var(--main-color-heading);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.7;
 }
 
 .button-container {
@@ -427,6 +432,7 @@ header {
 }
 
 #search-bar {
+  display: none;
   text-align: center;
   margin: 0;
   position: absolute;
@@ -441,7 +447,7 @@ header {
   opacity: 90%;
 }
 
-.blog-para {
+/* .blog-para {
   margin-bottom: 30px;
   word-break: break-word;
 }
@@ -453,7 +459,7 @@ header {
 
 .descy {
   line-height: 2rem;
-}
+} */
 
 .body {
   background-color: rgb(255, 255, 255);
@@ -469,41 +475,10 @@ header {
   cursor: pointer;
 }
 
-.individual-blog {
-  text-align: center;
-  border-style: unset;
-  margin: 25px;
-  width: 45%;
-  width: 600px;
-  border-radius: 7px;
-  padding: 40px;
-  color: rgba(255, 255, 255, 0.877) !important;
-  background-color: rgba(5, 3, 36, 0.884);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: all 100ms ease-in-out;
-}
-
-.individual-blog:hover {
-  transform: scale(1.01);
-  background-color: rgba(5, 3, 36, 0.774);
-}
-
 .feed {
   padding-bottom: 60px;
 }
 
-.blog-heading {
-  word-break: break-word;
-  color: var(--title-color);
-  margin: 40px;
-  font-size: var(--title-headings);
-  text-decoration: none;
-  line-height: 3rem;
-}
 .headingA {
   width: 100%;
   height: 100%;
@@ -518,14 +493,6 @@ header {
   width: 100%;
 }
 
-.aStyle {
-  text-align: center;
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.877) !important;
-  width: 50%;
-  /* margin-left: 10%; */
-}
-
 .aStyle:hover {
   color: rgba(255, 255, 255, 0.568) !important;
 }
@@ -533,26 +500,9 @@ header {
 .dateCreated {
   text-align: center;
   width: 50%;
-}
+} */
 
 /* Individual Blog */
-
-.individual-blog2 {
-  text-align: center;
-  border-style: unset;
-  margin: 25px;
-  width: 55%;
-  border-radius: 7px;
-  padding: 40px;
-  color: rgba(255, 255, 255, 0.877) !important;
-  background-color: rgba(5, 3, 36, 0.884);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* cursor: pointer; */
-  transition: all 100ms ease-in-out;
-}
 
 
 .row2 {
@@ -564,14 +514,6 @@ header {
   width: 100%;
 }
 
-/* .commentSection {
-  border-style: inset;
-  border-radius: 10px;
-  border-color: rgba(5, 3, 36, 0.884);
-  width: 55%;
-  text-align: center;
-  font-size: 20px;
-} */
 /* Changed comment section to be the same as blog */
 .commentSection {
   text-align: center;
@@ -623,10 +565,10 @@ header {
   margin: 20px;
 }
 
-.addcomment {
+/* .addcomment {
   width: 60%;
   margin-bottom: 30px;
-}
+} */
 /* input[type="text"] {
   font-size: var(--body-text);
 } */
@@ -637,7 +579,7 @@ header {
   outline: none;
   margin-right: 3px;
   width: 60%;
-}
+} */
 
 .btn {
   padding-top: 10px;
@@ -661,19 +603,19 @@ header {
 .btn:hover {
   background-color: rgba(238, 67, 67, 0.5);
 }
-
+/* 
 #comment-form {
   margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .menuBtn:hover {
   cursor: pointer;
 }
 
-/* User Page Styling */
+/* =========================================================== User Page Styling ============================================= */
 
 .userContainer {
   margin-top: 20px;
@@ -758,19 +700,6 @@ header {
 }
 
 /* New Blog Page */
-.blogHeading {
-  font-size: var(--main-headings);
-  padding-top: 35px;
-  margin: 40px;
-  color: var(--main-color-heading);
-}
-
-#headingBlog {
-  font-weight: 900;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  letter-spacing: 0.7;
-}
 
 .newBlogBackBtn {
   padding-top: 10px;
@@ -800,14 +729,6 @@ header {
   width: 40%;
 }
 
-.newBlogContainer {
-  width: 50%;
-  text-align: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-}
-
 .formDiv form {
   /* margin: 30px; */
   width: 100%;
@@ -822,16 +743,7 @@ header {
   flex-direction: column;
 }
 
-#Title {
-  margin-top: 15px;
-  border-radius: 10px;
-  min-height: 40px;
-  outline: none;
-  margin-right: 3px;
-  width: 60%;
-}
-
-#Description {
+#Title, #Description {
   margin-top: 15px;
   border-radius: 10px;
   min-height: 40px;
@@ -905,10 +817,6 @@ header {
 }
 
 .exercise-container {
-  /* display: flex;
-  flex-direction: row;
-  padding: 10px;
-  width: 100%; */
   background-color: rgb(0,0,0,0.5);
   width: 100%;
   display: grid;
@@ -920,13 +828,8 @@ header {
 }
 
 .exercise-box-container {
-  /* margin-top: 50px; */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
-  /* flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   width: 100%;
 }
 
@@ -942,82 +845,20 @@ header {
   font-size: var(--body-text);
 }
 
+/* ================================================== media querys ================================================== */
 @media (max-width: 1024px) {
-  header {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-  }
-
-
-  .exercise-container {
-    grid-template-columns: 2fr 3fr;
-  }
-
-  .exercise-box-container {
-    grid-template-columns: 1fr;
-  }
-
-  .blog-layout {
-    grid-template-columns:1fr;
-
-
-  #search-bar {
-    position: inherit;
-  }
-
-  .navBtn {
-    position: inherit;
-  }
-
-  .logo {
-    left: 0px;
-  }
-  .menu {
-    right: 0px;
-  }
-
-  .individual-blog, .individual-blog2,  .addcomment, .commentSection, .userContainer {
-    width: 90%;
-  }
-/* 
-  .individual-blog2 {
-    width: 90%;
-  }
-
-  .addcomment {
-    width: 90%;
-  }
-
-  .commentSection {
-    width: 90%;
-  }
-
-  .userContainer {
-    width: 90%;
-  } */
-
-  .blogHeading {
-    font-size: 25px;
-  }
-
-  .newBlogContainer {
-    width: 100%;
-  }
-
-  .formDiv {
-    width: 100%;
-  }
+  header {flex-direction: column;justify-content: center; align-items: center;height: 200px;}
+  .heading {font-size: 60px;margin: 20px;}
+  .exercise-container {grid-template-columns: 2fr 3fr;}
+  .exercise-box-container {grid-template-columns: 1fr;}
+  .blog-layout {grid-template-columns: 1fr;} 
+  .navBtn {position: inherit;}
+  .logo {margin-top: 10px;margin-bottom: 10px; width: 200px;}
+  .menu {right: 0px;}
 }
 
 @media (max-width: 830px) {
   .exercise-container {
-    /* display: flex;
-    justify-content: center;
-    justify-content: center;
-    border-style: solid;
-    flex-direction: column; */
     grid-template-columns: 1fr;
   }
 
@@ -1033,9 +874,25 @@ header {
 }
 
 @media screen and (max-width: 424px) {
-  .homeNav {
-    display: none;
+  .heading {font-size: 30px; margin:10px;}
+  .userBtns {flex-direction: row;}
+  .back-button {font-size: 12px; font-weight: bolder; padding: 5px; margin: 5px;}
+  .userContainer {
+  
   }
+  .userDetails {
+    padding:20px;
+    margin: 20px;
+    width: 90%;
+  }
+  .bit {
+    padding:5px;
+    margin:5px;
+  }
+  .stats, .bodyStats{
+    flex-direction: column;
+  }
+  .homeNav {display: none;}
 }
 
 @media screen and (max-width: 375px) {
@@ -1096,7 +953,7 @@ header {
 }
 
 header {
-  height: 250px;
+  height: 200px;
   display: flex;
 }
 
@@ -1107,9 +964,9 @@ header {
 
 .logo {
   position: relative;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  width: 200px;
+  margin-top: 10x;
+  margin-bottom: 10px;
+  width: 150px;
   cursor: pointer;
   transition: all 100ms ease-in-out;
 }
@@ -1117,25 +974,6 @@ header {
 }
 
 /* @media (orientation: landscape) {
-  header {
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .blogHeading {
-    font-size: var(--mainTitleHeadings);
-    margin: 0;
-  }
-
-  .logo {
-    display: none;
-  }
-
-  .navBtn {
-  }
-  
-  .navBtn:hover {
-    background-color: rgba(255, 255, 255, 0.089);
-  }
+  header {height: 60px;}
+  .logo {display: none;}
 } */
