@@ -22,6 +22,19 @@ Exercise bodytext */
 --button-text-color: black; 
 }
 
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.button-container {
+  width: 100%;
+  padding: 0px;
+  border: 0px;
+  display: flex;
+  justify-content:flex-end;
+}
+
 .body-text {
   color: var(--main-color-heading);
   font-size: var(--body-text);
@@ -32,7 +45,6 @@ Exercise bodytext */
 .body-text-forms {
   color: var(--main-color-heading);
   font-size: var(--body-text);
-  background-color: red;
 }
 
 .input-box {
@@ -114,6 +126,8 @@ html {
 .back-button,
 .change-image,
 #icon-button {
+  font-size: var(--body-text);
+  color: var(--main-color-heading);
   padding: 15px;
   margin: 10px;
   background-color: rgba(220, 220, 220, 0.384);

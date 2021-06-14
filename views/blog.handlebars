@@ -1,7 +1,9 @@
 <main class="body"> 
       <div class="individual-blog2">
         {{#if allowEdit}}
+        <div class="button-container">
           <button id="delete-blog-button" class="back-button" data-blogs-id="{{id}}" user-id="{{user.id}}">Delete</button>
+        </div>
           {{/if}}
         <h1 class="blog-heading">{{title}}</h1>
         {{!-- <div class="row2">
@@ -21,7 +23,7 @@
 
       <div class='addcomment'>
         <form id="comment-form">
-            <input type="text" id="comment-box" name="comment-box" placeholder="Add your comment">
+            <input class="input-box" type="text" id="comment-box" name="comment-box" placeholder="Add your comment">
             <button class="back-button btn-primary log" type="submit" id="comment-button" data-post-id="{{id}}">Post</button>
         </form>
       </div>
