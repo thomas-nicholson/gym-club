@@ -839,9 +839,8 @@ header {
   text-align: center;
   border-style: unset;
   margin: 25px;
-  width: 70%;
+  width: 300px;
   /* ccc changed from height: 200px to min-height: 200px */
-  min-height: 200px;
   border-radius: 7px;
   padding: 40px;
   color: rgba(255, 255, 255, 0.877) !important;
@@ -876,10 +875,9 @@ header {
   margin: 10px;
 }
 
-.exercise-container {x
-  width: 100%;
+.exercise-container {
+  width: 80%;
   display: grid;
-  grid-template-columns: 2fr 3fr;
 }
 
 .exercise-message {
@@ -887,9 +885,36 @@ header {
 }
 
 .exercise-box-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.exercise-box-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
+  text-align: center;
+}
+
+.ex-input {
+  width: 250px !important;
+  margin: auto;
+}
+
+.ex-button {
+  width: 250px;
+  margin: 10px auto;
+}
+
+.firstForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
 }
 
 /* =================================================== Edit Profile Page =================================================== */
@@ -916,12 +941,7 @@ header {
     font-size: 60px;
     margin: 20px;
   }
-  .exercise-container {
-    grid-template-columns: 2fr 3fr;
-  }
-  .exercise-box-container {
-    grid-template-columns: 1fr;
-  }
+
   .blog-layout {
     grid-template-columns: 1fr;
   }
@@ -939,18 +959,24 @@ header {
 }
 
 @media (max-width: 830px) {
-  .exercise-container {
-    grid-template-columns: 1fr;
-  }
-
   .newExerciseContainer {
     width: 100%;
   }
+}
 
-  .exercise-box-container {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+@media screen and (max-width: 480px) {
+  .individual-exercise {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .special-delete {
+    height: 18px;
+  }
+
+  .ex-input,
+  .ex-button {
+    width: 210px !important;
   }
 }
 
@@ -1036,14 +1062,6 @@ header {
 }
 
 @media screen and (max-width: 280px) {
-  .exercise-container {
-    grid-template-rows: 0fr;
-  }
-
-  .exercise-box-container {
-    grid-template-columns: 0fr;
-  }
-
   header {
     height: 200px;
     display: flex;
