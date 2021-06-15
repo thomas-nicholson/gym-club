@@ -122,17 +122,13 @@ html {
 }
 
 .icon-model {
-  width: 100vw;
   height: 100vh;
-  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
   background-color: white;
-  top: 2px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  padding-top: 200px;
   z-index: 1000;
 }
 
@@ -148,6 +144,12 @@ html {
   cursor: pointer;
   border: none;
   transition: all 100ms ease-in-out;
+}
+
+#real-back {
+  width: 100px;
+  margin: 20px auto;
+  text-align: center;
 }
 
 .login-error {
@@ -171,6 +173,7 @@ html {
   padding: 20px 50px;
   display: flex;
   align-items: center;
+  margin: auto;
   width: 60%;
   overflow-y: hidden;
   background-color: rgba(220, 220, 220, 0.185);
@@ -946,6 +949,9 @@ header {
 }
 
 @media screen and (max-width: 424px) {
+  .image-container {
+    width: 95%;
+  }
   .heading {
     font-size: 30px;
     margin: 10px;

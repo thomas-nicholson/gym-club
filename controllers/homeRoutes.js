@@ -45,6 +45,17 @@ router.get('/login', async (req, res) => {
     }
 })
 
+router.get('/changeicon', auth, async (req, res) => {
+    try {
+        res.render('chooseIcon', {
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
+
 router.get('/welcome', async (req, res) => {
     try {
         res.render('gateway');
