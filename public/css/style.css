@@ -257,6 +257,34 @@ html {
   background-color: rgba(255, 255, 255, 0.918) !important;
 }
 
+.delete-icon {
+  height: 25px;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  opacity: 70%;
+}
+
+.delete-icon-workout {
+  height: 25px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.delete-icon-workout:hover {
+  opacity: 70%;
+}
+
+.no-workout {
+  padding: 25px;
+  line-height: 1.5rem;
+  text-align: center;
+  opacity: 40%;
+}
+
 #buttons {
   position: relative;
   left: -1000px;
@@ -793,7 +821,6 @@ header {
   justify-content: center;
   text-align: center;
   flex-direction: row;
-  width: 35%;
 }
 
 /* Exercises page */

@@ -13,7 +13,7 @@
     
       <div class="individual-blog">
         {{#if ../allowWorkoutEdit}}
-        <button class="deleteWorkout back-button" data-id="{{workout.id}}">Delete</button>
+        <img src="/Images/trash.png" class="delete-icon-workout deleteWorkout" data-id="{{workout.id}}"/>
           {{/if}}
         <a href="/exercises/{{workout.id}}" class="headingA"><h1 class="blog-heading">{{workout.title}}</h1></a>
     
@@ -26,7 +26,7 @@
     {{/each}}
     {{else}}
     {{#if allowWorkoutEdit}}
-    <h2>You currently have no workouts, click "New Workout" to create one!</h2>
+    <p class="no-workout">You currently have no workouts, click "New Workout" to create one!</p>
     {{else}}
     <h2>This user currently has no workouts</h2>
     {{/if}}
