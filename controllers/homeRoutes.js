@@ -89,9 +89,19 @@ router.get('/blog/:id', auth,  async (req, res) => {
              ]
         });
 
-        const liked = await hasLiked.findAll({})
+        
     
         const blog = blogData.get({ plain: true });
+
+        const liked = await hasLiked.findAll({
+            where: {
+                post_id: req.params.id,
+                user_id: req.session.user_id
+            }
+        })
+
+        const haveLiked = liked.map((like) => like.get({ plain: true}))
+        console.log(haveLiked)
 
         let allowEdit;
         if (blog.user_id == req.session.user_id) {
@@ -99,9 +109,18 @@ router.get('/blog/:id', auth,  async (req, res) => {
         } else {
             allowEdit = false;
         }
+
+        let allowLike;
+        if (haveLiked.length){
+            allowLike = false
+        }
+        else{
+            allowLike = true
+        }
     
         res.render('blog', {
           ...blog,
+          allowLike,
           logged_in: req.session.logged_in,
           user_id: req.session.user_id,
           allowEdit

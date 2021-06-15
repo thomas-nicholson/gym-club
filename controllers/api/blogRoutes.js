@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog, Comment } = require('../../models');
+const { User, Blog, Comment, hasLiked } = require('../../models');
 const auth = require('../../utils/auth');
 
 // The structure for this is very similar to workoutRoutes.js
@@ -25,6 +25,10 @@ router.put('/update/:id', async (req, res) => {
             id: req.params.id
         }}
         )
+        const updateLikes = await hasLiked.create({
+            user_id: req.session.user_id,
+            post_id: req.params.id
+        })
         res.status(200).json(blogUpdate)
     } catch (err) {
         res.status(500).json(err);
