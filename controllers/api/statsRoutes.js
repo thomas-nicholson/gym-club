@@ -19,7 +19,8 @@ router.put('/update/:id', async (req, res) => {
             },
             {
                 where: {
-                    id: req.params.id
+                    id: req.params.id,
+                    user_id: req.session.user_id
                 },
             }
         )
