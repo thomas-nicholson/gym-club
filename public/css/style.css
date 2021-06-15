@@ -1092,7 +1092,56 @@ header {
   }
 }
 
-/* @media (orientation: landscape) {
+@media (max-width: 680px) and (orientation: landscape) {
   header {height: 60px;}
   .logo {display: none;}
-} */
+}
+
+@media print {
+  .userDetail {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto;
+  }
+  .userContainer {
+    display: block;
+  }
+
+  header {
+    background-color: transparent;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .theImage {
+    display: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .logo {
+    padding: 0px;
+    margin: 10px;
+  }
+
+  .heading {
+    font-size: 150px;
+    padding: 0px;
+    margin: 10px;
+  }
+
+  .change-image {
+    display: none;
+  }
+
+  .userBtns {
+    display: none;
+  }
+  .bit {
+    font-size: 200%;
+  }
+
+  .menuflex {
+    display: none;
+  }
+}
