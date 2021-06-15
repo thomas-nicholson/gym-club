@@ -266,6 +266,18 @@ html {
   opacity: 70%;
 }
 
+.delete-icon-workout {
+  height: 25px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+}
+
+.delete-icon-workout:hover {
+  opacity: 70%;
+}
+
 #buttons {
   position: relative;
   left: -1000px;

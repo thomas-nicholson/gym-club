@@ -23,6 +23,7 @@
   color: rgba(255, 255, 255, 0.877) !important;
   background-color: rgba(5, 3, 36, 0.884);
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
