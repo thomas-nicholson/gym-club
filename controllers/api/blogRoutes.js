@@ -85,4 +85,21 @@ router.delete('/delete/:id', async (req, res) => {
     }
 });
 
+router.delete('/deleteLike/:id', async (req, res) => {
+
+    try {
+        const blogUpdate = await Blog.increment('likes', {by: -1, where: {
+            id: req.params.id
+        }}
+        )
+        const updateLikes = await hasLiked.destroy({
+            user_id: req.session.user_id,
+            post_id: req.params.id
+        })
+        res.status(200).json(blogUpdate)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

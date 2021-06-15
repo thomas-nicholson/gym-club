@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const e = require('express');
 const { User, Blog, Stats, Comment, Workout, Exercise, hasLiked} = require('../models');
 const auth = require('../utils/auth');
 const correctUser = require('../utils/correctUser');
@@ -101,7 +102,6 @@ router.get('/blog/:id', auth,  async (req, res) => {
         })
 
         const haveLiked = liked.map((like) => like.get({ plain: true}))
-        console.log(haveLiked)
 
         let allowEdit;
         if (blog.user_id == req.session.user_id) {
@@ -248,21 +248,30 @@ router.get('/exercises/:id', auth,  async (req, res) => {
             },
         })
 
+        const workouts = await Workout.findAll({
+            where: {
+                id: req.params.id
+            },
+            include: {
+                model: User,
+            }
+        })
+
         const id = req.params.id
+
+        const workout = workouts.map((theWorkout) => theWorkout.get({ plain: true}));
     
         const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
-
+        console.log(workout[0].user_id)
 
         let allowExerciseEdit;
         let showUp;
-        if (exercises[0] === undefined) {
-            allowExerciseEdit = false;
-        } else if (exercises[0].workout.user_id == req.session.user_id) {
+        if (workout[0].user_id === req.session.user_id){
             allowExerciseEdit = true;
-            showUp = true;
+            showUp = true
         } else {
             allowExerciseEdit = false;
-            showUp = false;
+            showUp = false
         }
         res.render('exercises', {
           exercises,
