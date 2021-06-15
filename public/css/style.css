@@ -1082,7 +1082,7 @@ header {
   }
 }
 
-/* @media (orientation: landscape) {
+@media (max-width: 680px) and (orientation: landscape) {
   header {height: 60px;}
   .logo {display: none;}
-} */
+}
