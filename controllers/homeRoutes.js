@@ -102,7 +102,6 @@ router.get('/blog/:id', auth,  async (req, res) => {
         })
 
         const haveLiked = liked.map((like) => like.get({ plain: true}))
-        console.log(haveLiked)
 
         let allowEdit;
         if (blog.user_id == req.session.user_id) {
