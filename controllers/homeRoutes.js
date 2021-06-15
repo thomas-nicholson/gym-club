@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog, Stats, Comment, Workout, Exercise} = require('../models');
+const { User, Blog, Stats, Comment, Workout, Exercise, hasLiked} = require('../models');
 const auth = require('../utils/auth');
 const correctUser = require('../utils/correctUser');
 
@@ -88,8 +88,20 @@ router.get('/blog/:id', auth,  async (req, res) => {
                 [{ model: Comment }, 'id', 'DESC']
              ]
         });
+
+        
     
         const blog = blogData.get({ plain: true });
+
+        const liked = await hasLiked.findAll({
+            where: {
+                post_id: req.params.id,
+                user_id: req.session.user_id
+            }
+        })
+
+        const haveLiked = liked.map((like) => like.get({ plain: true}))
+        console.log(haveLiked)
 
         let allowEdit;
         if (blog.user_id == req.session.user_id) {
@@ -97,9 +109,18 @@ router.get('/blog/:id', auth,  async (req, res) => {
         } else {
             allowEdit = false;
         }
+
+        let allowLike;
+        if (haveLiked.length){
+            allowLike = false
+        }
+        else{
+            allowLike = true
+        }
     
         res.render('blog', {
           ...blog,
+          allowLike,
           logged_in: req.session.logged_in,
           user_id: req.session.user_id,
           allowEdit
