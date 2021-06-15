@@ -20,7 +20,7 @@
       {{#each exercises as |exercise| }}
         <div class="individual-exercise">
           {{#if ../allowExerciseEdit}}
-          <button class="deleteExercise back-button" data-id="{{exercise.id}}">Delete</button>
+          <img src="/Images/trash.png" id="delete-blog-button" class="delete-icon deleteExercise special-delete" data-id="{{exercise.id}}"/>
           {{/if}}
           <div class="blog-para">
             <h2 class="exerciseHeading">{{exercise.exercise}}</h2>

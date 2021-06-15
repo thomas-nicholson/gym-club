@@ -847,11 +847,18 @@ header {
   color: rgba(255, 255, 255, 0.877) !important;
   background-color: rgba(5, 3, 36, 0.884);
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all 100ms ease-in-out;
+}
+
+.special-delete {
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 .exerciseHeading {
@@ -869,8 +876,7 @@ header {
   margin: 10px;
 }
 
-.exercise-container {
-  background-color: rgb(0, 0, 0, 0.5);
+.exercise-container {x
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
