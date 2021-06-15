@@ -226,23 +226,32 @@ router.get('/exercises/:id', auth,  async (req, res) => {
                 model: Workout,
             },
         })
+
         const id = req.params.id
     
         const exercises = workoutExercises.map((exercise) => exercise.get({ plain: true}));
 
-        console.log(exercises);
 
         let allowExerciseEdit;
-        if (exercises[0].workout.user_id == req.session.user_id) {
+        let showUp
+        if (exercises[0] === undefined) {
+            allowExerciseEdit = false;
+            showUp = true;
+        } else if (exercises[0].workout.user_id == req.session.user_id) {
             allowExerciseEdit = true;
+            showUp = true;
         } else {
             allowExerciseEdit = false;
+            showUp = false;
         }
+
+       
 
         res.render('exercises', {
           exercises,
           id,
           allowExerciseEdit,
+          showUp,
           logged_in: req.session.logged_in,
           user_id: req.session.user_id
         });
