@@ -40,7 +40,6 @@ const deleteBlogHandler = async (event) => {
 const likesBlogHandler = async (event) => {
     event.preventDefault()
     const id = event.target.getAttribute('data-update-id')
-    const user_id = event.target.getAttribute('user-id')
     if (id) {
         const response = await fetch(`/api/blog/update/${id}`, {
             method: 'PUT',
@@ -53,6 +52,22 @@ const likesBlogHandler = async (event) => {
         }
     }
 }
+
+// const likesBlogHandler = async (event) => {
+//     event.preventDefault()
+//     const id = event.target.getAttribute('data-update-id')
+//     if (id) {
+//         const response = await fetch(`/api/blog/update/${id}`, {
+//             method: 'PUT',
+//             headers: { 'Content-Type': 'application/json' },
+//         });
+//         if(response.ok) {
+//             document.location.reload();
+//         } else {
+//             alert(response.statusText);
+//         }
+//     }
+// }
 
 
 if (document.querySelector('#like-button')) {
