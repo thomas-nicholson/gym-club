@@ -86,6 +86,7 @@ router.delete('/delete/:id', async (req, res) => {
 });
 
 router.delete('/deleteLike/:id', async (req, res) => {
+
     try {
         const likeDelete = await hasLiked.destroy({
             where: {
@@ -103,5 +104,6 @@ router.delete('/deleteLike/:id', async (req, res) => {
     }
     
 })
+
 
 module.exports = router;
