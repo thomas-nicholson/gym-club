@@ -83,9 +83,10 @@ router.get('/blog/:id', auth,  async (req, res) => {
                 include: [{
                     model:User,
                 }],
-                order: [['id', 'DESC']],
             }],
-            order: [['id', 'DESC']],
+            order: [
+                [{ model: Comment }, 'id', 'DESC']
+             ]
         });
     
         const blog = blogData.get({ plain: true });
