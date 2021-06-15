@@ -93,7 +93,7 @@ router.delete('/deleteLike/:id', async (req, res) => {
                 post_id: req.params.id
             }
         })
-        const blogUpdate = await Blog.increment('likes', {by: 1, where: {
+        const blogUpdate = await Blog.increment('likes', {by: -1, where: {
             id: req.params.id
         }}
         )
