@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog, Stats, Comment, Workout, Exercise} = require('../models');
+const { User, Blog, Stats, Comment, Workout, Exercise, hasLiked} = require('../models');
 const auth = require('../utils/auth');
 const correctUser = require('../utils/correctUser');
 
@@ -88,6 +88,8 @@ router.get('/blog/:id', auth,  async (req, res) => {
                 [{ model: Comment }, 'id', 'DESC']
              ]
         });
+
+        const liked = await hasLiked.findAll({})
     
         const blog = blogData.get({ plain: true });
 
