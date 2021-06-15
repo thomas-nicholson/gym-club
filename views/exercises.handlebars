@@ -2,16 +2,16 @@
   <h1 class="heading">Exercises!</h1>
   <div class="exercise-container">
     {{#if showUp}}
-    <div class="exercise-box-container">
+    <div class="exercise-box-container1">
       <form class="firstForm" autocomplete="off">
           <label class="body-text-forms" for="Exercise">Exercise Name</label><br>
-          <input class="input-box"type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
+          <input class="input-box ex-input"type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
           <label class="body-text-forms" for="Sets">Sets</label><br>
-          <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
+          <input class="input-box ex-input"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
           <label class="body-text-forms" for="Reps">Reps</label><br>
-          <input class="input-box"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
-          <a class="back-button" href="/userWorkouts/{{user_id}}">Back</a>
-          <input class="back-button" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
+          <input class="input-box ex-input"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Reps" name="Reps" required><br><br>
+          <a class="back-button ex-button" href="/userWorkouts/{{user_id}}">Back</a>
+          <input class="back-button ex-button" type="submit" id="new-exercise-button" value="Add Exercise" data-post-id="{{id}}">
       </form>
     </div>
     {{/if}}
@@ -20,14 +20,14 @@
       {{#each exercises as |exercise| }}
         <div class="individual-exercise">
           {{#if ../allowExerciseEdit}}
-          <button class="deleteExercise back-button" data-id="{{exercise.id}}">Delete</button>
+          <img src="/Images/trash.png" id="delete-blog-button" class="delete-icon deleteExercise special-delete" data-id="{{exercise.id}}"/>
           {{/if}}
-          <div class="blog-para">
+          <div>
             <h2 class="exerciseHeading">{{exercise.exercise}}</h2>
             
             <div class="routine">
-                <p>Sets: {{exercise.sets}}</p>
-                <p>Reps: {{exercise.reps}}</p>
+                <p>Sets | {{exercise.sets}}</p>
+                <p>Reps | {{exercise.reps}}</p>
             </div>
             
           </div>

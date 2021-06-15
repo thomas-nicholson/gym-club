@@ -254,10 +254,9 @@ router.get('/exercises/:id', auth,  async (req, res) => {
 
 
         let allowExerciseEdit;
-        let showUp
+        let showUp;
         if (exercises[0] === undefined) {
             allowExerciseEdit = false;
-            showUp = true;
         } else if (exercises[0].workout.user_id == req.session.user_id) {
             allowExerciseEdit = true;
             showUp = true;
@@ -265,9 +264,6 @@ router.get('/exercises/:id', auth,  async (req, res) => {
             allowExerciseEdit = false;
             showUp = false;
         }
-
-       
-
         res.render('exercises', {
           exercises,
           id,
