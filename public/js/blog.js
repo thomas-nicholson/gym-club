@@ -40,10 +40,25 @@ const deleteBlogHandler = async (event) => {
 const likesBlogHandler = async (event) => {
     event.preventDefault()
     const id = event.target.getAttribute('data-update-id')
-    const user_id = event.target.getAttribute('user-id')
     if (id) {
         const response = await fetch(`/api/blog/update/${id}`, {
             method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+        });
+        if(response.ok) {
+            document.location.reload();
+        } else {
+            alert(response.statusText);
+        }
+    }
+}
+
+const unlikeBlogHandler = async (event) => {
+    event.preventDefault()
+    const id = event.target.getAttribute('data-update-id')
+    if (id) {
+        const response = await fetch(`/api/blog/deleteLike/${id}`, {
+            method: 'DELETE',
             headers: { 'Content-Type': 'application/json' },
         });
         if(response.ok) {
@@ -59,6 +74,12 @@ if (document.querySelector('#like-button')) {
     document
       .querySelector('#like-button')
       .addEventListener('click', likesBlogHandler);
+};
+
+if (document.querySelector('#unlike-button')) {
+    document
+      .querySelector('#unlike-button')
+      .addEventListener('click', unlikeBlogHandler);
 };
 
 if (document.querySelector('#new-blog-button')) {
