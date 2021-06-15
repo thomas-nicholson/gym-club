@@ -278,6 +278,13 @@ html {
   opacity: 70%;
 }
 
+.no-workout {
+  padding: 25px;
+  line-height: 1.5rem;
+  text-align: center;
+  opacity: 40%;
+}
+
 #buttons {
   position: relative;
   left: -1000px;
@@ -814,7 +821,6 @@ header {
   justify-content: center;
   text-align: center;
   flex-direction: row;
-  width: 35%;
 }
 
 /* Exercises page */
