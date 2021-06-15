@@ -5,7 +5,7 @@
     <div class="exercise-box-container1">
       <form class="firstForm" autocomplete="off">
           <label class="body-text-forms" for="Exercise">Exercise Name</label><br>
-          <input class="input-box ex-input"type="text" maxlength="30" id="Exercise" name="Exercise" required><br><br>
+          <input class="input-box ex-input"type="text" maxlength="10" id="Exercise" name="Exercise" required><br><br>
           <label class="body-text-forms" for="Sets">Sets</label><br>
           <input class="input-box ex-input"min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==2) return false;" type="number" id="Sets" name="Sets" required><br><br>
           <label class="body-text-forms" for="Reps">Reps</label><br>
@@ -35,7 +35,7 @@
       {{/each}}
       {{else}}
       {{#if allowExerciseEdit}}
-      <h2>You currently have no exercises, add an exercise using the form on this page!</h2>
+      <h2 class="no-workay">You currently have no exercises, add an exercise using the form on this page!</h2>
       {{/if}}
       {{/if}}
     </div>
