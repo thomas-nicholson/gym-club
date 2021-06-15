@@ -40,19 +40,23 @@ router.post('/', async (req, res) => {
 
 // This route allows you to update an image
 router.put('/update/:id', async (req, res) => {
+  
   try {
-    const pictureUpdate = await User.update(
-      {
-        picture: req.body.picture,
-      },
-      {
-        where: {
-          id: req.params.id,
+    if (req.params.id == req.session.user_id) {
+      const pictureUpdate = await User.update(
+        {
+          picture: req.body.picture,
+        },
+        {
+          where: {
+            id: req.params.id,
+          }
         }
-      }
-    )
-
-    res.status(200).json(pictureUpdate)
+      )
+      res.status(200).json(pictureUpdate)
+    } else {
+      res.status(200).json({"message": "Couldn't update picture"});
+    }
   } catch (err) {
     res.status(500).json(err)
   }

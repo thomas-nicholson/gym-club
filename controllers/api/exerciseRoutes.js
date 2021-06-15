@@ -4,6 +4,7 @@ const auth = require('../../utils/auth');
 
 //   This allows you to add exercises to the workout
 router.post('/add/:id', auth, async (req, res) => {
+  // Can't add security to this route
   try {
       const newExercise = await Exercise.create({
           exercise: req.body.exercise,
