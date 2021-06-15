@@ -826,6 +826,15 @@ header {
   flex-direction: row;
 }
 
+.no-workay {
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.5rem;
+  margin-top: 15px;
+  opacity: 40%;
+}
+
 /* Exercises page */
 
 #Exercise,
