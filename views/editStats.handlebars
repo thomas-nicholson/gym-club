@@ -18,7 +18,7 @@
                 <label class="profile-stats" for="Max-Squat">Max Squat:</label><br>
                 <input class="input-box" min="0" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" type="number" id="Max-Squat" name="Max-Squat" value="{{statsy.[0].max_squat}}" required><br><br>
                 <a class="back-button" href="/user/{{id}}">Back</a>
-                <input class="back-button" type="submit" id="update-stats-button" value="Submit" data-post-id="{{id}}">
+                <input class="back-button" type="submit" id="update-stats-button" value="Update" data-post-id="{{id}}">
             </form>
         </div>
     </div>
